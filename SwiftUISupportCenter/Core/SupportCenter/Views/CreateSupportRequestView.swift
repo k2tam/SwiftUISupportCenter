@@ -14,17 +14,14 @@ struct CreateSupportRequestView: View {
     var body: some View {
         VStack(alignment: .leading){
             //Block Title
-            Text("Tạo yêu cầu hỗ trợ")
-                .font(.system(size: 20))
-                .fontWeight(.medium)
+            BlockTitle(title: "Tạo yêu cầu hỗ trợ")
             
             Spacer()
                 .frame(height: 24)
                 
             //Content
-            HStack{
+            HStack(spacing: 16){
                 ForEach(supportRequestCategories, id: \.self){ item in
-                    
                     Button(action: {
                         selectCategoryCallBack(item)
                     }, label: {
@@ -36,8 +33,6 @@ struct CreateSupportRequestView: View {
                 }
 
             }
-            
-                
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
@@ -50,7 +45,7 @@ struct RequestCategory: View {
     
     var body: some View {
         VStack(spacing: 8){
-            HiImageView(string: image)
+            HiImage(string: image)
                 .frame(width: 40, height: 40)
                 .cornerRadius(8)
             
@@ -60,7 +55,7 @@ struct RequestCategory: View {
                 .multilineTextAlignment(.center)
                 
         }
-        .frame(width: 117)
+        .frame(maxWidth: .infinity)
         .padding(.vertical, 8)
         .background(Color.white.cornerRadius(8))
     }

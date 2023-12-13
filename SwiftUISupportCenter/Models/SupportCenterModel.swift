@@ -39,6 +39,32 @@ enum eSupportRequestCategory {
 
 
 struct SupportRequestList {
+    let report: [SupportRequest]
+    
+    init(json: JSON) {
+        let report = json["data"]["report"].arrayValue.map {
+            return SupportRequest(json: $0)
+        }
+        
+        self.report = report
+    }
+}
+
+struct SupportRequest : Hashable{
+    static func == (lhs: SupportRequest, rhs: SupportRequest) -> Bool {
+           // Implement the comparison logic based on your requirements
+           return lhs.reportId == rhs.reportId
+               && lhs.contractNo == rhs.contractNo
+               // Add other properties you want to compare
+       }
+
+    
+    
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(reportId)
+    }
+    
     let reportId: String
     let contractNo: String
     let reportTypeId: String
@@ -139,7 +165,7 @@ struct ReportTime {
     
     init(json: JSON){
         self.begin = json["begin"].stringValue
-        self.end = json["begin"].stringValue
+        self.end = json["end"].stringValue
 
     }
 }

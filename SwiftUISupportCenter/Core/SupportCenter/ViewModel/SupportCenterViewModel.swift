@@ -16,8 +16,6 @@ class SupportCenterViewModel: ObservableObject {
         SupportCenterManager.requestSupportRequestListData(completion: { result in
             self.supportRequestList = result
         })
-        
-        
     }
     
     

@@ -19,15 +19,19 @@
 		05B77A172B295D3C00D4C8EB /* HiNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A112B295D3C00D4C8EB /* HiNavigationLink.swift */; };
 		05B77A182B295D3C00D4C8EB /* HiNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A122B295D3C00D4C8EB /* HiNavBarPreferenceKeys.swift */; };
 		05B77A192B295D3C00D4C8EB /* HiNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A132B295D3C00D4C8EB /* HiNavigationView.swift */; };
-		05B77A1B2B295D3C00D4C8EB /* HiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A152B295D3C00D4C8EB /* HiImageView.swift */; };
+		05B77A1B2B295D3C00D4C8EB /* HiImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A152B295D3C00D4C8EB /* HiImage.swift */; };
 		05B77A1E2B29628400D4C8EB /* CreateSupportRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A1D2B29628400D4C8EB /* CreateSupportRequestView.swift */; };
 		05B77A202B296B4100D4C8EB /* SupportCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A1F2B296B4100D4C8EB /* SupportCenterModel.swift */; };
 		05B77A222B296BF700D4C8EB /* SupportCenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A212B296BF700D4C8EB /* SupportCenterViewModel.swift */; };
 		05B77A252B296FC600D4C8EB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A242B296FC600D4C8EB /* PreviewProvider.swift */; };
 		05B77A282B29922D00D4C8EB /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A272B29922D00D4C8EB /* SampleData.swift */; };
 		05B77A2A2B29926500D4C8EB /* SupportCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A292B29926500D4C8EB /* SupportCenterManager.swift */; };
-		05B77A2D2B2992EC00D4C8EB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05B77A2C2B2992EC00D4C8EB /* SwiftyJSON */; };
 		05B77A2F2B29958D00D4C8EB /* SupportRequestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A2E2B29958D00D4C8EB /* SupportRequestListView.swift */; };
+		05B77A322B29AD9300D4C8EB /* BlockTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A312B29AD9300D4C8EB /* BlockTitle.swift */; };
+		05B77A342B29B1CB00D4C8EB /* HiDividerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A332B29B1CB00D4C8EB /* HiDividerLine.swift */; };
+		05B77A362B29B20100D4C8EB /* SupportRequestItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A352B29B20100D4C8EB /* SupportRequestItemView.swift */; };
+		05B77A392B29B7E300D4C8EB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05B77A382B29B7E300D4C8EB /* SwiftyJSON */; };
+		05B77A3C2B29BD2300D4C8EB /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = 05B77A3B2B29BD2300D4C8EB /* SwiftUIBackports */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +49,7 @@
 		05B77A112B295D3C00D4C8EB /* HiNavigationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiNavigationLink.swift; sourceTree = "<group>"; };
 		05B77A122B295D3C00D4C8EB /* HiNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
 		05B77A132B295D3C00D4C8EB /* HiNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiNavigationView.swift; sourceTree = "<group>"; };
-		05B77A152B295D3C00D4C8EB /* HiImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiImageView.swift; sourceTree = "<group>"; };
+		05B77A152B295D3C00D4C8EB /* HiImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiImage.swift; sourceTree = "<group>"; };
 		05B77A1D2B29628400D4C8EB /* CreateSupportRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSupportRequestView.swift; sourceTree = "<group>"; };
 		05B77A1F2B296B4100D4C8EB /* SupportCenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCenterModel.swift; sourceTree = "<group>"; };
 		05B77A212B296BF700D4C8EB /* SupportCenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCenterViewModel.swift; sourceTree = "<group>"; };
@@ -53,6 +57,9 @@
 		05B77A272B29922D00D4C8EB /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		05B77A292B29926500D4C8EB /* SupportCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCenterManager.swift; sourceTree = "<group>"; };
 		05B77A2E2B29958D00D4C8EB /* SupportRequestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportRequestListView.swift; sourceTree = "<group>"; };
+		05B77A312B29AD9300D4C8EB /* BlockTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTitle.swift; sourceTree = "<group>"; };
+		05B77A332B29B1CB00D4C8EB /* HiDividerLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiDividerLine.swift; sourceTree = "<group>"; };
+		05B77A352B29B20100D4C8EB /* SupportRequestItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportRequestItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B77A2D2B2992EC00D4C8EB /* SwiftyJSON in Frameworks */,
+				05B77A3C2B29BD2300D4C8EB /* SwiftUIBackports in Frameworks */,
+				05B77A392B29B7E300D4C8EB /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +119,7 @@
 		05B779F02B29575300D4C8EB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				05B77A302B29AD8800D4C8EB /* Components */,
 				05B779FD2B295BF500D4C8EB /* SupportCenter */,
 			);
 			path = Core;
@@ -147,6 +156,7 @@
 				05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */,
 				05B77A1D2B29628400D4C8EB /* CreateSupportRequestView.swift */,
 				05B77A2E2B29958D00D4C8EB /* SupportRequestListView.swift */,
+				05B77A352B29B20100D4C8EB /* SupportRequestItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,7 +175,8 @@
 				05B779F92B2959E500D4C8EB /* HiColor.swift */,
 				05B77A0F2B295D3C00D4C8EB /* HiBottomSheet.swift */,
 				05B77A102B295D3C00D4C8EB /* Navigation */,
-				05B77A152B295D3C00D4C8EB /* HiImageView.swift */,
+				05B77A152B295D3C00D4C8EB /* HiImage.swift */,
+				05B77A332B29B1CB00D4C8EB /* HiDividerLine.swift */,
 			);
 			path = HiTheme;
 			sourceTree = "<group>";
@@ -207,6 +218,14 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		05B77A302B29AD8800D4C8EB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				05B77A312B29AD9300D4C8EB /* BlockTitle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,7 +243,8 @@
 			);
 			name = SwiftUISupportCenter;
 			packageProductDependencies = (
-				05B77A2C2B2992EC00D4C8EB /* SwiftyJSON */,
+				05B77A382B29B7E300D4C8EB /* SwiftyJSON */,
+				05B77A3B2B29BD2300D4C8EB /* SwiftUIBackports */,
 			);
 			productName = SwiftUISupportCenter;
 			productReference = 05B779DB2B2956EF00D4C8EB /* SwiftUISupportCenter.app */;
@@ -255,7 +275,8 @@
 			);
 			mainGroup = 05B779D22B2956EF00D4C8EB;
 			packageReferences = (
-				05B77A2B2B2992EC00D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				05B77A372B29B7E300D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				05B77A3A2B29BD2300D4C8EB /* XCRemoteSwiftPackageReference "SwiftUIBackports" */,
 			);
 			productRefGroup = 05B779DC2B2956EF00D4C8EB /* Products */;
 			projectDirPath = "";
@@ -291,14 +312,17 @@
 				05B77A252B296FC600D4C8EB /* PreviewProvider.swift in Sources */,
 				05B77A182B295D3C00D4C8EB /* HiNavBarPreferenceKeys.swift in Sources */,
 				05B77A222B296BF700D4C8EB /* SupportCenterViewModel.swift in Sources */,
+				05B77A322B29AD9300D4C8EB /* BlockTitle.swift in Sources */,
 				05B77A282B29922D00D4C8EB /* SampleData.swift in Sources */,
 				05B779DF2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift in Sources */,
 				05B77A162B295D3C00D4C8EB /* HiBottomSheet.swift in Sources */,
 				05B77A1E2B29628400D4C8EB /* CreateSupportRequestView.swift in Sources */,
 				05B77A2F2B29958D00D4C8EB /* SupportRequestListView.swift in Sources */,
+				05B77A342B29B1CB00D4C8EB /* HiDividerLine.swift in Sources */,
 				05B779EF2B29575100D4C8EB /* SceneDelegate.swift in Sources */,
+				05B77A362B29B20100D4C8EB /* SupportRequestItemView.swift in Sources */,
 				05B77A172B295D3C00D4C8EB /* HiNavigationLink.swift in Sources */,
-				05B77A1B2B295D3C00D4C8EB /* HiImageView.swift in Sources */,
+				05B77A1B2B295D3C00D4C8EB /* HiImage.swift in Sources */,
 				05B779FC2B295BEB00D4C8EB /* SupportCenterScreen.swift in Sources */,
 				05B77A192B295D3C00D4C8EB /* HiNavigationView.swift in Sources */,
 			);
@@ -514,7 +538,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		05B77A2B2B2992EC00D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		05B77A372B29B7E300D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
@@ -522,13 +546,26 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		05B77A3A2B29BD2300D4C8EB /* XCRemoteSwiftPackageReference "SwiftUIBackports" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shaps80/SwiftUIBackports.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		05B77A2C2B2992EC00D4C8EB /* SwiftyJSON */ = {
+		05B77A382B29B7E300D4C8EB /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 05B77A2B2B2992EC00D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			package = 05B77A372B29B7E300D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		05B77A3B2B29BD2300D4C8EB /* SwiftUIBackports */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05B77A3A2B29BD2300D4C8EB /* XCRemoteSwiftPackageReference "SwiftUIBackports" */;
+			productName = SwiftUIBackports;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

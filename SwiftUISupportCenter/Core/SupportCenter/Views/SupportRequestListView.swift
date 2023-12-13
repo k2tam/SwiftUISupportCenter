@@ -8,16 +8,41 @@
 import SwiftUI
 
 struct SupportRequestListView: View {
-//    let supportRequestList: SupportRequestList
-    
+    let supportRequestList: [SupportRequest]
+        
     var body: some View {
-        VStack{
+        VStack(spacing: 16){
+            BlockTitle(title: "Danh sách yêu cầu") {
+            }
+            
+            //Report List
+            VStack(spacing: 0){
+                ForEach(supportRequestList, id: \.self){item in
+                    SupportRequestItemView()
+                    
+                    //List divider line
+                    if item != supportRequestList.last {
+                        HiDividerLine()
+                            .frame(maxWidth: .infinity, maxHeight: 1)
+                            .padding(.vertical, 8)
+                    }
+                   
+                }
+
+            }
+            .padding(.all ,16)
+            .background(Color.white.cornerRadius(8))
             
         }
+        .padding(.horizontal, 16)
     }
 }
 
-#Preview {
-    SupportRequestListView()
-        
+
+
+struct SupportRequestListView_Previews: PreviewProvider {
+    static var previews: some View {
+        SupportRequestListView(supportRequestList: [])
+            .previewLayout(.sizeThatFits)
+    }
 }

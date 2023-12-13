@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct HiImageView: View {
+public struct HiImage: View {
     var string: String
     
     public init(

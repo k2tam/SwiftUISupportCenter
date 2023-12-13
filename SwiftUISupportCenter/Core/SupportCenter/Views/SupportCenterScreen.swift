@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftUIBackports
 
 struct SupportCenterScreen: View {
-    var vm = SupportCenterViewModel()
+    @Backport.StateObject var vm = SupportCenterViewModel()
     
     var body: some View {
         NavigationView {
@@ -19,31 +20,30 @@ struct SupportCenterScreen: View {
                     
                     //Content Layer
                     VStack(spacing: 24){
-                        
                         //MARK: - Create Support Request Block
                         CreateSupportRequestView(supportRequestCategories: vm.createSupportRequestCategories, selectCategoryCallBack: vm.didSelectSupportRequestCategory)
                         
-                        Spacer()
                         
                         //MARK: - Support Request List Block
                         if let supportRequestList = vm.supportRequestList {
-                            SupportRequestListView(/*supportRequestList: supportRequestList*/)
-
+                            SupportRequestListView(supportRequestList: supportRequestList.report)
                         }
                         
-                        
-                        
-                        
+                        Spacer()
+
                     }
+                    
+                    
                 }
-                .hiNavigationTitle("Trung tâm hỗ trợ")
-                .hiNavigationBackButtonHidden(true)
-                
-                
             }
+            .hiNavigationTitle("Trung tâm hỗ trợ")
+            .hiNavigationBackButtonHidden(true)
+            
+            
         }
     }
 }
+
 
 
 struct SupportCenterScreen_Previews: PreviewProvider {
