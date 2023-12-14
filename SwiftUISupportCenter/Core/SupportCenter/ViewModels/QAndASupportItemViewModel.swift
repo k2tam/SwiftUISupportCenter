@@ -18,7 +18,7 @@ class QAndASupportItemViewModel: ObservableObject {
         self.didSelectQAKey = didSelectQAKey
     }
     
-    func setUpAnswerTextView(question: QandASupport) {
+    func setUpAnswerTextView(question: SupportQandA) {
         var str = question.content
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -81,7 +81,7 @@ class QAndASupportItemViewModel: ObservableObject {
         self.attributedString = attributeString
     }
     
-    func handleTapKeys(range: NSRange, question: QandASupport){
+    func handleTapKeys(range: NSRange, question: SupportQandA){
 //         Check if the character index is within the bounds of the attributed string
         if let index = keyRanges.firstIndex(where: {
             (range.location >= $0.location ) &&  (range.location <= ($0.location + $0.length) )

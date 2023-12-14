@@ -38,7 +38,7 @@ struct SupportCenterScreen: View {
                             
                             //MARK: - Q&A Support Block
                             if let qAndAQuestionModel = vm.qAndAQuestionModel {
-                                QandAQuestionView(qAndAModel: qAndAQuestionModel)
+                                SupportQandAView(qAndAModel: qAndAQuestionModel, didSelectQandA: vm.didSelectQandASupport)
                             }
                             
                             

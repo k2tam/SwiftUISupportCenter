@@ -12,7 +12,7 @@ class SupportCenterViewModel: ObservableObject {
     let createSupportRequestCategories: [eSupportRequestCategory] = [.technicalSupport,.feeProcedures,.customerCare]
     @Published var supportRequestList: SupportRequestList? = nil
     @Published var supportExtensionList: [SupportExtension]? = nil
-    @Published var qAndAQuestionModel: QandASupportModel? = nil
+    @Published var qAndAQuestionModel: SupportQandAModel? = nil
     
     init() {
         SupportCenterManager.requestSupportRequestListData(completion: { result in
@@ -47,4 +47,10 @@ class SupportCenterViewModel: ObservableObject {
     func didSelectSupportExtension(action: NavigationModel){
         print(action.dataAction)
     }
+    
+    //TODO: Handle selected Q&ASupport extension here
+    func didSelectQandASupport(selectedQandA: SupportQandA) {
+        
+    }
+
 }

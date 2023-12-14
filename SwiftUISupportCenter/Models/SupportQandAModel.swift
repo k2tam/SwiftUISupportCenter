@@ -8,12 +8,12 @@
 import Foundation
 import SwiftyJSON
 
-struct QandASupportModel{
+struct SupportQandAModel{
     var totalPage: Int
     var perPage: Int
     var title: String
     var currentPage: Int
-    var listQuestion: [QandASupport] = []
+    var listQuestion: [SupportQandA] = []
     
     init(json: JSON){
         self.totalPage = json["totalPage"].intValue
@@ -22,14 +22,14 @@ struct QandASupportModel{
         self.currentPage = json["currentPage"].intValue
         
         self.listQuestion = json["ListQuestion"].arrayValue.map{
-            return QandASupport(json: $0)
+            return SupportQandA(json: $0)
         }
     }
     
 }
 
-class QandASupport: Identifiable, Hashable{
-    static func == (lhs: QandASupport, rhs: QandASupport) -> Bool {
+class SupportQandA: Identifiable, Hashable{
+    static func == (lhs: SupportQandA, rhs: SupportQandA) -> Bool {
         return lhs.id == rhs.id
     }
     

@@ -51,7 +51,7 @@ struct SupportCenterManager {
         }
     }
     
-    static func requestQandAQuestionData(completion: @escaping(_ result: QandASupportModel?) -> Void) {
+    static func requestQandAQuestionData(completion: @escaping(_ result: SupportQandAModel?) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             guard let data = QAndAQuestionSampleData.sampleData.data(using: .utf8) else {
                 completion(nil)
@@ -60,7 +60,7 @@ struct SupportCenterManager {
             
             do {
                 let json = try JSON(data: data)
-                completion(QandASupportModel(json: json["data"]))
+                completion(SupportQandAModel(json: json["data"]))
             }catch{
                 print("Error parsing JSON: \(error)")
                 completion(nil)
