@@ -18,9 +18,21 @@ extension PreviewProvider {
 class DeveloperPreview {
     static let shared = DeveloperPreview()
     
-    private init() {}
+    var supportRequestList: SupportRequestList? = nil
+    var supportExtensionList: [SupportExtension]? = nil
+    
+    private init() {
+        SupportCenterManager.requestSupportRequestListData(completion: { result in
+            self.supportRequestList = result
+        })
+        
+        SupportCenterManager.requestSupportExtensionsData { result in
+            self.supportExtensionList = result
+        }
+    }
     
     let createSupportRequestCategories: [eSupportRequestCategory] = [.customerCare,.feeProcedures,.technicalSupport]
+
     
     //TODO: Handle selected support request category
     func didSelectSupportRequestCategory(category: eSupportRequestCategory) {

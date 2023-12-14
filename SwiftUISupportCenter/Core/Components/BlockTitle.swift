@@ -29,7 +29,7 @@ struct BlockTitle: View {
                 .font(.system(size: 20))
                 .fontWeight(.medium)
             
-            if let action {
+            if action != nil {
                 HiImage(string: "ic_right_arrow")
                     .background(
                         Circle()

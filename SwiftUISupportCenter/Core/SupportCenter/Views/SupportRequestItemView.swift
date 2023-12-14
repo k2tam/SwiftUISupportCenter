@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct SupportRequestItemView: View {
+    let supportRequest: SupportRequest
+    
     var body: some View {
         HStack {
             VStack{
                 VStack(alignment: .leading){
                     HStack(spacing: 4) {
-                        Text("SGJ040120")
+                        Text(supportRequest.contractNo)
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                         
-                        Text("Cử nhân viên")
+                        Text(supportRequest.lastStepName)
                             .foregroundColor(Color.hiTheme.blue)
                             .font(.system(size: 12))
                             .padding(.horizontal, 8)
@@ -29,7 +31,7 @@ struct SupportRequestItemView: View {
                     }
                     
                     
-                    Text("Không truy cập được Internet")
+                    Text(supportRequest.subTypeName)
                         .font(.system(size: 16))
                         .frame(height: 24)
                 }
@@ -43,6 +45,13 @@ struct SupportRequestItemView: View {
     }
 }
 
-#Preview {
-    SupportRequestItemView()
+struct SupportRequestItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        if let supportRequest = dev.supportRequestList?.report[0] {
+            SupportRequestItemView(supportRequest: supportRequest)
+                .previewLayout(.sizeThatFits)
+        }
+        
+    }
 }
+

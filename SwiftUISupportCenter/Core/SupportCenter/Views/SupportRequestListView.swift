@@ -17,11 +17,12 @@ struct SupportRequestListView: View {
             
             //Report List
             VStack(spacing: 0){
-                ForEach(supportRequestList, id: \.self){item in
-                    SupportRequestItemView()
+                ForEach(Array(supportRequestList.enumerated()), id: \.offset){index, item in
+                    SupportRequestItemView(supportRequest: item)
                     
                     //List divider line
-                    if item != supportRequestList.last {
+                    if index != supportRequestList.count - 1 {
+                        
                         HiDividerLine()
                             .frame(maxWidth: .infinity, maxHeight: 1)
                             .padding(.vertical, 8)
@@ -42,7 +43,7 @@ struct SupportRequestListView: View {
 
 struct SupportRequestListView_Previews: PreviewProvider {
     static var previews: some View {
-        SupportRequestListView(supportRequestList: [])
+        SupportRequestListView(supportRequestList: dev.supportRequestList?.report ?? [] )
             .previewLayout(.sizeThatFits)
     }
 }

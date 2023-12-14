@@ -26,8 +26,8 @@ struct CreateSupportRequestView: View {
                         selectCategoryCallBack(item)
                     }, label: {
                         RequestCategory(title: item.title(), image: item.imageString())
-                            .foregroundColor(.black)
                     })
+                    .buttonStyle(PlainButtonStyle())
                     
                         
                 }
