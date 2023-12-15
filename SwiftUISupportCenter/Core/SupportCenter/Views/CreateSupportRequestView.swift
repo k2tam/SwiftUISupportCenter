@@ -14,7 +14,7 @@ struct CreateSupportRequestView: View {
     var body: some View {
         VStack(alignment: .leading){
             //Block Title
-            BlockTitle(title: "Tạo yêu cầu hỗ trợ")
+            BlockNavHeader(title: "Tạo yêu cầu hỗ trợ")
             
             Spacer()
                 .frame(height: 24)

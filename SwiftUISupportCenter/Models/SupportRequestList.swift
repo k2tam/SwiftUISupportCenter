@@ -100,7 +100,7 @@ struct SupportRequest : Hashable{
     }
 }
 
-struct StepStatus {
+struct StepStatus: Identifiable {
     let icon: String
     let textColor: String
     let time: String

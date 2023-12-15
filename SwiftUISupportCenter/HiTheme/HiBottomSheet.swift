@@ -44,7 +44,7 @@ struct HiBottomSheet<Content: View>: View {
             Rectangle()
                 .foregroundColor(Color.gray.opacity(0.5))
                 .opacity(isCardShow ? 1 : 0)
-                .animation(Animation.easeIn)
+                .animation(.default)
                 .onTapGesture {
                     self.dismiss()
                 }
@@ -83,9 +83,7 @@ struct HiBottomSheet<Content: View>: View {
             }
         }
         .edgesIgnoringSafeArea(.all)
-        .onAppear {
-            self.content
-        }
+        
     }
     
     

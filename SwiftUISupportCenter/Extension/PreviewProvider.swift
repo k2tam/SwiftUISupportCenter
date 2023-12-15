@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftyJSON
 
 extension PreviewProvider {
     static var dev: DeveloperPreview {
@@ -21,10 +22,28 @@ class DeveloperPreview {
     var supportRequestList: SupportRequestList? = nil
     var supportExtensionList: [SupportExtension]? = nil
     
+    
+     func previewRequestSupportRequestListData() {
+        
+        guard let data = SupportRequestListSampleData.sampleData.data(using: .utf8) else {
+            return
+        }
+        
+        do {
+            let json = try JSON(data: data)
+            self.supportRequestList =  SupportRequestList(json: json)
+        } catch {
+            print("Error parsing JSON: \(error)")
+            return
+        }
+        
+    }
+    
     private init() {
-        SupportCenterManager.requestSupportRequestListData(completion: { result in
-            self.supportRequestList = result
-        })
+        previewRequestSupportRequestListData()
+        
+      
+        
         
         SupportCenterManager.requestSupportExtensionsData { result in
             self.supportExtensionList = result

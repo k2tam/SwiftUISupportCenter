@@ -19,7 +19,7 @@ class QAndASupportItemViewModel: ObservableObject {
     }
     
     func setUpAnswerTextView(question: SupportQandA) {
-        var str = question.content
+        let str = question.content
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 7 // Set the desired line height here

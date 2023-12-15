@@ -16,6 +16,7 @@ struct HiDividerLine: View {
     
     var body: some View {
         Color(hex: hexColor)
+            .frame(maxWidth: .infinity,maxHeight: 1)
     }
 }
 

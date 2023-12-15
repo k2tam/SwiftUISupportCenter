@@ -153,6 +153,7 @@ struct SupportRequestListSampleData {
                      "name": "Đã tiếp nhận yêu cầu ",
                      "detail": ""
                    },
+    
                    {
                      "icon": "",
                      "textColor": "#969696",

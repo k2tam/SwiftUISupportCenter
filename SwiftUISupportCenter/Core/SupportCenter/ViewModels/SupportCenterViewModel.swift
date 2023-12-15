@@ -15,16 +15,23 @@ class SupportCenterViewModel: ObservableObject {
     @Published var qAndAQuestionModel: SupportQandAModel? = nil
     
     init() {
-        SupportCenterManager.requestSupportRequestListData(completion: { result in
-            self.supportRequestList = result
+        SupportCenterManager.requestSupportRequestListData(completion: {[weak self] result in
+            DispatchQueue.main.async {
+                self?.supportRequestList = result
+
+            }
         })
         
-        SupportCenterManager.requestSupportExtensionsData { result in
-            self.supportExtensionList = result
+        SupportCenterManager.requestSupportExtensionsData {[weak self] result in
+            DispatchQueue.main.async {
+                self?.supportExtensionList = result
+            }
         }
         
-        SupportCenterManager.requestQandAQuestionData { result in
-            self.qAndAQuestionModel = result
+        SupportCenterManager.requestQandAQuestionData {[weak self] result in
+            DispatchQueue.main.async {
+                self?.qAndAQuestionModel = result
+            }
         }
     }
     

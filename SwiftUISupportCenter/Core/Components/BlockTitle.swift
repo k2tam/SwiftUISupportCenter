@@ -2,54 +2,39 @@
 //  BlockTitle.swift
 //  SwiftUISupportCenter
 //
-//  Created by k2 tam on 13/12/2023.
+//  Created by k2 tam on 15/12/2023.
 //
 
 import SwiftUI
 
-/// Block Title
-/// ```
-/// title: Title for block
-/// action: call back action if nil then block title will not have arrow button
-/// ```
 struct BlockTitle: View {
+    let icon: String
     let title: String
-    let action: (() -> Void)?
-    
-    
-    init(title: String, action: ( () -> Void)? = nil) {
-        self.title = title
-        self.action = action
-    }
+    var isShowArrow: Bool = false
     
     var body: some View {
-        
-        HStack(spacing: 8){
-            Text(title)
-                .font(.system(size: 20))
-                .fontWeight(.medium)
+        HStack{
+            HiImage(string: icon)
+                .frame(width: 24, height: 24)
             
-            if action != nil {
-                HiImage(string: "ic_right_arrow")
-                    .background(
-                        Circle()
-                            .fill(Color.white)
-                    )
-                    .frame(width: 12, height: 12)
-                
-                    .padding(.leading, 8)
-            }
+            Text(title)
+                .font(Font.system(size: 16))
+                .fontWeight(.medium)
+                .padding(.leading, 8)
             
             Spacer()
+            
+            if isShowArrow {
+                HiImage(string: "ic_right_arrow")
+                    .frame(width: 24, height: 24)
+            }
+            
+            
         }
-        .onTapGesture(perform: {
-            action?()
-        })
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
 #Preview {
-    BlockTitle(title: "Danh sách yêu cầu") {
-        
-    }
+    BlockTitle(icon: "ic_note", title: "Ghi chú", isShowArrow: true)
 }

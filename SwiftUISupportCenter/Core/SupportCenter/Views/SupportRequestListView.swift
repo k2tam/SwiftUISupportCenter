@@ -12,13 +12,22 @@ struct SupportRequestListView: View {
         
     var body: some View {
         VStack(spacing: 16){
-            BlockTitle(title: "Danh sách yêu cầu") {
+            BlockNavHeader(title: "Danh sách yêu cầu") {
             }
             
             //Report List
             VStack(spacing: 0){
                 ForEach(Array(supportRequestList.enumerated()), id: \.offset){index, item in
-                    SupportRequestItemView(supportRequest: item)
+                    
+                    
+                    NavigationLink {
+                        RequestDetailScreen(supportRequest: supportRequestList[0])
+                    } label: {
+                        SupportRequestItemView(supportRequest: item)
+                            .foregroundColor(.black)
+                    }
+
+                   
                     
                     //List divider line
                     if index != supportRequestList.count - 1 {
