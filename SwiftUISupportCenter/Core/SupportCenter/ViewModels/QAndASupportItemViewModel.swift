@@ -68,6 +68,7 @@ class QAndASupportItemViewModel: ObservableObject {
             //            attributeString.addAttributes( colorAttributes, range: newRangeAfterInsert)
             
             
+            
             keyRanges.append(newRangeAfterInsert)
             
             

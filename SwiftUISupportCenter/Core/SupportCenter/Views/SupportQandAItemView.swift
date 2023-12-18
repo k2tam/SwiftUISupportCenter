@@ -58,6 +58,8 @@ struct SupportQandAItemView: View, Equatable {
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity)
                 .animation(.default)
+                
+//                Text("Hi")
             }
             
             //Bottom divider line
@@ -75,6 +77,10 @@ struct SupportQandAItemView: View, Equatable {
         .onAppear(perform: {
             vm.setUpAnswerTextView(question: qAndAQuestion)
         })
+    }
+    
+    func selectedCharacterRangeCallBack(range: NSRange){
+        vm.handleTapKeys(range: range, question: qAndAQuestion)
     }
     
     
