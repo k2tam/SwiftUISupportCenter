@@ -51,10 +51,11 @@ struct SupportCenterScreen: View {
                 }
                 .hiNavigationTitle("Trung tâm hỗ trợ")
                 .hiNavigationBackButtonHidden(true)
+             
                 
             }
-           
-            
+
+
         }
     }
 }

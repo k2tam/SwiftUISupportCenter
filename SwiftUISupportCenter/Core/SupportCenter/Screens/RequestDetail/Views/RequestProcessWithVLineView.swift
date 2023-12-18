@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RequestProcessWithVLineView: View {
+    var isLastProcess: Bool = false
     var paddingBottom: CGFloat
     let time: String
     let statusTitle: String
@@ -15,7 +16,8 @@ struct RequestProcessWithVLineView: View {
     
     @State var processLineHeight: CGFloat = 0
     
-    init(paddingBottom: CGFloat = 0,time: String, statusTitle: String, statusDetail: String) {
+    init(isLastProcess: Bool = false , paddingBottom: CGFloat = 0,time: String, statusTitle: String, statusDetail: String) {
+        self.isLastProcess = isLastProcess
         self.paddingBottom = paddingBottom
         self.time = time
         self.statusTitle = statusTitle
@@ -31,8 +33,11 @@ struct RequestProcessWithVLineView: View {
             
             
             ZStack(alignment: .top){
-                Color(hex: "#D1D1D1")
-                    .frame(width: 1, height: processLineHeight + paddingBottom)
+                if !isLastProcess {
+                    Color(hex: "#D1D1D1")
+                        .frame(width: 1, height:  processLineHeight + paddingBottom)
+                }
+               
                 
                 HiImage(string: "ic_done")
                     .padding(.horizontal, 17)
@@ -56,7 +61,6 @@ struct RequestProcessWithVLineView: View {
         .background(GeometryReader { geo in
             Color.clear
                 .onAppear(perform: {
-                    print(geo.size.height)
                     processLineHeight = geo.size.height
                 })
         })

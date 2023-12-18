@@ -11,8 +11,8 @@ import SwiftBackports
 
 struct CreateSupportRequestScreen: View {
     @Backport.StateObject var vm = CreateSupportRequestViewModel()
-    @State var isShowKeyboard = false
-    @State var isCardShow = false
+    @State private var isShowKeyboard = false
+    @State private var isCardShow = false
     
     //    private var ContactInfoView: some View {
     //        VStack(alignment: .leading, spacing: 8){

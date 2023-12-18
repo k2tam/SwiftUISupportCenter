@@ -13,7 +13,7 @@ struct SupportRequestBottomSheetContent: View {
     
     
     @Binding var isShow: Bool
-    @State var categorySelected: eContractService? = nil
+    @State  var categorySelected: eContractService? = nil
     @State var statusSelected: eSupportStatus? = nil
     
   

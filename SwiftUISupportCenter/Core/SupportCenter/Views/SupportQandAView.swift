@@ -16,7 +16,7 @@ struct SupportQandAView: View {
     var body: some View {
         VStack{
             //Title layout
-            BlockNavHeader(title: "Câu hỏi thường gặp") {
+            BlockNavHeader(title: qAndAModel.title) {
                 
             }
 
@@ -30,7 +30,6 @@ struct SupportQandAView: View {
                         SupportQandAItemView(qAndAQuestion: item, didSelected: manageExpandQAItems)
 
                     }
-   
                 }
             }
             .padding(.all, 16)
@@ -53,10 +52,10 @@ struct SupportQandAView: View {
          
         }
         
-        currentSelectedQandA?.isSelected.toggle()
+        withAnimation {
+            currentSelectedQandA?.isSelected.toggle()
 
-        
-        
+        }
 
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051225B82B2EF80600FB1DEF /* HiAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225B72B2EF80600FB1DEF /* HiAlert.swift */; };
 		0540F5A02B2C034100E9A1D5 /* RequestProcessWithVLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */; };
 		0540F5A22B2C0D6000E9A1D5 /* RequestStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */; };
 		0540F5A52B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		051225B72B2EF80600FB1DEF /* HiAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiAlert.swift; sourceTree = "<group>"; };
 		0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessWithVLineView.swift; sourceTree = "<group>"; };
 		0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusView.swift; sourceTree = "<group>"; };
 		0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusTimeLineScreen.swift; sourceTree = "<group>"; };
@@ -258,12 +260,13 @@
 		05B77A0E2B295D3C00D4C8EB /* HiTheme */ = {
 			isa = PBXGroup;
 			children = (
+				05B77A102B295D3C00D4C8EB /* Navigation */,
 				05B779F92B2959E500D4C8EB /* HiColor.swift */,
 				05B77A632B2AFFC600D4C8EB /* HiPrimaryButton.swift */,
 				05B77A0F2B295D3C00D4C8EB /* HiBottomSheet.swift */,
-				05B77A102B295D3C00D4C8EB /* Navigation */,
 				05B77A152B295D3C00D4C8EB /* HiImage.swift */,
 				05B77A332B29B1CB00D4C8EB /* HiDividerLine.swift */,
+				051225B72B2EF80600FB1DEF /* HiAlert.swift */,
 			);
 			path = HiTheme;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				05B779DF2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift in Sources */,
 				05B77A162B295D3C00D4C8EB /* HiBottomSheet.swift in Sources */,
 				05B77A642B2AFFC600D4C8EB /* HiPrimaryButton.swift in Sources */,
+				051225B82B2EF80600FB1DEF /* HiAlert.swift in Sources */,
 				05B77A1E2B29628400D4C8EB /* CreateSupportRequestView.swift in Sources */,
 				05B77A5F2B2AFD9200D4C8EB /* SupportRequestBottomSheetContent.swift in Sources */,
 				05B77A622B2AFF3D00D4C8EB /* CreateSupportRequestViewModel.swift in Sources */,

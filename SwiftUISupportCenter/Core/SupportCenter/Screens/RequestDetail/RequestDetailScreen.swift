@@ -12,7 +12,7 @@ enum eNavTag{
 }
 
 struct RequestDetailScreen: View {
-    @State var isNavToRequestStatusTimeLineScreen: Bool = false
+    @State private var isNavToRequestStatusTimeLineScreen: Bool = false
     @State var navTag: eNavTag?
     let supportRequest: SupportRequest
     

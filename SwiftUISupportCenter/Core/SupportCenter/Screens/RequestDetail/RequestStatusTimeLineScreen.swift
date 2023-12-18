@@ -17,15 +17,26 @@ struct RequestStatusTimeLineScreen: View {
                 Color.hiTheme.background
                 
                 VStack {
-                    VStack(spacing: 0){
-                        ForEach(stepStatusList) { step in
-                            RequestProcessWithVLineView(paddingBottom: paddingBottomEachStep, time: step.time, statusTitle: step.name, statusDetail: step.detail)
+                    ScrollView{
+                        VStack(spacing: 0){
+                            ForEach(Array(stepStatusList.enumerated()), id: \.element.id) {index, step in
+                                RequestProcessWithVLineView(
+                                    isLastProcess: index == stepStatusList.count - 1 ? true : false,
+                                    paddingBottom: paddingBottomEachStep,
+                                    time: step.time,
+                                    statusTitle: step.name,
+                                    statusDetail: step.detail
+                                )
+                            }
+                            
+                            
                         }
-                        
+                        .padding(.all, 16)
+                        .background(Color.white)
+                        .padding(.top, 8)
                         
                     }
-                    .padding(.all, 16)
-                    .background(Color.white)
+                    
                     
                     Spacer()
                 }
@@ -33,7 +44,8 @@ struct RequestStatusTimeLineScreen: View {
                 
             }
             .hiNavigationTitle("Trạng thái yêu cầu")
-           
+            .edgesIgnoringSafeArea(.bottom)
+            
             
             
         }
@@ -45,7 +57,7 @@ struct RequestStatusTimeLineScreen_Previews: PreviewProvider {
         if let supportRequest = dev.supportRequestList?.report[0] {
             RequestStatusTimeLineScreen(stepStatusList: supportRequest.stepStatus)
         }
-       
+        
     }
     
 }
