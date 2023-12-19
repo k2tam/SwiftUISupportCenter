@@ -7,31 +7,33 @@
 
 import SwiftUI
 
-enum eNavTag{
-    case toRequestStatusTimeLineScreen
-}
+
 
 struct RequestDetailScreen: View {
+    @EnvironmentObject var navManager : NavigationTagManager
     @State private var isNavToRequestStatusTimeLineScreen: Bool = false
-    @State var navTag: eNavTag?
     let supportRequest: SupportRequest
     
     var body: some View {
         HiNavigationView {
-            ZStack{
-                NavigationLinks
+            ZStack {
                 
                 //Background layout
                 Color.hiTheme.background
                 
-                NavigationLink("", destination: RequestStatusTimeLineScreen(stepStatusList: supportRequest.stepStatus), isActive: $isNavToRequestStatusTimeLineScreen)
+                NavigationLinks
+
+     
                 
                 //Content layout
                 ScrollView {
                     VStack{
                         //MARK: - Request status block
-                        RequestStatusView(callBackNavToRequestStatusTimeLineScreen: self.callBackNavToRequestStatusTimeLineScreen)
-
+                        RequestStatusView()
+                            .onTapGesture(perform: {
+                                navManager.navTag = .toRequestStatusTimeLineScreen
+                            })
+                        
                         //MARK: - Contract info block
                         //TODO: find address
                         ContractInfoView(contractNo: supportRequest.contractNo, address: "")
@@ -51,25 +53,28 @@ struct RequestDetailScreen: View {
             }
             .hiNavigationTitle("Chi tiết yêu cầu")
             .edgesIgnoringSafeArea(.bottom)
-          
+            
             
         }
+        
+        
+        
     }
     
-    func callBackNavToRequestStatusTimeLineScreen() {
-        self.navTag = .toRequestStatusTimeLineScreen
-    }
+  
 }
 
 extension RequestDetailScreen {
     var NavigationLinks: some View {
         Group {
             NavigationLink(
-                destination: RequestStatusTimeLineScreen(stepStatusList: self.supportRequest.stepStatus),
+                destination: RequestStatusTimeLineScreen(stepStatusList: supportRequest.stepStatus),
                 tag: eNavTag.toRequestStatusTimeLineScreen,
-                selection: $navTag) {}
+                selection: $navManager.navTag) {}
         }
     }
+    
+    
     struct ContentRow: View {
         let title: String
         let content: String

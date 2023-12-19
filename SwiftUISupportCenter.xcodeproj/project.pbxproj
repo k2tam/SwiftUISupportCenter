@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		051225B82B2EF80600FB1DEF /* HiAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225B72B2EF80600FB1DEF /* HiAlert.swift */; };
+		051225C32B30487A00FB1DEF /* MoreQandAScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225C22B30487A00FB1DEF /* MoreQandAScreen.swift */; };
+		051225C62B3048A700FB1DEF /* MoreQandAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225C52B3048A700FB1DEF /* MoreQandAViewModel.swift */; };
+		051225C82B304CBE00FB1DEF /* NavigationTagManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225C72B304CBE00FB1DEF /* NavigationTagManager.swift */; };
+		051225CE2B312BD900FB1DEF /* HiCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225CD2B312BD900FB1DEF /* HiCalendar.swift */; };
+		051225D22B31D79100FB1DEF /* SupportScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225D12B31D79100FB1DEF /* SupportScheduleScreen.swift */; };
 		0540F5A02B2C034100E9A1D5 /* RequestProcessWithVLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */; };
 		0540F5A22B2C0D6000E9A1D5 /* RequestStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */; };
 		0540F5A52B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */; };
@@ -57,6 +62,11 @@
 
 /* Begin PBXFileReference section */
 		051225B72B2EF80600FB1DEF /* HiAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiAlert.swift; sourceTree = "<group>"; };
+		051225C22B30487A00FB1DEF /* MoreQandAScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreQandAScreen.swift; sourceTree = "<group>"; };
+		051225C52B3048A700FB1DEF /* MoreQandAViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreQandAViewModel.swift; sourceTree = "<group>"; };
+		051225C72B304CBE00FB1DEF /* NavigationTagManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTagManager.swift; sourceTree = "<group>"; };
+		051225CD2B312BD900FB1DEF /* HiCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiCalendar.swift; sourceTree = "<group>"; };
+		051225D12B31D79100FB1DEF /* SupportScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportScheduleScreen.swift; sourceTree = "<group>"; };
 		0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessWithVLineView.swift; sourceTree = "<group>"; };
 		0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusView.swift; sourceTree = "<group>"; };
 		0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusTimeLineScreen.swift; sourceTree = "<group>"; };
@@ -117,9 +127,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051225C12B30487A00FB1DEF /* MoreQandA */ = {
+			isa = PBXGroup;
+			children = (
+				051225C42B30489B00FB1DEF /* ViewModels */,
+				051225C22B30487A00FB1DEF /* MoreQandAScreen.swift */,
+			);
+			path = MoreQandA;
+			sourceTree = "<group>";
+		};
+		051225C42B30489B00FB1DEF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				051225C52B3048A700FB1DEF /* MoreQandAViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		051225CC2B312BB900FB1DEF /* SupportSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				051225CD2B312BD900FB1DEF /* HiCalendar.swift */,
+				051225D12B31D79100FB1DEF /* SupportScheduleScreen.swift */,
+			);
+			path = SupportSchedule;
+			sourceTree = "<group>";
+		};
 		0540F5A32B2C41E100E9A1D5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				051225CC2B312BB900FB1DEF /* SupportSchedule */,
+				051225C12B30487A00FB1DEF /* MoreQandA */,
 				05B77A582B2AFD9200D4C8EB /* CreateSupportRequest */,
 				0597324D2B2BF92200F79E25 /* RequestDetail */,
 			);
@@ -304,6 +342,7 @@
 			children = (
 				05B77A272B29922D00D4C8EB /* SampleData.swift */,
 				05B77A292B29926500D4C8EB /* SupportCenterManager.swift */,
+				051225C72B304CBE00FB1DEF /* NavigationTagManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -430,12 +469,15 @@
 				05B77A202B296B4100D4C8EB /* SupportRequestList.swift in Sources */,
 				05B77A2A2B29926500D4C8EB /* SupportCenterManager.swift in Sources */,
 				05B779F62B29590200D4C8EB /* HiAppExtension.swift in Sources */,
+				051225D22B31D79100FB1DEF /* SupportScheduleScreen.swift in Sources */,
 				05B77A4F2B2AA5AC00D4C8EB /* SupportQandAModel.swift in Sources */,
 				05B77A252B296FC600D4C8EB /* PreviewProvider.swift in Sources */,
 				0540F5A52B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift in Sources */,
+				051225CE2B312BD900FB1DEF /* HiCalendar.swift in Sources */,
 				0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */,
 				059732532B2BFE1E00F79E25 /* BlockTitle.swift in Sources */,
 				05B77A182B295D3C00D4C8EB /* HiNavBarPreferenceKeys.swift in Sources */,
+				051225C82B304CBE00FB1DEF /* NavigationTagManager.swift in Sources */,
 				05B77A422B29F42700D4C8EB /* SupportExtension.swift in Sources */,
 				05B77A222B296BF700D4C8EB /* SupportCenterViewModel.swift in Sources */,
 				05B77A662B2B003600D4C8EB /* CustomTextView.swift in Sources */,
@@ -452,6 +494,8 @@
 				05B77A552B2AC1F700D4C8EB /* TextView.swift in Sources */,
 				05B77A342B29B1CB00D4C8EB /* HiDividerLine.swift in Sources */,
 				0540F5A22B2C0D6000E9A1D5 /* RequestStatusView.swift in Sources */,
+				051225C32B30487A00FB1DEF /* MoreQandAScreen.swift in Sources */,
+				051225C62B3048A700FB1DEF /* MoreQandAViewModel.swift in Sources */,
 				05B779EF2B29575100D4C8EB /* SceneDelegate.swift in Sources */,
 				05B77A3E2B29F2B300D4C8EB /* SupportExtensionsView.swift in Sources */,
 				05B77A362B29B20100D4C8EB /* SupportRequestItemView.swift in Sources */,

@@ -9,12 +9,17 @@ import SwiftUI
 import SwiftUIBackports
 
 struct SupportCenterScreen: View {
+    @EnvironmentObject var navManager : NavigationTagManager
     @Backport.StateObject var vm = SupportCenterViewModel()
+    
     
     var body: some View {
         NavigationView {
             HiNavigationView {
+                
                 ZStack{
+                    NavigationLinks
+                    
                     //Background layer
                     Color.hiTheme.background
                     
@@ -46,16 +51,25 @@ struct SupportCenterScreen: View {
 
                         }
                     }
-                    
-                    
+
                 }
                 .hiNavigationTitle("Trung tâm hỗ trợ")
                 .hiNavigationBackButtonHidden(true)
-             
-                
             }
 
+        }
+        .environmentObject(navManager)
+    }
+        
+}
 
+extension SupportCenterScreen {
+    var NavigationLinks: some View {
+        Group {
+            NavigationLink(
+                destination: MoreQandAScreen(),
+                tag: eNavTag.toMoreQaAScreen,
+                selection: $navManager.navTag) {}
         }
     }
 }

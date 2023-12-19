@@ -248,7 +248,7 @@ struct SupportExtensionsSampleData {
     
 }
 
-struct QAndAQuestionSampleData {
+struct QAndAQuestionSampleDataPage1 {
     static let sampleData = """
         {
           "statusCode" : 0,
@@ -315,3 +315,69 @@ struct QAndAQuestionSampleData {
     """
 }
 
+struct QAndAQuestionSampleDataPage2 {
+    static let sampleData = """
+        {
+          "statusCode" : 0,
+          "data" : {
+            "totalPage" : 8,
+            "perPage" : 3,
+            "ListQuestion" : [
+              {
+                "content" : "Để được thông tin về chính sách, ưu đãi hoặc hỗ trợ thủ tục, cước phí và đăng ký dịch vụ bạn có thể gọi điện thoại đến số {key}",
+                "id" : 1,
+                "question" : "Tôi có thể gọi đến tổng đài Chăm sóc khách hàng (CSKH) qua số điện thoại nào?",
+                "keyTracking" : "QA1",
+                "keys" : [
+                  {
+                    "text" : "19006600",
+                    "fontWeight" : "medium",
+                    "action" : null,
+                    "textAction" : "CALL",
+                    "textColor" : "#2552E0",
+                    "textUnderline" : true
+                  }
+                ]
+              },
+                  {
+                    "content" : "Để được thông tin về chính sách, ưu đãi hoặc hỗ trợ thủ tục, cước phí và đăng ký dịch vụ bạn có thể gọi điện thoại đến số {key}",
+                    "id" : 2,
+                    "question" : "Tôi có thể gọi đến tổng đài Chăm sóc khách hàng (CSKH) qua số điện thoại nào?",
+                    "keyTracking" : "QA1",
+                    "keys" : [
+                      {
+                        "text" : "19006600",
+                        "fontWeight" : "medium",
+                        "action" : null,
+                        "textAction" : "CALL",
+                        "textColor" : "#2552E0",
+                        "textUnderline" : true
+                      }
+                    ]
+                  },
+    
+                  {
+                    "content" : "Để được thông tin về chính sách, ưu đãi hoặc hỗ trợ thủ tục, cước phí và đăng ký dịch vụ bạn có thể gọi điện thoại đến số {key}",
+                    "id" : 3,
+                    "question" : "Tôi có thể gọi đến tổng đài Chăm sóc khách hàng (CSKH) qua số điện thoại nào?",
+                    "keyTracking" : "QA1",
+                    "keys" : [
+                      {
+                        "text" : "19006600",
+                        "fontWeight" : "medium",
+                        "action" : null,
+                        "textAction" : "CALL",
+                        "textColor" : "#2552E0",
+                        "textUnderline" : true
+                      }
+                    ]
+                  },
+              
+            ],
+            "Title" : "Câu hỏi thường gặp",
+            "currentPage" : 2
+          },
+          "message" : "Thành công"
+        }
+    """
+}

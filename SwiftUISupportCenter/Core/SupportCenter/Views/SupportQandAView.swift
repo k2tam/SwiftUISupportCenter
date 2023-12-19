@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct SupportQandAView: View {
+    @EnvironmentObject var navManager: NavigationTagManager
+    
     let qAndAModel: SupportQandAModel
     @State var currentSelectedQandA: SupportQandAItemView? = nil
     var didSelectQandA: (_ qAndA: SupportQandA) -> Void
-
+    var isNavToMoreQA: Bool = false
+    
+    
+    
     
     var body: some View {
         VStack{
             //Title layout
             BlockNavHeader(title: qAndAModel.title) {
-                
+                navManager.navTag = .toMoreQaAScreen
             }
 
             //Content layout

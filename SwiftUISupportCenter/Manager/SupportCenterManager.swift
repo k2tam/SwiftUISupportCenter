@@ -53,7 +53,7 @@ struct SupportCenterManager {
     
     static func requestQandAQuestionData(completion: @escaping(_ result: SupportQandAModel?) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            guard let data = QAndAQuestionSampleData.sampleData.data(using: .utf8) else {
+            guard let data = QAndAQuestionSampleDataPage1.sampleData.data(using: .utf8) else {
                 completion(nil)
                 return
             }

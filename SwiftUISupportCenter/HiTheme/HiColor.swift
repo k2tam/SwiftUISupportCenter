@@ -13,9 +13,9 @@ extension Color{
 }
 
 struct HiColorTheme {
+    let primaryColor = Color(hex: "#4564ED")
     let background = Color(hex: "#F5F5F5")
     let secondaryText = Color(hex: "#888888")
-    let blue = Color(hex: "#4564ED")
     let secondaryBlue = Color(hex: "#F0F3FE")
     let green = Color(hex: "#17BA58")
     let secondaryGreen = Color(hex: "#F1FDF6")
