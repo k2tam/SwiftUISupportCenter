@@ -42,7 +42,9 @@ class SupportCenterViewModel: ObservableObject {
     func didSelectSupportRequestCategory(category: eSupportRequestCategory) {
         switch category {
         case .technicalSupport:
+            NavigationTagManager.shared.navTag = .toSupportRequestScreen
             print("Hỗ trợ kỹ thuật")
+            
         case .feeProcedures:
             print("Thủ tục cước phí")
         case .customerCare:

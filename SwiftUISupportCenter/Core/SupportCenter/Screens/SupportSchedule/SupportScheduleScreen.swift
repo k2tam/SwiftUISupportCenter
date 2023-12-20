@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 enum eInDayTime{
     case morning
     case afternoon
@@ -35,13 +36,11 @@ enum eInDayTime{
     }
 }
 
-
-
 struct SupportScheduleScreen: View {
     var body: some View {
         HiNavigationView {
             ZStack(alignment: .bottom){
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading){
                         
                         Text("Chọn ngày")
@@ -51,7 +50,7 @@ struct SupportScheduleScreen: View {
                             .padding(.bottom, 8)
                         
                         HiCalendar()
-                        
+                            .frame(height: 350) // Adjust the value as needed
                         
                         Text("Chọn giờ")
                             .font(.system(size: 18, weight: .medium))
@@ -60,16 +59,33 @@ struct SupportScheduleScreen: View {
                             .padding(.bottom, 8)
                         
                         VStack(spacing: 16){
-                            HourScheduleLine(inDayTime: .morning)
-                            HourScheduleLine(inDayTime: .afternoon)
-                            HourScheduleLine(inDayTime: .night)
+                            HStack{
+                                VStack{
+                                    HeaderHourSchedule(inDayTime: .morning)
+                                    HeaderHourSchedule(inDayTime: .afternoon)
+                                    HeaderHourSchedule(inDayTime: .night)
+                                }
+                                .frame(maxWidth: 37)
+                                .padding(.trailing, 20)
+                                
+                                ScrollView(.horizontal, showsIndicators: false){
+                                    VStack(spacing: 16){
+                                        HourScheduleLine()
+                                        HourScheduleLine()
+                                        HourScheduleLine()
+                                    }
+                                }   
+                            }
+                            
                             
                         }
                         .padding(.leading, 16)
                         
                     }
+                    .padding(.bottom, 100)
                 }
                 
+
                 CreateButton
                 
             }
@@ -92,12 +108,12 @@ extension SupportScheduleScreen {
             PrimaryButton(btnText: "Áp dụng") {
                 
             }
-            .padding(.init(top: 16, leading: 16, bottom: 32, trailing: 16))
+            .padding(.init(top: 16, leading: 16, bottom: 16, trailing: 16))
             .frame(maxWidth: .infinity)
             
             
         }
-        .frame(maxHeight: 96)
+        .frame(maxHeight: 80)
     }
     
     
@@ -142,26 +158,18 @@ extension SupportScheduleScreen {
     }
     
     struct HourScheduleLine: View {
-        let inDayTime: eInDayTime
-        
         var body: some View {
+    
             HStack{
-                HeaderHourSchedule(inDayTime: inDayTime)
-                    .padding(.trailing, 24)
-                
-                ScrollView(.horizontal, showsIndicators: false){
-                    HStack{
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                        HourCell(isAvailable: true)
-                    }
-                }
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
+                HourCell(isAvailable: true)
             }
             .frame(maxWidth: .infinity,  maxHeight: 72,alignment: .leading)
             

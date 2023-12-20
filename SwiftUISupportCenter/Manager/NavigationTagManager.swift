@@ -11,6 +11,8 @@ import Foundation
 enum eNavTag{
     case toRequestStatusTimeLineScreen
     case toMoreQaAScreen
+    case toSupportScheduleScreen
+    case toSupportRequestScreen
 }
 
 

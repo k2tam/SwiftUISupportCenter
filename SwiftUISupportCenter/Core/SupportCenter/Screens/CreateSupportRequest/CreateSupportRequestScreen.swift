@@ -8,53 +8,30 @@
 import SwiftUI
 import SwiftBackports
 
-
 struct CreateSupportRequestScreen: View {
     @Backport.StateObject var vm = CreateSupportRequestViewModel()
     @State private var isShowKeyboard = false
     @State private var isCardShow = false
-    
-    //    private var ContactInfoView: some View {
-    //        VStack(alignment: .leading, spacing: 8){
-    //            HStack{
-    //                HiImage(string: "ic_phone_book")
-    //                    .frame(width: 24, height: 24)
-    //
-    //                Text("Thông tin liên hệ")
-    //                    .font(Font.system(size: 16))
-    //                    .fontWeight(.medium)
-    //                    .padding(.leading, 8)
-    //
-    //                Spacer()
-    //
-    //            }
-    //
-    //            ContactTextFieldView(title: "Họ tên", tfText: $vm.fullName, keyboardType: .alphabet, vm: vm)
-    //            ContactTextFieldView(title: "Số điện thoại liên hệ", tfText: $vm.phoneNumber, keyboardType: .phonePad, vm: vm)
-    //
-    //
-    //        }
-    //        .padding(.all, 16)
-    //        .background(Color.white)
-    //
-    //
-    //    }
-    
+    @State var navTag: eNavTag?
     
     var body: some View {
         ZStack {
             HiNavigationView {
                 ZStack(alignment: .bottom){
+                    NavigationLinks
+                    
+                    Color.hiTheme.background
+                    
                     createSupportContent
                     
                     createButton
                     
                 }
                 .hiNavigationTitle("Tạo yêu cầu hỗ trợ")
-                .background(Color.hiTheme.background)
-                .edgesIgnoringSafeArea(.bottom)
-                
+
+    
             }
+            
             
             GeometryReader { geometry in
                 HiBottomSheet(isCardShow: $isCardShow, height: geometry.size.height * 0.6, minHeight: geometry.size.height * 0.3) {
@@ -65,15 +42,21 @@ struct CreateSupportRequestScreen: View {
             }
             
         }
-        
-        
-        
+        .edgesIgnoringSafeArea(.bottom)
+
     }
-    
-    
+  
 }
 
 extension CreateSupportRequestScreen {
+    private var NavigationLinks: some View {
+        Group {
+            NavigationLink(tag: eNavTag.toSupportScheduleScreen, selection: $navTag, destination: {
+                SupportScheduleScreen()
+            }){}
+        }
+    }
+    
     private var ContractNoView: some View {
         HStack(alignment: .top){
             HiImage(string: "ic_contract")
@@ -149,7 +132,9 @@ extension CreateSupportRequestScreen {
                     self.isCardShow.toggle()
                 }
                 
+                
                 BlockWithActionView(icon: "ic_calendar", title: "Thời gian đặt lịch hẹn ", selectionText: "06/04/2022 (10:00 - 11:00)", selectionIcon: "ic_black_calendar"){
+                    self.navTag = .toSupportScheduleScreen
                 }
                 
                 ContactInfoView
@@ -257,8 +242,8 @@ extension CreateSupportRequestScreen {
 }
 
 
-//#Preview {
-//    CreateSupportRequestScreen()
-//}
+#Preview {
+    CreateSupportRequestScreen()
+}
 
 
