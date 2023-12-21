@@ -11,6 +11,8 @@ import Foundation
 struct SupportCenterManager {
     public static var shared = SupportCenterManager()
     
+    
+    
     static func requestSupportRequestListData(completion: @escaping(_ result: SupportRequestList?) -> Void) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){

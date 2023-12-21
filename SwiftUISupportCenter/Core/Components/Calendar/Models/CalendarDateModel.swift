@@ -15,7 +15,7 @@ enum CalendarDateType {
     case SelectedDay
 }
 
-struct CalendarDateModel{
+struct CalendarDateModel {
     var type: CalendarDateType?
     var date: Date
     var isChecked: Bool = false
@@ -27,28 +27,32 @@ struct CalendarDateModel{
         self.date = date
         let weekday = WeekdayType(rawValue: self.date.getWeekdayNumber())
         self.weekDay = weekday ?? .Mon
-        self.type = .UnableDay
+        self.type = date.setCalendarDateType()
         self.day = String(date.getIntDay())
     }
-}
-
-struct CalendarDate: Identifiable {
-    let id = UUID()
-    var day: Int
-    var date: Date
     
-    var availableDate: Bool {
-        if date.string() == Date().string() {
-            return true
-        }
-        
-        if date >= Date() {
-            return true
-        }
-        
-        return false
+    init(date: Date, day: String){
+        self.date = date
+        let weekday = WeekdayType(rawValue: self.date.getWeekdayNumber())
+        self.weekDay = weekday ?? .Mon
+        self.type = date.setCalendarDateType()
+        self.day = day
     }
-
+ 
+}
+ 
+extension Date {
+    func setCalendarDateType() -> CalendarDateType{
+        if self.string() == Date().string() {
+            return .AbleDay
+        }
+        
+        if self >= Date() {
+            return .AbleDay
+        }
+        
+        return .UnableDay
+    }
 }
 
 //Value weekday of Swift Callendar library

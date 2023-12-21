@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftyJSON
-
+ 
 struct DateTimeAllowModel{
     var listTime: [ListTimeSlotModel]
     var dateTimeAllow: String
@@ -38,7 +38,8 @@ struct DateTimeAllowModel{
     }
 }
 
-struct ListTimeSlotModel{
+struct ListTimeSlotModel: Identifiable {
+    var id = UUID()
     var title: String = ""
     var iconType: TimeSlotIconType = .morning
     var supportTime: [TimeSlotModel] = []
@@ -52,13 +53,22 @@ struct ListTimeSlotModel{
     }
 }
 
-struct TimeSlotModel{
+struct TimeSlotModel: Identifiable{
+    let id: Int
     var begin: String
     var end: String
 //    var employeeData: [EmplModel]
     var status: TimeSlotStatus = .deny
     
+    // Implement Equatable
+   static func ==(lhs: TimeSlotModel, rhs: TimeSlotModel) -> Bool {
+       return lhs.id == rhs.id &&
+              lhs.begin == rhs.begin &&
+              lhs.end == rhs.end
+   }
+    
     init(json: JSON){
+        self.id = json["timeId"].intValue
         self.begin = json["begin"].stringValue
         self.end = json["end"].stringValue
 //        var temp: [EmplModel] = []
@@ -69,22 +79,22 @@ struct TimeSlotModel{
         self.status = TimeSlotStatus(rawValue: json["timeStatus"].stringValue) ?? .deny
     }
     
-    init(begin: String,end: String){
-        self.begin = begin
-        self.end = end
-        self.status = .allow
-    }
-    
-    init?(begin: String?,end: String?){
-        guard let begin = begin,
-        let end = end else{
-            return nil
-        }
-        
-        self.begin = begin
-        self.end = end
-        self.status = .allow
-    }
+//    init( begin: String,end: String){
+//        self.begin = begin
+//        self.end = end
+//        self.status = .allow
+//    }
+//    
+//    init?(begin: String?,end: String?){
+//        guard let begin = begin,
+//        let end = end else{
+//            return nil
+//        }
+//        
+//        self.begin = begin
+//        self.end = end
+//        self.status = .allow
+//    }
 }
 
 //struct EmplModel:HiThemesImageTitleIconProtocol{

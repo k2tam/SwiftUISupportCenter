@@ -86,6 +86,8 @@ extension SupportCenterScreen {
 struct SupportCenterScreen_Previews: PreviewProvider {
     static var previews: some View {
         SupportCenterScreen(vm: SupportCenterViewModel())
+            .environmentObject(NavigationTagManager.shared)
+
     }
 }
 

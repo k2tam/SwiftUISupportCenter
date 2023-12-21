@@ -22,6 +22,12 @@ class DeveloperPreview {
     var supportRequestList: SupportRequestList? = nil
     var supportExtensionList: [SupportExtension]? = nil
     
+    var dateTimeModel: DateTimeAllowModel? = nil
+    
+    
+    
+    
+    
     
      func previewRequestSupportRequestListData() {
         
@@ -42,11 +48,13 @@ class DeveloperPreview {
     private init() {
         previewRequestSupportRequestListData()
         
-      
-        
-        
         SupportCenterManager.requestSupportExtensionsData { result in
             self.supportExtensionList = result
+        }
+        
+        
+        self.getSupportScheduleData { result in
+            self.dateTimeModel = result
         }
     }
     
@@ -62,6 +70,24 @@ class DeveloperPreview {
             print("Thủ tục cước phí")
         case .customerCare:
             print("Chăm sóc khác hàng")
+        }
+    }
+    
+    
+    
+    private func getSupportScheduleData(completion: @escaping(_ result: DateTimeAllowModel?) -> Void) {
+        guard let data = DateTimeAllowSampleData.sampleData.data(using: .utf8) else {
+            completion(nil)
+            return
+        }
+        
+        do{
+            let json = try JSON(data: data)
+            completion(DateTimeAllowModel(json: json["data"]))
+        } catch {
+            print("Error parsing JSON: \(error)")
+            completion(nil)
+
         }
     }
     

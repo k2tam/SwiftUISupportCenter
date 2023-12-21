@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIBackports
 
 
 enum eInDayTime{
@@ -37,6 +38,8 @@ enum eInDayTime{
 }
 
 struct SupportScheduleScreen: View {
+    @Backport.StateObject var vm = SupportScheduleViewModel()
+    
     var body: some View {
         HiNavigationView {
             ZStack(alignment: .bottom){
@@ -49,44 +52,17 @@ struct SupportScheduleScreen: View {
                             .frame(maxHeight: 36)
                             .padding(.bottom, 8)
                         
-                        HiCalendar()
+                        HiCalendar(calendarType: .technical, checkedDate: $vm.selectedDate)
                             .frame(height: 350) // Adjust the value as needed
                         
-                        Text("Chọn giờ")
-                            .font(.system(size: 18, weight: .medium))
-                            .frame(maxWidth: .infinity, maxHeight: 36,alignment: .leading)
-                            .padding(.leading, 60)
-                            .padding(.bottom, 8)
-                        
-                        VStack(spacing: 16){
-                            HStack{
-                                VStack{
-                                    HeaderHourSchedule(inDayTime: .morning)
-                                    HeaderHourSchedule(inDayTime: .afternoon)
-                                    HeaderHourSchedule(inDayTime: .night)
-                                }
-                                .frame(maxWidth: 37)
-                                .padding(.trailing, 20)
-                                
-                                ScrollView(.horizontal, showsIndicators: false){
-                                    VStack(spacing: 16){
-                                        HourScheduleLine()
-                                        HourScheduleLine()
-                                        HourScheduleLine()
-                                    }
-                                }   
-                            }
-                            
-                            
-                        }
-                        .padding(.leading, 16)
+                    
+                       HourSelectionView
                         
                     }
                     .padding(.bottom, 100)
                 }
-                
 
-                CreateButton
+                ApplyButton
                 
             }
             .hiNavigationTitle("Thời gian đặt hẹn")
@@ -101,7 +77,41 @@ struct SupportScheduleScreen: View {
 
 extension SupportScheduleScreen {
     
-    private var CreateButton: some View {
+    private var HourSelectionView: some View {
+        Group {
+            Text("Chọn giờ")
+                .font(.system(size: 18, weight: .medium))
+                .frame(maxWidth: .infinity, maxHeight: 36,alignment: .leading)
+                .padding(.leading, 60)
+                .padding(.bottom, 8)
+            
+            VStack(spacing: 16){
+                HStack{
+                    VStack{
+                        HeaderHourSchedule(inDayTime: .morning)
+                        HeaderHourSchedule(inDayTime: .afternoon)
+                        HeaderHourSchedule(inDayTime: .night)
+                    }
+                    .frame(maxWidth: 37)
+                    .padding(.trailing, 20)
+                    
+                    ScrollView(.horizontal, showsIndicators: false){
+                        VStack(spacing: 16){
+                            ForEach(vm.listTime){timeSlotModel in
+                                HourScheduleLine(vm: self.vm, timeSupports: timeSlotModel.supportTime)
+                                
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .frame(height: 248)
+            .padding(.leading, 16)
+        }
+    }
+    
+    private var ApplyButton: some View {
         ZStack{
             Color.white
             
@@ -131,52 +141,131 @@ extension SupportScheduleScreen {
         }
     }
     
+    
+    
     struct HourCell: View {
-        var isAvailable: Bool
+        let timeCellModel: TimeSlotModel
         var isSelected: Bool = false
         
         var body: some View {
-            VStack{
-                Text("08:00")
+            VStack(spacing: 4){
+                Text(timeCellModel.begin)
                     .font(.system(size: 14))
                 
-                Color(hex: "#969696")
-                    .frame(width: 18, height: 1)
                 
+               Rectangle()
+                    .frame(width: 18.8, height: 1)
+                    
+                    
                 
-                Text("09:00")
+                Text(timeCellModel.end)
                     .font(.system(size: 14))
                 
             }
-            .frame(maxWidth: 80, maxHeight: .infinity)
-            .padding()
-            .background(Color.gray.opacity(0.2))
+            .frame(width: 80, height: 72)
+            .modifier(ModifierColorBasedOnTimeStatus(timeStatus: timeCellModel.status, isSelected: isSelected))
             .cornerRadius(8)
-            
-            
+ 
         }
+
     }
     
     struct HourScheduleLine: View {
+        @ObservedObject var vm : SupportScheduleViewModel
+        var timeSupports: [TimeSlotModel]
+        
         var body: some View {
     
             HStack{
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
-                HourCell(isAvailable: true)
+                ForEach(timeSupports) { timeSupport in
+                    Button(action: {
+                        self.vm.selectedTime = timeSupport
+                    }, label: {
+                        HourCell(timeCellModel: timeSupport, isSelected: checkHourCellIsChecked(timeSupport: timeSupport))
+
+                    })
+                    .disabled(
+                        checkInteractCondition(timeSupport: timeSupport)
+                    )
+                }
             }
             .frame(maxWidth: .infinity,  maxHeight: 72,alignment: .leading)
             
         }
+        
+        func checkInteractCondition(timeSupport: TimeSlotModel) -> Bool{
+            guard let selectedTime = self.vm.selectedTime else {
+                return false
+            }
+
+            if timeSupport.status == .deny || selectedTime == timeSupport {
+                return true
+            }
+            
+            return false
+        }
+        
+        func checkHourCellIsChecked(timeSupport: TimeSlotModel) -> Bool{
+            guard let selectedTime = vm.selectedTime else {
+                return false
+            }
+            
+            if timeSupport == selectedTime {
+                return true
+            }
+            
+            return false
+        }
+    }
+    
+    
+    struct ModifierColorBasedOnTimeStatus : ViewModifier {
+        let timeStatus: TimeSlotStatus
+        var isSelected: Bool = false
+        
+        func body(content: Content) -> some View {
+            content
+                .foregroundColor(setForegroundColor())
+                .background(setBackgroundColor())
+        }
+        
+        func setBackgroundColor() -> Color {
+            if isSelected {
+                return Color.hiTheme.primaryColor
+            }
+            
+            if timeStatus == .deny {
+                return Color(hex: "#4A6187", alpha: 0.08)
+            }
+            else if timeStatus == .allow {
+                return Color(hex: "#EFF4FF")
+            }
+            
+            return Color.black
+        }
+        
+        func setForegroundColor() -> Color {
+            if isSelected {
+                return Color.white
+            }
+            
+            if timeStatus == .allow {
+                return Color.black
+            }else {
+                return Color.hiTheme.secondaryText
+            }
+            
+            return Color.black
+
+        }
     }
 }
 
-#Preview {
-    SupportScheduleScreen()
+struct SupportScheduleScreen_Previews: PreviewProvider {
+    @Backport.StateObject var vm = SupportScheduleViewModel()
+
+    static var previews: some View {
+        
+        SupportScheduleScreen()
+    }
 }

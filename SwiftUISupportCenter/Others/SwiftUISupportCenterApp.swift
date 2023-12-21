@@ -12,6 +12,8 @@ struct SwiftUISupportCenterApp: View {
     @Backport.StateObject var navManager = NavigationTagManager.shared
     var body: some View {
         SupportCenterScreen()
+            .preferredColorScheme(.light)
             .environmentObject(navManager)
     }
 }
+ 

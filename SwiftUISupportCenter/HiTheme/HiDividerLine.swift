@@ -15,7 +15,8 @@ struct HiDividerLine: View {
     }
     
     var body: some View {
-        Color(hex: hexColor)
+        Rectangle()
+            .foregroundColor(Color(hex: hexColor))
             .frame(maxWidth: .infinity,maxHeight: 1)
     }
 }

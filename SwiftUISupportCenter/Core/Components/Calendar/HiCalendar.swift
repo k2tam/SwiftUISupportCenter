@@ -10,21 +10,35 @@
 import SwiftUI
 import SwiftUIBackports
 
+enum eCalendarBusinessType {
+    case technical
+    case procedure
+}
 
 struct HiCalendar: View {
     
     let weekDays = ["T2","T3","T4","T5","T6","T7","CN"]
     
-    @State var selectedDate: Date? = nil
+    let calendarType: eCalendarBusinessType
+
+    @Binding var checkedDate: Date?
+    
+    @State var canForwardMonth: Bool = true
+    @State var canBackwardMonth: Bool = false
+    
+    //Variable for showing current month
     @State var selectedMonthDate = Date()
+    
+    //Variable for update fetch dates of month -/+ month
     @State var offSetMonth = 0
-    @State var datesOfMonthSelected: [CalendarDate] = []
+    @State var datesOfMonthSelected: [CalendarDateModel] = []
+    
+ 
     
     private var CalendarToolBar: some View {
         HStack{
-            
             //Previous month button
-            if self.selectedMonthDate > Date() {
+          
                 Button(action: {
                     withAnimation(.easeInOut) {
                         offSetMonth -= 1
@@ -36,19 +50,21 @@ struct HiCalendar: View {
                         .frame(width: 24, height: 24)
                     
                 })
-            }
+                .disabled(!self.canBackwardMonth)
+                .opacity(self.canBackwardMonth ? 1 : 0)
+            
             
             Spacer()
             
             Text(selectedMonthDate.monthAndYearToString())
+
             
             Spacer()
             
             //Next month button
             Button(action: {
-                withAnimation(.easeInOut) {
-                    offSetMonth += 1
-                    
+                    withAnimation(.easeInOut) {
+                        offSetMonth += 1
                 }
             }, label: {
                 Image(systemName: "chevron.right")
@@ -59,10 +75,25 @@ struct HiCalendar: View {
                 
                 
             })
+            .disabled(!self.canForwardMonth)
+            .opacity(self.canForwardMonth ? 1 : 0)
+        
+           
         }
         .padding(.all, 8)
+        .backport.onChange(of: self.offSetMonth) { newOffSetMonth in
+            self.canBackwardMonth = newOffSetMonth > 0
+            
+            switch calendarType {
+            case .technical:
+                self.canForwardMonth = newOffSetMonth < 4
+            default:
+                break
+            }
+           
+        }
+       
     }
-    
     
     var body: some View {
         VStack {
@@ -76,7 +107,10 @@ struct HiCalendar: View {
         .padding(.horizontal, 16)
         .onAppear(perform: {
             self.datesOfMonthSelected = fetchDates()
-            self.selectedDate = Date()
+            
+            if calendarType == .procedure {
+                self.canForwardMonth = false
+            }
         })
         .backport.onChange(of: offSetMonth, perform: { _ in
             selectedMonthDate = fetchDateOfSelectedMonth()
@@ -90,21 +124,18 @@ struct HiCalendar: View {
 }
 
 struct modifierSelectionUIForDateCell : ViewModifier {
-    var isSelected: Bool
-    var isToday: Bool
-    var isAvailable: Bool
-    
+    let date: CalendarDateModel
+    var isChecked: Bool = false
 
     func body(content: Content) -> some View {
-        
         content
             .foregroundColor(setForegroudcolor())
             .background(
                 ZStack {
-                    if isSelected {
+                    if isChecked {
                         Circle()
                             .fill(Color.hiTheme.primaryColor)
-                    }else if isToday {
+                    }else if date.isToday {
                         Circle()
                             .fill(Color(hex: "#EFF4FF"))
                     }
@@ -113,12 +144,12 @@ struct modifierSelectionUIForDateCell : ViewModifier {
     }
     
     func setForegroudcolor() -> Color {
-        if isAvailable {
-            if self.isSelected {
+        if date.type == .AbleDay {
+            if isChecked {
                 return Color.white
             }
             
-            if self.isToday {
+            if date.isToday {
                 return Color.hiTheme.primaryColor
             }
             
@@ -152,34 +183,35 @@ extension HiCalendar{
     private var CalendarDates: some View {
         VStack(spacing: 8){
             if !self.datesOfMonthSelected.isEmpty  {
-                ForEach(0..<6) { lineIndex in
-                    let firstItemLineIndex = lineIndex * 7
-                    let lastItemLineIndex = firstItemLineIndex + 6
+                ForEach(0..<6, id: \.self) { lineIndex in
                     
+                    let firstItemLineIndex: Int = lineIndex * 7
+                    let lastItemLineIndex: Int = firstItemLineIndex + 6
+                    
+
                     
                     HStack{
-                        ForEach(firstItemLineIndex..<lastItemLineIndex+1) { index in
+                        ForEach(firstItemLineIndex..<lastItemLineIndex+1 ) { index  in
+                            var dateItem = self.datesOfMonthSelected[index]
                             
-                            let date = self.datesOfMonthSelected[index]
-                            
-                            if date.day != -1 {
+                            if dateItem.day != "" {
                                 Button(action: {
-                                    self.selectedDate = date.date
+                                    self.checkedDate = dateItem.date
+
                                 }, label: {
-                                    Text("\(date.day)")
+                                    Text(dateItem.day)
                                         .frame(maxWidth: .infinity, maxHeight: 40)
-                                        .modifier(
-                                            modifierSelectionUIForDateCell(
-                                                isSelected: self.selectedDate?.string() == date.date.string(),
-                                                isToday: date.date.string() == Date().string(),
-                                                isAvailable: date.availableDate)
-                                        )
-                                    
+                                            .modifier(
+                                                modifierSelectionUIForDateCell(
+                                                    date: dateItem,
+                                                    isChecked: self.checkedDate?.string() == dateItem.date.string()
+                                                )
+                                            )
+                                            
                                 })
                                 .buttonStyle(PlainButtonStyle())
-                                .disabled(!date.availableDate)
+                                .disabled(dateItem.type == .UnableDay)
 
-                                
                                 
                             }else {
                                 Text("")
@@ -195,13 +227,18 @@ extension HiCalendar{
         }
     }
     
-    func fetchDates() -> [CalendarDate]  {
+    func fetchDates() -> [CalendarDateModel]  {
         let calendar =  Calendar.current
         let currentMonth = fetchDateOfSelectedMonth()
         
         var datesOfMonth = currentMonth.datesOfMonth().map {
-            return CalendarDate(day: calendar.component(.day, from: $0), date: $0)
-            
+//            return CalendarDate(day: calendar.component(.day, from: $0), date: $0)
+            if $0.string() == Date().string() {
+                var todayDate =  CalendarDateModel(date: $0)
+                todayDate.isToday = true
+                return todayDate
+            }
+            return CalendarDateModel(date: $0)
         }
 
         //firstDayOfWeek -> 2 for Monday, 3 for Tuesday, ...
@@ -215,7 +252,7 @@ extension HiCalendar{
                 let dayOfPreviousDayOfMonthToAppend = previousDayOfMonthToAppend?.getIntDay() ?? 0
                 
                 
-                datesOfMonth.insert(CalendarDate(day: dayOfPreviousDayOfMonthToAppend, date: previousDayOfMonthToAppend ?? Date()), at: 0)
+                datesOfMonth.insert(CalendarDateModel(date: previousDayOfMonthToAppend ?? Date()), at: 0)
                 
                 previousDayOfMonthToAppend = calendar.date(byAdding: .day, value: -1, to: previousDayOfMonthToAppend ?? Date())
                 
@@ -225,14 +262,15 @@ extension HiCalendar{
                 let dayOfPreviousDayOfMonthToAppend = previousDayOfMonthToAppend?.getIntDay() ?? 0
                 
                 
-                datesOfMonth.insert(CalendarDate(day: dayOfPreviousDayOfMonthToAppend, date: previousDayOfMonthToAppend ?? Date()), at: 0)
+                datesOfMonth.insert(CalendarDateModel(date: previousDayOfMonthToAppend ?? Date()), at: 0)
                 
                 previousDayOfMonthToAppend = calendar.date(byAdding: .day, value: -1, to: previousDayOfMonthToAppend ?? Date())
             }
         }
         
         while datesOfMonth.count < 7 * 6 {
-            datesOfMonth.append(CalendarDate(day: -1, date: Date()))
+            //Dummy date to full fill calendar
+            datesOfMonth.append(CalendarDateModel(date: Date(), day: ""))
         }
         
         return datesOfMonth
@@ -249,8 +287,12 @@ extension HiCalendar{
 }
 
 
-#Preview {
-    HiCalendar()
+struct HiCalendar_Previews: PreviewProvider {
+    static var previews: some View {
+        @State var checkedDate: Date? = Date()
+
+        HiCalendar(calendarType: .technical, checkedDate: $checkedDate)
+    }
 }
 
 
