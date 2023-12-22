@@ -26,7 +26,6 @@ class SupportScheduleViewModel: ObservableObject {
         
     }
     
-    
     func setupDate() {
         guard let dateTimeAllowModel else {return}
         self.listTime = dateTimeAllowModel.listTime

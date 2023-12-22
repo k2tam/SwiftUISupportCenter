@@ -33,7 +33,7 @@ struct HiCalendar: View {
     @State var offSetMonth = 0
     @State var datesOfMonthSelected: [CalendarDateModel] = []
     
- 
+    
     
     private var CalendarToolBar: some View {
         HStack{
@@ -83,7 +83,7 @@ struct HiCalendar: View {
         .padding(.all, 8)
         .backport.onChange(of: self.offSetMonth) { newOffSetMonth in
             self.canBackwardMonth = newOffSetMonth > 0
-            
+
             switch calendarType {
             case .technical:
                 self.canForwardMonth = newOffSetMonth < 4

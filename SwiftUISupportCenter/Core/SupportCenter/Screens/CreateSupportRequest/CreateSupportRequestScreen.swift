@@ -51,7 +51,10 @@ extension CreateSupportRequestScreen {
     private var NavigationLinks: some View {
         Group {
             NavigationLink(tag: eNavTag.toSupportScheduleScreen, selection: $navTag, destination: {
-                SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel)
+//                SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel)
+                SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel) { date, time in
+                    vm.didGetDateAndTimeSupport(date: date.string(), time: time)
+                }
             }){}
         }
     }

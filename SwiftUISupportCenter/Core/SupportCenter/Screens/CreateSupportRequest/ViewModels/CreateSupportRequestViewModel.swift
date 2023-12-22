@@ -67,6 +67,12 @@ class CreateSupportRequestViewModel: ObservableObject {
         addSubscribersForDateTimeAllowModel()
     }
     
+    //TODO: Handle date and time support selected here
+    func didGetDateAndTimeSupport(date: String, time: TimeSlotModel) {
+        print("tambnk: \(date)")
+        print("tambnk: \(time)")
+    }
+    
     func addSubscribersForDateTimeAllowModel() {
         self.dateTimeAllowService.$dateTimeAllowModel
             .sink {[weak self] returnedDateTimeAllowModel in

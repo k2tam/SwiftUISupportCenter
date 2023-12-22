@@ -40,10 +40,13 @@ enum eInDayTime{
 struct SupportScheduleScreen: View {
     
     @Backport.StateObject var vm =  SupportScheduleViewModel()
+    var callBackToGetSelectedDateTimes: ( ( _ date: Date , _ time: TimeSlotModel) -> Void )?
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     
-    init(dateTimeAllowModel: DateTimeAllowModel?){
+    init(dateTimeAllowModel: DateTimeAllowModel?, callBackToGetSelectedDateTimes: @escaping ( ( _ date: Date , _ time: TimeSlotModel) -> Void ) ){
         vm.dateTimeAllowModel = dateTimeAllowModel
-        
+        self.callBackToGetSelectedDateTimes = callBackToGetSelectedDateTimes
     }
     
     var body: some View {
@@ -61,7 +64,7 @@ struct SupportScheduleScreen: View {
                         HiCalendar(calendarType: .technical, checkedDate: $vm.selectedDate)
                             .frame(height: 350) // Adjust the value as needed
                         
-                    
+                
                        HourSelectionView
                         
                     }
@@ -117,11 +120,15 @@ extension SupportScheduleScreen {
         }
     }
     
+    //MARK: - Apply Button
     private var ApplyButton: some View {
         ZStack{
             Color.white
             
             PrimaryButton(btnText: "Áp dụng") {
+                guard let selectedDate =  vm.selectedDate, let selectedTime = vm.selectedTime else {return}
+                self.callBackToGetSelectedDateTimes?(selectedDate, selectedTime)
+                self.presentationMode.wrappedValue.dismiss()
                 
             }
             .padding(.init(top: 16, leading: 16, bottom: 16, trailing: 16))
