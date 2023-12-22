@@ -38,7 +38,13 @@ enum eInDayTime{
 }
 
 struct SupportScheduleScreen: View {
-    @Backport.StateObject var vm = SupportScheduleViewModel()
+    
+    @Backport.StateObject var vm =  SupportScheduleViewModel()
+    
+    init(dateTimeAllowModel: DateTimeAllowModel?){
+        vm.dateTimeAllowModel = dateTimeAllowModel
+        
+    }
     
     var body: some View {
         HiNavigationView {
@@ -261,11 +267,10 @@ extension SupportScheduleScreen {
     }
 }
 
-struct SupportScheduleScreen_Previews: PreviewProvider {
-    @Backport.StateObject var vm = SupportScheduleViewModel()
-
-    static var previews: some View {
-        
-        SupportScheduleScreen()
-    }
-}
+//struct SupportScheduleScreen_Previews: PreviewProvider {
+//    @Backport.StateObject var vm = SupportScheduleViewModel()
+//    static var previews: some View {
+//        
+//        SupportScheduleScreen()
+//    }
+//}

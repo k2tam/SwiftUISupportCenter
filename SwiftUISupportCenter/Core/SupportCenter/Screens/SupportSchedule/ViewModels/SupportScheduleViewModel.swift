@@ -8,55 +8,49 @@
 import Foundation
 import Combine
 
-
-
-
 class SupportScheduleViewModel: ObservableObject {
-    @Published var dateTimeAllowModel: DateTimeAllowModel? = nil
+    @Published var dateTimeAllowModel: DateTimeAllowModel? = nil{
+        didSet {
+            setupDate()
+        }
+    }
     @Published var listTime: [ListTimeSlotModel] = []
     @Published var selectedDate: Date? = nil
     @Published var selectedTime: TimeSlotModel? = nil
     
-    private let dateTimeAllowService = DateTimeAllowDataService()
-    private var cancelables = Set<AnyCancellable>()
     
     
     init() {
-        addSubscribers()
+//        addSubscribers()
+        
+        
     }
     
-    func addSubscribers() {
+    
+    func setupDate() {
+        guard let dateTimeAllowModel else {return}
+        self.listTime = dateTimeAllowModel.listTime
         
-        self.dateTimeAllowService.$dateTimeAllowModel
-            .sink {[weak self] returnedDateTimeModel in
+        
+        //Check date allow is valid
+        self.checkValidationOfDateAllow(model: dateTimeAllowModel) { isDateValid in
+            if isDateValid {
+                self.selectedDate = dateTimeAllowModel.dateTimeAllow.parseStringDateToDate()
                 
-                guard let returnedDateTimeModel, let self else {
-                    return
-                }
-                
-                self.dateTimeAllowModel = returnedDateTimeModel
-                self.listTime = returnedDateTimeModel.listTime
-                
-                
-                //Check date allow is valid
-                self.checkValidationOfDateAllow(model: returnedDateTimeModel) { isDateValid in
-                    if isDateValid {
-                        self.selectedDate = returnedDateTimeModel.dateTimeAllow.parseStringDateToDate()
-                        
-                        //Check time is valid
-                        self.checkValidationOfTimeSelect(dateTimeAllowModel: returnedDateTimeModel, completion: { isTimeValid in
-                            
-                            if isTimeValid {
-                                self.selectedTime = returnedDateTimeModel.timeSelect
-                                
-                            }
-                        })
+                //Check time is valid
+                self.checkValidationOfTimeSelect(dateTimeAllowModel: dateTimeAllowModel, completion: { isTimeValid in
+                    
+                    if isTimeValid {
+                        self.selectedTime = dateTimeAllowModel.timeSelect
                         
                     }
-                }
+                })
+                
             }
-            .store(in: &cancelables)
+        }
     }
+    
+   
     
     func checkValidationOfTimeSelect(dateTimeAllowModel: DateTimeAllowModel, completion: (_ isTimeValid: Bool) -> Void) {
         dateTimeAllowModel.listTime.map { timesInDay in

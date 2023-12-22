@@ -50,15 +50,15 @@ struct DateTimeAllowSampleData {
       "data" : {
         "timeSelect" : {
           "timeStatus" : "allow",
-          "end" : "11:00",
-          "begin" : "10:00",
-          "timeId" : 11,
+          "end" : "17:00",
+          "begin" : "16:00",
+          "timeId" : 17,
           "listInfoEmployee" : [
 
           ]
         },
         "buttonTimeSkip" : 0,
-        "dateTimeAllow" : "22/12/2023",
+        "dateTimeAllow" : "26/12/2023",
         "isShowButtonChat" : false,
         "listTime" : [
           {

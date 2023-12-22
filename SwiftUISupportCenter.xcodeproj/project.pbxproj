@@ -329,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */,
-				05B1390B2B33CCCB001633C5 /* Service */,
 				0540F5A32B2C41E100E9A1D5 /* Screens */,
 				05B779FF2B295C4500D4C8EB /* ViewModels */,
 				05B779FE2B295C4000D4C8EB /* Views */,
@@ -425,6 +424,7 @@
 		05B77A582B2AFD9200D4C8EB /* CreateSupportRequest */ = {
 			isa = PBXGroup;
 			children = (
+				05B1390B2B33CCCB001633C5 /* Service */,
 				05B77A592B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift */,
 				05B77A602B2AFF3400D4C8EB /* ViewModels */,
 				05B77A5A2B2AFD9200D4C8EB /* Views */,

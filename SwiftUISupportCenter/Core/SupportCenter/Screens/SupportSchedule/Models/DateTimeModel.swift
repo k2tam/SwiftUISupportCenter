@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
  
-struct DateTimeAllowModel{
+class DateTimeAllowModel: ObservableObject{
     var listTime: [ListTimeSlotModel]
     var dateTimeAllow: String
     var dateAllow: String

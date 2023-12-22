@@ -51,7 +51,7 @@ extension CreateSupportRequestScreen {
     private var NavigationLinks: some View {
         Group {
             NavigationLink(tag: eNavTag.toSupportScheduleScreen, selection: $navTag, destination: {
-                SupportScheduleScreen()
+                SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel)
             }){}
         }
     }
@@ -132,7 +132,11 @@ extension CreateSupportRequestScreen {
                 }
                 
                 
-                BlockWithActionView(icon: "ic_calendar", title: "Thời gian đặt lịch hẹn ", selectionText: "06/04/2022 (10:00 - 11:00)", selectionIcon: "ic_black_calendar"){
+                BlockWithActionView(
+                    icon: "ic_calendar",
+                    title: "Thời gian đặt lịch hẹn ",
+                    selectionText: "\(self.vm.calendarLabelText)",
+                    selectionIcon: "ic_black_calendar"){
                     self.navTag = .toSupportScheduleScreen
                 }
                 

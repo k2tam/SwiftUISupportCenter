@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum eContractService {
     case internet
@@ -52,10 +53,43 @@ class CreateSupportRequestViewModel: ObservableObject {
     @Published var fullName: String = ""
     @Published var phoneNumber: String = ""
     @Published var note: String = ""
+    @Published var calendarLabelText = ""
     
+    private let dateTimeAllowService = DateTimeAllowDataService()
+    private var cancelables = Set<AnyCancellable>()
+    
+    @Published var dateTimeAllowModel: DateTimeAllowModel? = nil
     @Published var wasSubmitRequest = false
     
     var contractTags = ["Chính chủ","Combo Internet","Camera"]
+    
+    init() {
+        addSubscribersForDateTimeAllowModel()
+    }
+    
+    func addSubscribersForDateTimeAllowModel() {
+        self.dateTimeAllowService.$dateTimeAllowModel
+            .sink {[weak self] returnedDateTimeAllowModel in
+                guard let self else {return}
+                
+                self.dateTimeAllowModel = returnedDateTimeAllowModel
+                
+                
+                self.setCalendarTextLabel(
+                    date: dateTimeAllowModel?.dateTimeAllow,
+                    beginTime: dateTimeAllowModel?.timeSelect?.begin,
+                    endTime: dateTimeAllowModel?.timeSelect?.end
+                
+                )
+            }
+            .store(in: &cancelables)
+    }
+    
+    func setCalendarTextLabel(date: String?, beginTime: String?, endTime: String?) {
+        guard let date, let beginTime, let endTime else {return}
+        
+        self.calendarLabelText = " \(date) (\(beginTime)-\(endTime))"
+    }
     
     
     func submitSupportRequest() {
@@ -66,5 +100,8 @@ class CreateSupportRequestViewModel: ObservableObject {
         }
       
     }
+    
+    
+    
 
 }
