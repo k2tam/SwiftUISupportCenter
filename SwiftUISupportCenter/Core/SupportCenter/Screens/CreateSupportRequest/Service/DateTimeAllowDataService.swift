@@ -58,7 +58,7 @@ struct DateTimeAllowSampleData {
           ]
         },
         "buttonTimeSkip" : 0,
-        "dateTimeAllow" : "26/12/2023",
+        "dateTimeAllow" : "20/12/2023",
         "isShowButtonChat" : false,
         "listTime" : [
           {

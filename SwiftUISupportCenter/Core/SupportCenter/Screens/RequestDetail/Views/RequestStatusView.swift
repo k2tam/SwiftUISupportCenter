@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct RequestStatusView: View {
+    var callBackNavToRequestStatusTimeLineScreen: () -> Void
     var body: some View {
         VStack{
             Button(action: {
-//                callBackNavToRequestStatusTimeLineScreen()
+                callBackNavToRequestStatusTimeLineScreen()
             }, label: {
                 VStack{
                     BlockTitle(icon: "ic_calendar_with_clock", title: "Trạng thái yêu cầu", isShowArrow: true)

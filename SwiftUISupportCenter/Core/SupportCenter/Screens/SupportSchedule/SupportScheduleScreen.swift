@@ -9,33 +9,7 @@ import SwiftUI
 import SwiftUIBackports
 
 
-enum eInDayTime{
-    case morning
-    case afternoon
-    case night
-    
-    func iconString() -> String {
-        switch self {
-        case .morning:
-            return "ic_sun_rise"
-        case .afternoon:
-            return "ic_sun_set"
-        case .night:
-            return "ic_moon"
-        }
-    }
-    
-    func text() -> String {
-        switch self {
-        case .morning:
-            return "Sáng"
-        case .afternoon:
-            return "Chiều"
-        case .night:
-            return "Tối"
-        }
-    }
-}
+
 
 struct SupportScheduleScreen: View {
     
@@ -141,7 +115,7 @@ extension SupportScheduleScreen {
     
     
     struct HeaderHourSchedule: View {
-        let inDayTime: eInDayTime
+        let inDayTime: TimeSlotIconType
         
         var body: some View {
             VStack(spacing: 4){

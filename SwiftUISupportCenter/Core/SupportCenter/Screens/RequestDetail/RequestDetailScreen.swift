@@ -10,29 +10,27 @@ import SwiftUI
 
 
 struct RequestDetailScreen: View {
-    @EnvironmentObject var navManager : NavigationTagManager
+    @State var navTag: eNavTag? = nil
     @State private var isNavToRequestStatusTimeLineScreen: Bool = false
     let supportRequest: SupportRequest
     
     var body: some View {
         HiNavigationView {
             ZStack {
+                NavigationLinks
+
                 
                 //Background layout
                 Color.hiTheme.background
-                
-                NavigationLinks
 
-     
-                
                 //Content layout
                 ScrollView {
                     VStack{
                         //MARK: - Request status block
-                        RequestStatusView()
-                            .onTapGesture(perform: {
-                                navManager.navTag = .toRequestStatusTimeLineScreen
-                            })
+                        RequestStatusView {
+                            self.navTag = .toRequestStatusTimeLineScreen
+                        }
+                            
                         
                         //MARK: - Contract info block
                         //TODO: find address
@@ -70,7 +68,7 @@ extension RequestDetailScreen {
             NavigationLink(
                 destination: RequestStatusTimeLineScreen(stepStatusList: supportRequest.stepStatus),
                 tag: eNavTag.toRequestStatusTimeLineScreen,
-                selection: $navManager.navTag) {}
+                selection: $navTag) {}
         }
     }
     

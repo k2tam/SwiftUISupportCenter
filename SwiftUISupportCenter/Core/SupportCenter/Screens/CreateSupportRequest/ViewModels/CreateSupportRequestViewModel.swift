@@ -55,11 +55,17 @@ class CreateSupportRequestViewModel: ObservableObject {
     @Published var note: String = ""
     @Published var calendarLabelText = ""
     
+    
+    
+    @Published var selectedDate: String = ""
+    @Published var selectedTime: TimeSlotModel? = nil
+    @Published var dateTimeAllowModel: DateTimeAllowModel? = nil
+    @Published var wasSubmitRequest = false
+    
     private let dateTimeAllowService = DateTimeAllowDataService()
     private var cancelables = Set<AnyCancellable>()
     
-    @Published var dateTimeAllowModel: DateTimeAllowModel? = nil
-    @Published var wasSubmitRequest = false
+
     
     var contractTags = ["Chính chủ","Combo Internet","Camera"]
     
@@ -69,8 +75,13 @@ class CreateSupportRequestViewModel: ObservableObject {
     
     //TODO: Handle date and time support selected here
     func didGetDateAndTimeSupport(date: String, time: TimeSlotModel) {
+        self.selectedDate = date
+        self.selectedTime = time
+        
         print("tambnk: \(date)")
         print("tambnk: \(time)")
+        
+        self.setCalendarTextLabel(date: date, beginTime: time.begin, endTime: time.end)
     }
     
     func addSubscribersForDateTimeAllowModel() {
