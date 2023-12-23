@@ -15,6 +15,7 @@
 		051225D22B31D79100FB1DEF /* SupportScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225D12B31D79100FB1DEF /* SupportScheduleScreen.swift */; };
 		051225D72B32A09700FB1DEF /* DateTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225D62B32A09700FB1DEF /* DateTimeModel.swift */; };
 		051225DD2B32DDC200FB1DEF /* CalendarDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225DC2B32DDC200FB1DEF /* CalendarDateModel.swift */; };
+		053172072B357A4F00BDC36F /* HiSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053172062B357A4F00BDC36F /* HiSearchView.swift */; };
 		0540F5A02B2C034100E9A1D5 /* RequestProcessWithVLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */; };
 		0540F5A22B2C0D6000E9A1D5 /* RequestStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */; };
 		0540F5A52B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */; };
@@ -74,6 +75,7 @@
 		051225D12B31D79100FB1DEF /* SupportScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportScheduleScreen.swift; sourceTree = "<group>"; };
 		051225D62B32A09700FB1DEF /* DateTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeModel.swift; sourceTree = "<group>"; };
 		051225DC2B32DDC200FB1DEF /* CalendarDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateModel.swift; sourceTree = "<group>"; };
+		053172062B357A4F00BDC36F /* HiSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiSearchView.swift; sourceTree = "<group>"; };
 		0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessWithVLineView.swift; sourceTree = "<group>"; };
 		0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusView.swift; sourceTree = "<group>"; };
 		0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusTimeLineScreen.swift; sourceTree = "<group>"; };
@@ -326,8 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */,
-				0540F5A32B2C41E100E9A1D5 /* Screens */,
 				05B779FF2B295C4500D4C8EB /* ViewModels */,
+				0540F5A32B2C41E100E9A1D5 /* Screens */,
 				05B779FE2B295C4000D4C8EB /* Views */,
 			);
 			path = SupportCenter;
@@ -361,6 +363,7 @@
 			children = (
 				05B77A102B295D3C00D4C8EB /* Navigation */,
 				05B779F92B2959E500D4C8EB /* HiColor.swift */,
+				053172062B357A4F00BDC36F /* HiSearchView.swift */,
 				05B77A632B2AFFC600D4C8EB /* HiPrimaryButton.swift */,
 				05B77A0F2B295D3C00D4C8EB /* HiBottomSheet.swift */,
 				05B77A152B295D3C00D4C8EB /* HiImage.swift */,
@@ -537,6 +540,7 @@
 				05B77A4F2B2AA5AC00D4C8EB /* SupportQandAModel.swift in Sources */,
 				051225D72B32A09700FB1DEF /* DateTimeModel.swift in Sources */,
 				05B77A252B296FC600D4C8EB /* PreviewProvider.swift in Sources */,
+				053172072B357A4F00BDC36F /* HiSearchView.swift in Sources */,
 				0540F5A52B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift in Sources */,
 				051225CE2B312BD900FB1DEF /* HiCalendar.swift in Sources */,
 				0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */,

@@ -19,13 +19,6 @@ class SupportScheduleViewModel: ObservableObject {
     @Published var selectedTime: TimeSlotModel? = nil
     
     
-    
-    init() {
-//        addSubscribers()
-        
-        
-    }
-    
     func setupDate() {
         guard let dateTimeAllowModel else {return}
         self.listTime = dateTimeAllowModel.listTime
@@ -34,22 +27,42 @@ class SupportScheduleViewModel: ObservableObject {
         //Check date allow is valid
         self.checkValidationOfDateAllow(model: dateTimeAllowModel) { isDateValid in
             if isDateValid {
-                self.selectedDate = dateTimeAllowModel.dateTimeAllow.parseStringDateToDate()
-                
-                //Check time is valid
-                self.checkValidationOfTimeSelect(dateTimeAllowModel: dateTimeAllowModel, completion: { isTimeValid in
-                    
-                    if isTimeValid {
-                        self.selectedTime = dateTimeAllowModel.timeSelect
-                        
-                    }
-                })
-                
+                setDefaultDateTimeIfDateAllowValid(dateTimeAllowModel: dateTimeAllowModel)
+            }
+            else {
+                setDefaultDateTimeIfDateAllowInvalid()
             }
         }
     }
     
-   
+    func setDefaultDateTimeIfDateAllowValid(dateTimeAllowModel: DateTimeAllowModel) {
+        self.selectedDate = dateTimeAllowModel.dateTimeAllow.parseStringDateToDate()
+        
+        //Check time is valid
+        self.checkValidationOfTimeSelect(dateTimeAllowModel: dateTimeAllowModel, completion: { isTimeValid in
+            
+            if isTimeValid {
+                self.selectedTime = dateTimeAllowModel.timeSelect
+                
+            }
+        })
+    }
+    
+    /// Function to set date time checked on calendar to today and time will be the time as soon as possible
+    func setDefaultDateTimeIfDateAllowInvalid() {
+        self.selectedDate = Date()
+        
+            
+        timeSlotsIterate: for timeSlot in self.listTime {
+            for timeSlotModel in timeSlot.supportTime {
+                if timeSlotModel.status == .allow {
+                    self.selectedTime = timeSlotModel
+                    break timeSlotsIterate
+                }
+            }
+        }
+        
+    }
     
     func checkValidationOfTimeSelect(dateTimeAllowModel: DateTimeAllowModel, completion: (_ isTimeValid: Bool) -> Void) {
         dateTimeAllowModel.listTime.map { timesInDay in
@@ -67,10 +80,7 @@ class SupportScheduleViewModel: ObservableObject {
             
             completion(isTimeSelectValid)
         }
-        
-        
     }
-    
     
     func checkValidationOfDateAllow(model: DateTimeAllowModel?, completion: (_ isDateValid: Bool) -> Void) {
         guard let model else {

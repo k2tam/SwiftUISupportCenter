@@ -11,13 +11,9 @@ struct SupportQandAView: View {
     @EnvironmentObject var navManager: NavigationTagManager
     
     let qAndAModel: SupportQandAModel
-    @State var currentSelectedQandA: SupportQandAItemView? = nil
-    var didSelectQandA: (_ qAndA: SupportQandA) -> Void
-    var isNavToMoreQA: Bool = false
+    @Binding var selectedQuestion: SupportQandA?
     
-    
-    
-    
+
     var body: some View {
         VStack{
             //Title layout
@@ -29,10 +25,10 @@ struct SupportQandAView: View {
             VStack(alignment: .leading){
                 ForEach(Array(qAndAModel.listQuestion.enumerated()), id: \.element){index, item in
                     if index == qAndAModel.listQuestion.count - 1 {
-                        SupportQandAItemView(isLastItem: true, qAndAQuestion: item, didSelected: manageExpandQAItems )
+                        SupportQandAItemView(isLastItem: true,qAndAQuestion: item, selectedQuestion: $selectedQuestion, didSelected: didSelectQuestion)
 
                     }else {
-                        SupportQandAItemView(qAndAQuestion: item, didSelected: manageExpandQAItems)
+                        SupportQandAItemView(qAndAQuestion: item, selectedQuestion: $selectedQuestion,didSelected: didSelectQuestion)
 
                     }
                 }
@@ -43,25 +39,9 @@ struct SupportQandAView: View {
         .padding(.horizontal, 16)
     }
     
-    func manageExpandQAItems(supportQandAItemViewSelected: SupportQandAItemView){
-        if currentSelectedQandA == nil {
-            currentSelectedQandA = supportQandAItemViewSelected
-        }else{
-            /*If current question selected is different from saved selected question then collapse selected question and
-            change selectedQAItem to current question selected
-             */
-            if currentSelectedQandA != supportQandAItemViewSelected {
-                currentSelectedQandA!.isSelected = false
-                currentSelectedQandA = supportQandAItemViewSelected
-            }
-         
-        }
-        
-        withAnimation {
-            currentSelectedQandA?.isSelected.toggle()
-
-        }
-
+    
+    func didSelectQuestion(selectedQuestion: SupportQandA) {
+//        self.selectedQuestion = selectedQuestion
     }
 }
 
@@ -69,7 +49,5 @@ struct SupportQandAView: View {
 
 
 
-//#Preview {
-//    QandAQuestionView()
-//        
-//}
+
+

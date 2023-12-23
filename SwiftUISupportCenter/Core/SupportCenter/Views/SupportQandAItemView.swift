@@ -8,27 +8,22 @@
 import SwiftUI
 import SwiftUIBackports
 
-struct SupportQandAItemView: View, Equatable {
+struct SupportQandAItemView: View {
     
-    let id = UUID().uuidString // Assuming id is an Int property
-    static func == (lhs: SupportQandAItemView, rhs: SupportQandAItemView) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    
-    @State var isSelected: Bool = false
-    var isLastItem: Bool
+    var isLastItem: Bool = false
     let qAndAQuestion: SupportQandA
-    @Backport.StateObject var vm = QAndASupportItemViewModel(didSelectQAKey: nil)
-    var didSelected: ((_ supportQandAItemViewSelected: SupportQandAItemView) -> Void)
+    @Binding var selectedQuestion: SupportQandA?
     
-    init(isSelected: Bool = false, isLastItem: Bool = false, qAndAQuestion: SupportQandA, didSelected: @escaping (_: SupportQandAItemView) -> Void) {
-        self.isSelected = isSelected
-        self.isLastItem = isLastItem
-        
-        self.qAndAQuestion = qAndAQuestion
-        self.didSelected = didSelected
-    }
+    @Backport.StateObject var vm = QAndASupportItemViewModel(didSelectQAKey: nil)
+
+    var didSelected: ((_ selectedQuestion: SupportQandA) -> Void)
+    
+    @State var isExpand: Bool = false
+    
+    // Additional state variable to track changes
+    @State private var selectedQuestionChanged: Bool = false
+    
+ 
     
     var body: some View {
         VStack(spacing: 16){
@@ -42,14 +37,14 @@ struct SupportQandAItemView: View, Equatable {
                 
                 HiImage(string: "ic_arrow_down")
                     .frame(width: 24, height: 24)
-                    .rotationEffect(self.isSelected ? .degrees(-180) : .degrees(0))
+                    .rotationEffect(self.isExpand ? .degrees(-180) : .degrees(0))
                     .padding(.leading, 16)
                 
                 
             }
             
             //Content Layout
-            if self.isSelected {
+            if self.isExpand {
                 AttributedText(
                     vm.attributedString
                 )
@@ -57,7 +52,7 @@ struct SupportQandAItemView: View, Equatable {
                 .foregroundColor(Color.hiTheme.secondaryText)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity)
-                .animation(.default)
+                    
                 
 //                Text("Hi")
             }
@@ -72,11 +67,29 @@ struct SupportQandAItemView: View, Equatable {
             
         }
         .onTapGesture(perform: {
-            self.didSelected(self)
+            withAnimation {
+                self.isExpand.toggle()
+            }
+                self.selectedQuestion = qAndAQuestion
         })
         .onAppear(perform: {
             vm.setUpAnswerTextView(question: qAndAQuestion)
+            
         })
+        .backport.onChange(of: selectedQuestion) { newSelectedQuestion in
+            if newSelectedQuestion == nil{
+                return
+            }
+            
+            withAnimation {
+                if  newSelectedQuestion?.id != qAndAQuestion.id {
+                    self.isExpand = false
+                }
+            }
+           
+            
+
+        }
     }
     
     func selectedCharacterRangeCallBack(range: NSRange){
@@ -87,6 +100,11 @@ struct SupportQandAItemView: View, Equatable {
     
 }
 
+
+
 //#Preview {
-//    QandAQuestionItemView()
+//    
+//    
+//    
+//    SupportQandAItemView(qAndAQuestion: <#SupportQandA#>, selectedQuestion: <#Binding<SupportQandA?>#>, didSelected: <#(SupportQandA) -> Void#>)
 //}

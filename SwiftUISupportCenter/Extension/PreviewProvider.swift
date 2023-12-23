@@ -24,12 +24,9 @@ class DeveloperPreview {
     
     var dateTimeModel: DateTimeAllowModel? = nil
     
+    var previewSupportCenterVM = SupportCenterViewModel()
     
-    
-    
-    
-    
-     func previewRequestSupportRequestListData() {
+    func previewRequestSupportRequestListData() {
         
         guard let data = SupportRequestListSampleData.sampleData.data(using: .utf8) else {
             return
@@ -59,7 +56,7 @@ class DeveloperPreview {
     }
     
     let createSupportRequestCategories: [eSupportRequestCategory] = [.customerCare,.feeProcedures,.technicalSupport]
-
+    
     
     //TODO: Handle selected support request category
     func didSelectSupportRequestCategory(category: eSupportRequestCategory) {
@@ -87,7 +84,7 @@ class DeveloperPreview {
         } catch {
             print("Error parsing JSON: \(error)")
             completion(nil)
-
+            
         }
     }
     

@@ -12,7 +12,6 @@ import SwiftUIBackports
 
 
 struct SupportScheduleScreen: View {
-    
     @Backport.StateObject var vm =  SupportScheduleViewModel()
     var callBackToGetSelectedDateTimes: ( ( _ date: Date , _ time: TimeSlotModel) -> Void )?
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -249,9 +248,15 @@ extension SupportScheduleScreen {
 }
 
 //struct SupportScheduleScreen_Previews: PreviewProvider {
-//    @Backport.StateObject var vm = SupportScheduleViewModel()
 //    static var previews: some View {
-//        
-//        SupportScheduleScreen()
+//        @Backport.StateObject var vm = SupportScheduleViewModel()
+//
+//        SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel) { date, time in
+//            
+//        }
 //    }
 //}
+    
+    
+    
+

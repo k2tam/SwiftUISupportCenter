@@ -44,7 +44,10 @@ struct SupportCenterScreen: View {
                             
                             //MARK: - Q&A Support Block
                             if let qAndAQuestionModel = vm.qAndAQuestionModel {
-                                SupportQandAView(qAndAModel: qAndAQuestionModel, didSelectQandA: vm.didSelectQandASupport)
+                                SupportQandAView(
+                                    qAndAModel: qAndAQuestionModel,
+                                    selectedQuestion: $vm.selectedQuestion
+                                )
                             }
                             
                             
@@ -56,6 +59,7 @@ struct SupportCenterScreen: View {
                 }
                 .hiNavigationTitle("Trung tâm hỗ trợ")
                 .hiNavigationBackButtonHidden(true)
+                .edgesIgnoringSafeArea(.bottom)
             }
         }
     }
@@ -67,10 +71,10 @@ extension SupportCenterScreen {
     var NavigationLinks: some View {
         
         Group {
-            NavigationLink(
-                destination: MoreQandAScreen(),
-                tag: eNavTag.toMoreQaAScreen,
-                selection: $navManager.navTag) {}
+//            NavigationLink(
+//                destination: MoreQandAScreen(),
+//                tag: eNavTag.toMoreQaAScreen,
+//                selection: $navManager.navTag) {}
             
             NavigationLink(
                 destination: CreateSupportRequestScreen(),
