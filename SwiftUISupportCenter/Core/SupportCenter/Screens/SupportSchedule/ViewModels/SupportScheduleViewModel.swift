@@ -65,7 +65,7 @@ class SupportScheduleViewModel: ObservableObject {
     }
     
     func checkValidationOfTimeSelect(dateTimeAllowModel: DateTimeAllowModel, completion: (_ isTimeValid: Bool) -> Void) {
-        dateTimeAllowModel.listTime.map { timesInDay in
+        _ = dateTimeAllowModel.listTime.map { timesInDay in
            
             guard let timeSelect = dateTimeAllowModel.timeSelect else {
                 completion(false)

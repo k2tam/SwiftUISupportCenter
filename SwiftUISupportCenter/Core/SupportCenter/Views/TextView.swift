@@ -29,12 +29,14 @@ struct TextViewWrapper: UIViewRepresentable {
     
     func updateUIView(_ uiView: TextView, context: Context) {
         uiView.attributedText = attributedText
-        uiView.maxLayoutWidth = maxLayoutWidth
-        
-        uiView.textContainer.maximumNumberOfLines = context.environment.lineLimit ?? 0
-        uiView.textContainer.lineBreakMode = NSLineBreakMode(context.environment.truncationMode)
-        
-        textViewStore.didUpdateTextView(uiView)
+         uiView.maxLayoutWidth = maxLayoutWidth
+         
+         uiView.textContainer.maximumNumberOfLines = context.environment.lineLimit ?? 0
+         uiView.textContainer.lineBreakMode = NSLineBreakMode(context.environment.truncationMode)
+         
+         DispatchQueue.main.async {
+             textViewStore.didUpdateTextView(uiView)
+         }
     }
 }
 

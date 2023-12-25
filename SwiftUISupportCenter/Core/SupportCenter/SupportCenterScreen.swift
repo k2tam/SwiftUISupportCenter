@@ -26,7 +26,7 @@ struct SupportCenterScreen: View {
                     
                     //Content Layer
                     
-                    ScrollView {
+                    ScrollView(showsIndicators: false) {
                         VStack(spacing: 24){
                             //MARK: - Create Support Request Block
                             CreateSupportRequestView(supportRequestCategories: vm.createSupportRequestCategories, selectCategoryCallBack: vm.didSelectSupportRequestCategory)
@@ -71,10 +71,10 @@ extension SupportCenterScreen {
     var NavigationLinks: some View {
         
         Group {
-//            NavigationLink(
-//                destination: MoreQandAScreen(),
-//                tag: eNavTag.toMoreQaAScreen,
-//                selection: $navManager.navTag) {}
+            NavigationLink(
+                destination: MoreQandAScreen(),
+                tag: eNavTag.toMoreQaAScreen,
+                selection: $navManager.navTag) {}
             
             NavigationLink(
                 destination: CreateSupportRequestScreen(),

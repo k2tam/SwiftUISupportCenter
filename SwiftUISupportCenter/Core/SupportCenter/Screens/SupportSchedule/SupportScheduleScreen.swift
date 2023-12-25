@@ -241,7 +241,6 @@ extension SupportScheduleScreen {
                 return Color.hiTheme.secondaryText
             }
             
-            return Color.black
 
         }
     }

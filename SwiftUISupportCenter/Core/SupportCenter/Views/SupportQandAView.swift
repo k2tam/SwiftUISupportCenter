@@ -25,10 +25,10 @@ struct SupportQandAView: View {
             VStack(alignment: .leading){
                 ForEach(Array(qAndAModel.listQuestion.enumerated()), id: \.element){index, item in
                     if index == qAndAModel.listQuestion.count - 1 {
-                        SupportQandAItemView(isLastItem: true,qAndAQuestion: item, selectedQuestion: $selectedQuestion, didSelected: didSelectQuestion)
+                        SupportQandAItemView(isLastItem: true,qAndAQuestion: item, selectedQuestion: $selectedQuestion)
 
                     }else {
-                        SupportQandAItemView(qAndAQuestion: item, selectedQuestion: $selectedQuestion,didSelected: didSelectQuestion)
+                        SupportQandAItemView(qAndAQuestion: item, selectedQuestion: $selectedQuestion)
 
                     }
                 }
@@ -39,10 +39,7 @@ struct SupportQandAView: View {
         .padding(.horizontal, 16)
     }
     
-    
-    func didSelectQuestion(selectedQuestion: SupportQandA) {
-//        self.selectedQuestion = selectedQuestion
-    }
+
 }
 
 

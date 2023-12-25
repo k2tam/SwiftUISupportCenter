@@ -142,8 +142,8 @@
 		051225C12B30487A00FB1DEF /* MoreQandA */ = {
 			isa = PBXGroup;
 			children = (
-				051225C42B30489B00FB1DEF /* ViewModels */,
 				051225C22B30487A00FB1DEF /* MoreQandAScreen.swift */,
+				051225C42B30489B00FB1DEF /* ViewModels */,
 			);
 			path = MoreQandA;
 			sourceTree = "<group>";
@@ -222,9 +222,9 @@
 		0597324D2B2BF92200F79E25 /* RequestDetail */ = {
 			isa = PBXGroup;
 			children = (
+				059732512B2BFC2B00F79E25 /* ViewModels */,
 				0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */,
 				0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */,
-				059732512B2BFC2B00F79E25 /* ViewModels */,
 				059732502B2BFC2500F79E25 /* Views */,
 			);
 			path = RequestDetail;

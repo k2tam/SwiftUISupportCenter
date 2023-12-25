@@ -16,7 +16,6 @@ struct SupportQandAItemView: View {
     
     @Backport.StateObject var vm = QAndASupportItemViewModel(didSelectQAKey: nil)
 
-    var didSelected: ((_ selectedQuestion: SupportQandA) -> Void)
     
     @State var isExpand: Bool = false
     
@@ -28,21 +27,29 @@ struct SupportQandAItemView: View {
     var body: some View {
         VStack(spacing: 16){
             //Question layout
-            HStack{
-                Text("Cách nào để kiểm tra Internet trong nhà có an toàn, bảo mật không?")
-                    .font(.system(size: 16))
-                    .multilineTextAlignment(.leading)
-                
-                Spacer()
-                
-                HiImage(string: "ic_arrow_down")
-                    .frame(width: 24, height: 24)
-                    .rotationEffect(self.isExpand ? .degrees(-180) : .degrees(0))
-                    .padding(.leading, 16)
-                
-                
+            Button {
+                withAnimation {
+                    self.isExpand.toggle()
+                }
+                    self.selectedQuestion = qAndAQuestion
+            } label: {
+                HStack{
+                    Text(qAndAQuestion.question)
+                        .font(.system(size: 16))
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    HiImage(string: "ic_arrow_down")
+                        .frame(width: 24, height: 24)
+                        .rotationEffect(self.isExpand ? .degrees(-180) : .degrees(0))
+                        .padding(.leading, 16)
+                    
+                    
+                }
             }
-            
+            .buttonStyle(PlainButtonStyle())
+
             //Content Layout
             if self.isExpand {
                 AttributedText(
@@ -54,7 +61,7 @@ struct SupportQandAItemView: View {
                 .frame(maxWidth: .infinity)
                     
                 
-//                Text("Hi")
+//                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum justo non semper suscipit. Vestibulum volutpat auctor arcu, non blandit risus malesuada et. Aenean lectus ligula, viverra facilisis pretium id, luctus non eros. Maecenas quis tristique mauris. Etiam ornare non justo sed fringilla. Sed porttitor vulputate orci, non consectetur lacus. Ut non metus massa.")
             }
             
             //Bottom divider line
@@ -66,12 +73,6 @@ struct SupportQandAItemView: View {
             }
             
         }
-        .onTapGesture(perform: {
-            withAnimation {
-                self.isExpand.toggle()
-            }
-                self.selectedQuestion = qAndAQuestion
-        })
         .onAppear(perform: {
             vm.setUpAnswerTextView(question: qAndAQuestion)
             

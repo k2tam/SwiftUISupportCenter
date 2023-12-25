@@ -273,9 +273,9 @@ struct QAndAQuestionSampleDataPage1 {
                 ]
               },
                   {
-                    "content" : "Để được thông tin về chính sách, ưu đãi hoặc hỗ trợ thủ tục, cước phí và đăng ký dịch vụ bạn có thể gọi điện thoại đến số {key}",
+                    "content" : "Bạn có thể kiểm tra ai đang truy cập trái phép mạng Wi-Fi ...",
                     "id" : 2,
-                    "question" : "Tôi có thể gọi đến tổng đài Chăm sóc khách hàng (CSKH) qua số điện thoại nào?",
+                    "question" : "Làm sao biết ai đang dùng trộm Wi-Fi nhà tôi?",
                     "keyTracking" : "QA1",
                     "keys" : [
                       {
@@ -290,9 +290,9 @@ struct QAndAQuestionSampleDataPage1 {
                   },
     
                   {
-                    "content" : "Để được thông tin về chính sách, ưu đãi hoặc hỗ trợ thủ tục, cước phí và đăng ký dịch vụ bạn có thể gọi điện thoại đến số {key}",
+                    "content" : "Chức năng F-Safe giúp bảo vệ kết nối mạng, ngăn chạn virus, mã độc",
                     "id" : 3,
-                    "question" : "Tôi có thể gọi đến tổng đài Chăm sóc khách hàng (CSKH) qua số điện thoại nào?",
+                    "question" : "Cách nào để kiểm tra Internet trong nhà có an toàn, bảo mật không ?",
                     "keyTracking" : "QA1",
                     "keys" : [
                       {

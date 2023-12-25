@@ -160,7 +160,6 @@ struct modifierSelectionUIForDateCell : ViewModifier {
         
         
         
-        return Color.black
     }
     
 }
@@ -192,7 +191,7 @@ extension HiCalendar{
                     
                     HStack{
                         ForEach(firstItemLineIndex..<lastItemLineIndex+1 ) { index  in
-                            var dateItem = self.datesOfMonthSelected[index]
+                            let dateItem = self.datesOfMonthSelected[index]
                             
                             if dateItem.day != "" {
                                 Button(action: {
@@ -249,7 +248,7 @@ extension HiCalendar{
         //Case first day of week is Sunday so firstDayOfWeek is 1
         if firstDayOfWeek == 1 {
             for _ in 0..<6 {
-                let dayOfPreviousDayOfMonthToAppend = previousDayOfMonthToAppend?.getIntDay() ?? 0
+              
                 
                 
                 datesOfMonth.insert(CalendarDateModel(date: previousDayOfMonthToAppend ?? Date()), at: 0)
@@ -259,7 +258,7 @@ extension HiCalendar{
             }
         }else {
             for _ in 0..<firstDayOfWeek - 2 {
-                let dayOfPreviousDayOfMonthToAppend = previousDayOfMonthToAppend?.getIntDay() ?? 0
+             
                 
                 
                 datesOfMonth.insert(CalendarDateModel(date: previousDayOfMonthToAppend ?? Date()), at: 0)

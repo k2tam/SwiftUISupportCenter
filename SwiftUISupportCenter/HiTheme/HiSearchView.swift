@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HiSearchView: View {
-    @State var searchText: String = ""
+    @Binding var searchText: String
     
     var body: some View {
         HStack{
@@ -46,7 +46,9 @@ struct HiSearchView: View {
 struct HiSearchView_Previews: PreviewProvider {
 
     static var previews: some View {
-        HiSearchView(searchText: "")
+        @State  var searchText: String = ""
+
+        HiSearchView(searchText: $searchText)
     }
    
 }

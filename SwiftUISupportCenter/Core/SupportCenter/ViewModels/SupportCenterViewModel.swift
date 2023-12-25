@@ -16,8 +16,9 @@ class SupportCenterViewModel: ObservableObject {
     @Published var qAndAQuestionModel: SupportQandAModel? = nil
     @Published var selectedQuestion: SupportQandA? = nil {
         didSet {
-            
-            print(selectedQuestion?.content)
+            if let selectedQuestion = selectedQuestion {
+                self.didSelectQandASupport(selectedQandA: selectedQuestion)
+            }
         }
     }
     
@@ -65,9 +66,9 @@ class SupportCenterViewModel: ObservableObject {
     }
     
     //TODO: Handle selected Q&ASupport extension here
-//    func didSelectQandASupport(selectedQandA: SupportQandA) {
-//        self.selectedQuestion = selectedQandA
-//        
-//    }
+    func didSelectQandASupport(selectedQandA: SupportQandA) {
+        print(selectedQandA.id)
+        
+    }
 
 }
