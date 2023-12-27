@@ -13,78 +13,75 @@ struct MoreQandAScreen: View {
     @Backport.StateObject var vm = MoreQandAViewModel()
     
     var body: some View {
-        ZStack {
-            HiNavigationView {
-                VStack(spacing: 0){
-                    HiSearchView(searchText: $vm.searchText)
-                        .padding(.horizontal, 16)
-                        .background(Color.white)
+        HiNavigationView {
+            VStack(spacing: 0){
+                HiSearchView(searchText: $vm.searchText)
+                    .padding(.horizontal, 16)
+                    .background(Color.white)
+                
+                HiDividerLine(hexColor: "#E7E7E7")
+                    .padding(.top, 8)
+                
+                ZStack(alignment: .top) {
+                    Color.hiBackground
+                        .edgesIgnoringSafeArea(.all)
                     
-                    HiDividerLine(hexColor: "#E7E7E7")
-                        .padding(.top, 8)
-                    
-                    ZStack(alignment: .top) {
-                        Color.hiTheme.background
-                            .edgesIgnoringSafeArea(.all)
-                        
-                        if !vm.listQandA.isEmpty {
-                            if vm.isSearching && vm.filteredListQandA.isEmpty {
-                                Text("Không có kết quả tìm kiếm")
-                                    .foregroundColor(Color.hiTheme.secondaryText)
-                                    .font(.system(size: 16))
-                                    .padding(.top, 24)
-                            }else {
-                                ScrollView {
-                                    VStack{
-                                        ForEach(Array(vm.isSearching ? vm.filteredListQandA.enumerated() : vm.listQandA.enumerated()), id: \.element.id) { index, item in
-                                            
-                                            if (index == (vm.isSearching ? vm.filteredListQandA.count : vm.listQandA.count) - 1) && vm.isSearching {
-                                                
-                                                SupportQandAItemView(isLastItem: true,qAndAQuestion: item, selectedQuestion: $vm.selectedQandA)
-                                            }else {
-                                                SupportQandAItemView(qAndAQuestion: item, selectedQuestion: $vm.selectedQandA)
-                                            }
-                                            
-                                        }
+                    if !vm.listQandA.isEmpty {
+                        if vm.isSearching && vm.filteredListQandA.isEmpty {
+                            Text("Không có kết quả tìm kiếm")
+                                .foregroundColor(Color.hiSecondaryText)
+                                .font(.system(size: 16))
+                                .padding(.top, 24)
+                        }else {
+                            ScrollView {
+                                VStack{
+                                    ForEach(Array(vm.isSearching ? vm.filteredListQandA.enumerated() : vm.listQandA.enumerated()), id: \.element.id) { index, item in
                                         
-                                        
-                                        if (!vm.isSearching && !vm.listQandA.isEmpty) {
-                                            Text("Xem thêm")
+                                        if (index == (vm.isSearching ? vm.filteredListQandA.count : vm.listQandA.count) - 1) && vm.isSearching {
+                                            
+                                            SupportQandAItemView(isLastItem: true,qAndAQuestion: item, selectedQuestion: $vm.selectedQandA)
+                                        }else {
+                                            SupportQandAItemView(qAndAQuestion: item, selectedQuestion: $vm.selectedQandA)
                                         }
                                         
                                     }
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.all, 16)
-                                    .background(Color.white)
-                                    .cornerRadius(8)
-                                    .padding(.top, 16)
-                                  
                                     
+                                    
+                                    if (!vm.isSearching && !vm.listQandA.isEmpty) {
+                                        Text("Xem thêm")
+                                    }
                                     
                                 }
-                                .padding(.horizontal, 16)
+                                .frame(maxWidth: .infinity)
+                                .padding(.all, 16)
+                                .background(Color.white)
+                                .cornerRadius(8)
+                                .padding(.top, 16)
+                              
+                                
+                                
                             }
-                           
+                            .padding(.horizontal, 16)
                         }
-                        
-                            
-                        
                        
-                        
-                        
                     }
                     
+                        
+                    
+                   
                     
                     
                 }
-                .hiNavigationTitle("Câu hỏi thường gặp")
+                
+                
+                
             }
-            .allowsHitTesting(!vm.isLoading)
-            
-            if vm.isLoading {
-                HiLoadingScreen()
-            }
+            .hiNavigationTitle("Câu hỏi thường gặp")
         }
+        .hiLoading(showLoading: vm.isLoading)
+            
+           
+        
 
     }
 }

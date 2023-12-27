@@ -224,7 +224,7 @@ extension SupportScheduleScreen {
         
         func setBackgroundColor() -> Color {
             if isSelected {
-                return Color.hiTheme.primaryColor
+                return Color.hiPrimary
             }
             
             if timeStatus == .deny {
@@ -245,7 +245,7 @@ extension SupportScheduleScreen {
             if timeStatus == .allow {
                 return Color.black
             }else {
-                return Color.hiTheme.secondaryText
+                return Color.hiSecondaryText
             }
             
             

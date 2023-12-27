@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,9 +22,16 @@
 		0547B10F2B3A6A49002B7D6C /* QADataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B10E2B3A6A49002B7D6C /* QADataService.swift */; };
 		0547B1122B3A6E36002B7D6C /* RequestListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B1112B3A6E36002B7D6C /* RequestListScreen.swift */; };
 		0547B1152B3A8021002B7D6C /* RequestTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B1142B3A8021002B7D6C /* RequestTicketView.swift */; };
-		0547B11E2B3AB0AD002B7D6C /* HiLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B11D2B3AB0AD002B7D6C /* HiLoadingScreen.swift */; };
-		0547B1212B3AB532002B7D6C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B1202B3AB532002B7D6C /* Lottie */; };
 		0547B1252B3AB884002B7D6C /* fpt_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0547B1242B3AB884002B7D6C /* fpt_loading.json */; };
+		0547B14B2B3BCD77002B7D6C /* HiLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B14A2B3BCD77002B7D6C /* HiLoading.swift */; };
+		0547B14F2B3BD4FC002B7D6C /* HiThemes in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B14E2B3BD4FC002B7D6C /* HiThemes */; };
+		0547B1532B3BD9A4002B7D6C /* HiThemes in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B1522B3BD9A4002B7D6C /* HiThemes */; };
+		0547B1562B3BDDDE002B7D6C /* HiFPTCoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B1552B3BDDDE002B7D6C /* HiFPTCoreSDK */; };
+		0547B1592B3BDDFD002B7D6C /* HiThemes in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B1582B3BDDFD002B7D6C /* HiThemes */; };
+		0547B15C2B3BDFD9002B7D6C /* HiFPTCoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B15B2B3BDFD9002B7D6C /* HiFPTCoreSDK */; };
+		0547B15F2B3BE422002B7D6C /* HiFPTCoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B15E2B3BE422002B7D6C /* HiFPTCoreSDK */; };
+		0547B1622B3BE50C002B7D6C /* HiFPTCoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */; };
+		0547B1642B3C03D7002B7D6C /* ReportInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B1632B3C03D7002B7D6C /* ReportInfoModel.swift */; };
 		058674172B34296D00B88A05 /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058674162B34296D00B88A05 /* HourCell.swift */; };
 		0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */; };
 		059732532B2BFE1E00F79E25 /* BlockTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059732522B2BFE1E00F79E25 /* BlockTitle.swift */; };
@@ -36,7 +43,6 @@
 		05B779EE2B29575100D4C8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B779EC2B29575100D4C8EB /* AppDelegate.swift */; };
 		05B779EF2B29575100D4C8EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B779ED2B29575100D4C8EB /* SceneDelegate.swift */; };
 		05B779F62B29590200D4C8EB /* HiAppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B779F52B29590200D4C8EB /* HiAppExtension.swift */; };
-		05B779FA2B2959E500D4C8EB /* HiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B779F92B2959E500D4C8EB /* HiColor.swift */; };
 		05B779FC2B295BEB00D4C8EB /* SupportCenterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */; };
 		05B77A162B295D3C00D4C8EB /* HiBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A0F2B295D3C00D4C8EB /* HiBottomSheet.swift */; };
 		05B77A172B295D3C00D4C8EB /* HiNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A112B295D3C00D4C8EB /* HiNavigationLink.swift */; };
@@ -53,12 +59,9 @@
 		05B77A322B29AD9300D4C8EB /* BlockNavHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A312B29AD9300D4C8EB /* BlockNavHeader.swift */; };
 		05B77A342B29B1CB00D4C8EB /* HiDividerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A332B29B1CB00D4C8EB /* HiDividerLine.swift */; };
 		05B77A362B29B20100D4C8EB /* SupportRequestItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A352B29B20100D4C8EB /* SupportRequestItemView.swift */; };
-		05B77A392B29B7E300D4C8EB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05B77A382B29B7E300D4C8EB /* SwiftyJSON */; };
-		05B77A3C2B29BD2300D4C8EB /* SwiftUIBackports in Frameworks */ = {isa = PBXBuildFile; productRef = 05B77A3B2B29BD2300D4C8EB /* SwiftUIBackports */; };
 		05B77A3E2B29F2B300D4C8EB /* SupportExtensionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A3D2B29F2B300D4C8EB /* SupportExtensionsView.swift */; };
 		05B77A402B29F3E300D4C8EB /* SupportRequestCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A3F2B29F3E300D4C8EB /* SupportRequestCategory.swift */; };
 		05B77A422B29F42700D4C8EB /* SupportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A412B29F42700D4C8EB /* SupportExtension.swift */; };
-		05B77A4B2B2A9E5800D4C8EB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 05B77A4A2B2A9E5800D4C8EB /* Kingfisher */; };
 		05B77A4D2B2AA4A500D4C8EB /* SupportQandAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A4C2B2AA4A500D4C8EB /* SupportQandAView.swift */; };
 		05B77A4F2B2AA5AC00D4C8EB /* SupportQandAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A4E2B2AA5AC00D4C8EB /* SupportQandAModel.swift */; };
 		05B77A532B2ABCC600D4C8EB /* SupportQandAItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A522B2ABCC600D4C8EB /* SupportQandAItemView.swift */; };
@@ -88,8 +91,9 @@
 		0547B10E2B3A6A49002B7D6C /* QADataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QADataService.swift; sourceTree = "<group>"; };
 		0547B1112B3A6E36002B7D6C /* RequestListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListScreen.swift; sourceTree = "<group>"; };
 		0547B1142B3A8021002B7D6C /* RequestTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTicketView.swift; sourceTree = "<group>"; };
-		0547B11D2B3AB0AD002B7D6C /* HiLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiLoadingScreen.swift; sourceTree = "<group>"; };
 		0547B1242B3AB884002B7D6C /* fpt_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fpt_loading.json; sourceTree = "<group>"; };
+		0547B14A2B3BCD77002B7D6C /* HiLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiLoading.swift; sourceTree = "<group>"; };
+		0547B1632B3C03D7002B7D6C /* ReportInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportInfoModel.swift; sourceTree = "<group>"; };
 		058674162B34296D00B88A05 /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailScreen.swift; sourceTree = "<group>"; };
 		059732522B2BFE1E00F79E25 /* BlockTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTitle.swift; sourceTree = "<group>"; };
@@ -103,7 +107,6 @@
 		05B779ED2B29575100D4C8EB /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		05B779F22B2957B800D4C8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05B779F52B29590200D4C8EB /* HiAppExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiAppExtension.swift; sourceTree = "<group>"; };
-		05B779F92B2959E500D4C8EB /* HiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiColor.swift; sourceTree = "<group>"; };
 		05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCenterScreen.swift; sourceTree = "<group>"; };
 		05B77A0F2B295D3C00D4C8EB /* HiBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiBottomSheet.swift; sourceTree = "<group>"; };
 		05B77A112B295D3C00D4C8EB /* HiNavigationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiNavigationLink.swift; sourceTree = "<group>"; };
@@ -141,10 +144,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B77A4B2B2A9E5800D4C8EB /* Kingfisher in Frameworks */,
-				05B77A3C2B29BD2300D4C8EB /* SwiftUIBackports in Frameworks */,
-				05B77A392B29B7E300D4C8EB /* SwiftyJSON in Frameworks */,
-				0547B1212B3AB532002B7D6C /* Lottie in Frameworks */,
+				0547B14F2B3BD4FC002B7D6C /* HiThemes in Frameworks */,
+				0547B15C2B3BDFD9002B7D6C /* HiFPTCoreSDK in Frameworks */,
+				0547B1562B3BDDDE002B7D6C /* HiFPTCoreSDK in Frameworks */,
+				0547B1532B3BD9A4002B7D6C /* HiThemes in Frameworks */,
+				0547B15F2B3BE422002B7D6C /* HiFPTCoreSDK in Frameworks */,
+				0547B1622B3BE50C002B7D6C /* HiFPTCoreSDK in Frameworks */,
+				0547B1592B3BDDFD002B7D6C /* HiThemes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +275,17 @@
 		0547B1462B3BCC58002B7D6C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0547B1632B3C03D7002B7D6C /* ReportInfoModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0547B1492B3BCD65002B7D6C /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0547B14A2B3BCD77002B7D6C /* HiLoading.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		0597324D2B2BF92200F79E25 /* RequestDetail */ = {
@@ -415,15 +430,14 @@
 		05B77A0E2B295D3C00D4C8EB /* HiTheme */ = {
 			isa = PBXGroup;
 			children = (
+				0547B1492B3BCD65002B7D6C /* Modifiers */,
 				05B77A102B295D3C00D4C8EB /* Navigation */,
-				05B779F92B2959E500D4C8EB /* HiColor.swift */,
 				053172062B357A4F00BDC36F /* HiSearchView.swift */,
 				05B77A632B2AFFC600D4C8EB /* HiPrimaryButton.swift */,
 				05B77A0F2B295D3C00D4C8EB /* HiBottomSheet.swift */,
 				05B77A152B295D3C00D4C8EB /* HiImage.swift */,
 				05B77A332B29B1CB00D4C8EB /* HiDividerLine.swift */,
 				051225B72B2EF80600FB1DEF /* HiAlert.swift */,
-				0547B11D2B3AB0AD002B7D6C /* HiLoadingScreen.swift */,
 			);
 			path = HiTheme;
 			sourceTree = "<group>";
@@ -523,10 +537,13 @@
 			);
 			name = SwiftUISupportCenter;
 			packageProductDependencies = (
-				05B77A382B29B7E300D4C8EB /* SwiftyJSON */,
-				05B77A3B2B29BD2300D4C8EB /* SwiftUIBackports */,
-				05B77A4A2B2A9E5800D4C8EB /* Kingfisher */,
-				0547B1202B3AB532002B7D6C /* Lottie */,
+				0547B14E2B3BD4FC002B7D6C /* HiThemes */,
+				0547B1522B3BD9A4002B7D6C /* HiThemes */,
+				0547B1552B3BDDDE002B7D6C /* HiFPTCoreSDK */,
+				0547B1582B3BDDFD002B7D6C /* HiThemes */,
+				0547B15B2B3BDFD9002B7D6C /* HiFPTCoreSDK */,
+				0547B15E2B3BE422002B7D6C /* HiFPTCoreSDK */,
+				0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */,
 			);
 			productName = SwiftUISupportCenter;
 			productReference = 05B779DB2B2956EF00D4C8EB /* SwiftUISupportCenter.app */;
@@ -557,10 +574,7 @@
 			);
 			mainGroup = 05B779D22B2956EF00D4C8EB;
 			packageReferences = (
-				05B77A372B29B7E300D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				05B77A3A2B29BD2300D4C8EB /* XCRemoteSwiftPackageReference "SwiftUIBackports" */,
-				05B77A492B2A9E5800D4C8EB /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				0547B11F2B3AB532002B7D6C /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				0547B1602B3BE50C002B7D6C /* XCLocalSwiftPackageReference "../Hi FPT/core-hi-fpt-HiCore_v3.4_SwiftUI" */,
 			);
 			productRefGroup = 05B779DC2B2956EF00D4C8EB /* Products */;
 			projectDirPath = "";
@@ -589,7 +603,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B779FA2B2959E500D4C8EB /* HiColor.swift in Sources */,
 				05B77A532B2ABCC600D4C8EB /* SupportQandAItemView.swift in Sources */,
 				05B779EE2B29575100D4C8EB /* AppDelegate.swift in Sources */,
 				05B77A202B296B4100D4C8EB /* SupportRequestList.swift in Sources */,
@@ -598,11 +611,11 @@
 				051225D22B31D79100FB1DEF /* SupportScheduleScreen.swift in Sources */,
 				05B1390A2B33CBCE001633C5 /* SupportScheduleViewModel.swift in Sources */,
 				05B77A4F2B2AA5AC00D4C8EB /* SupportQandAModel.swift in Sources */,
+				0547B1642B3C03D7002B7D6C /* ReportInfoModel.swift in Sources */,
 				0547B10F2B3A6A49002B7D6C /* QADataService.swift in Sources */,
 				051225D72B32A09700FB1DEF /* DateTimeModel.swift in Sources */,
 				05B77A252B296FC600D4C8EB /* PreviewProvider.swift in Sources */,
 				053172072B357A4F00BDC36F /* HiSearchView.swift in Sources */,
-				0547B11E2B3AB0AD002B7D6C /* HiLoadingScreen.swift in Sources */,
 				0540F5A52B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift in Sources */,
 				051225CE2B312BD900FB1DEF /* HiCalendar.swift in Sources */,
 				0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */,
@@ -633,6 +646,7 @@
 				05B779EF2B29575100D4C8EB /* SceneDelegate.swift in Sources */,
 				0547B1152B3A8021002B7D6C /* RequestTicketView.swift in Sources */,
 				05B77A3E2B29F2B300D4C8EB /* SupportExtensionsView.swift in Sources */,
+				0547B14B2B3BCD77002B7D6C /* HiLoading.swift in Sources */,
 				05B77A362B29B20100D4C8EB /* SupportRequestItemView.swift in Sources */,
 				05B77A402B29F3E300D4C8EB /* SupportRequestCategory.swift in Sources */,
 				05B77A172B295D3C00D4C8EB /* HiNavigationLink.swift in Sources */,
@@ -859,61 +873,41 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		0547B11F2B3AB532002B7D6C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.4;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		0547B1602B3BE50C002B7D6C /* XCLocalSwiftPackageReference "../Hi FPT/core-hi-fpt-HiCore_v3.4_SwiftUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../Hi FPT/core-hi-fpt-HiCore_v3.4_SwiftUI";
 		};
-		05B77A372B29B7E300D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		05B77A3A2B29BD2300D4C8EB /* XCRemoteSwiftPackageReference "SwiftUIBackports" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/shaps80/SwiftUIBackports.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.0;
-			};
-		};
-		05B77A492B2A9E5800D4C8EB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.10.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0547B1202B3AB532002B7D6C /* Lottie */ = {
+		0547B14E2B3BD4FC002B7D6C /* HiThemes */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0547B11F2B3AB532002B7D6C /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
+			productName = HiThemes;
 		};
-		05B77A382B29B7E300D4C8EB /* SwiftyJSON */ = {
+		0547B1522B3BD9A4002B7D6C /* HiThemes */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 05B77A372B29B7E300D4C8EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
+			productName = HiThemes;
 		};
-		05B77A3B2B29BD2300D4C8EB /* SwiftUIBackports */ = {
+		0547B1552B3BDDDE002B7D6C /* HiFPTCoreSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 05B77A3A2B29BD2300D4C8EB /* XCRemoteSwiftPackageReference "SwiftUIBackports" */;
-			productName = SwiftUIBackports;
+			productName = HiFPTCoreSDK;
 		};
-		05B77A4A2B2A9E5800D4C8EB /* Kingfisher */ = {
+		0547B1582B3BDDFD002B7D6C /* HiThemes */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 05B77A492B2A9E5800D4C8EB /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			productName = HiThemes;
+		};
+		0547B15B2B3BDFD9002B7D6C /* HiFPTCoreSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HiFPTCoreSDK;
+		};
+		0547B15E2B3BE422002B7D6C /* HiFPTCoreSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HiFPTCoreSDK;
+		};
+		0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HiFPTCoreSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

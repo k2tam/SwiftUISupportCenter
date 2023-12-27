@@ -21,7 +21,7 @@ struct RequestDetailScreen: View {
 
                 
                 //Background layout
-                Color.hiTheme.background
+                Color.hiBackground
 
                 //Content layout
                 ScrollView {
@@ -89,7 +89,7 @@ extension RequestDetailScreen {
             HStack(alignment: .top){
                 Text(title)
                     .font(.system(size: 14))
-                    .foregroundColor(Color.hiTheme.secondaryText)
+                    .foregroundColor(Color.hiSecondaryText)
                     .frame(maxWidth: blockWidth * 0.3, alignment: .leading)
                 
                 Spacer()

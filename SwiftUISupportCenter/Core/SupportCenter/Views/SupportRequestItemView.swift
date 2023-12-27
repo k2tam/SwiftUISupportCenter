@@ -20,12 +20,12 @@ struct SupportRequestItemView: View {
                             .fontWeight(.semibold)
                         
                         Text(supportRequest.lastStepName)
-                            .foregroundColor(Color.hiTheme.primaryColor)
+                            .foregroundColor(Color.hiPrimary)
                             .font(.system(size: 12))
                             .padding(.horizontal, 8)
                             .padding(.vertical, 2)
                             .background(
-                                Color.hiTheme.secondaryBlue
+                                Color.hiPrimaryContainer
                                     .cornerRadius(4)
                             )
                     }

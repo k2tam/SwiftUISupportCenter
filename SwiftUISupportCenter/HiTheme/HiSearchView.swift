@@ -27,7 +27,7 @@ struct HiSearchView: View {
                 self.searchText = ""
             }, label: {
                 Image(systemName: "xmark")
-                    .foregroundColor(Color.hiTheme.secondaryText)
+                    .foregroundColor(Color.hiSecondaryText)
                     .frame(width: 24, height: 24)
             })
             .padding(.trailing, 13)

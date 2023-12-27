@@ -21,7 +21,7 @@ struct RequestListScreen: View {
                 TabNavigationView
                 
                 ZStack {
-                    Color.hiTheme.background
+                    Color.hiBackground
                     
                     ScrollView {
                         VStack{
@@ -72,11 +72,11 @@ extension RequestListScreen {
             }, label: {
                 ZStack(alignment: .bottom){
                     Text( "Đang xử lý")
-                        .foregroundColor(selectedTab == .progressing ? .black : Color.hiTheme.secondaryText)
+                        .foregroundColor(selectedTab == .progressing ? .black : Color.hiSecondaryText)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
                     Rectangle()
-                        .fill(selectedTab == .progressing ? Color.hiTheme.primaryColor : .clear)
+                        .fill(selectedTab == .progressing ? Color.hiPrimary : .clear)
                         .frame(height: 1)
                 }
                 .foregroundColor(.black)
@@ -88,11 +88,11 @@ extension RequestListScreen {
             }, label: {
                 ZStack(alignment: .bottom){
                     Text("Hoàn tất")
-                        .foregroundColor(selectedTab == .completed ? .black : Color.hiTheme.secondaryText)
+                        .foregroundColor(selectedTab == .completed ? .black : Color.hiSecondaryText)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
                     Rectangle()
-                        .fill(selectedTab == .completed ? Color.hiTheme.primaryColor : .clear)
+                        .fill(selectedTab == .completed ? Color.hiPrimary : .clear)
                         .frame(height: 1)
                 }
                 .foregroundColor(.black)

@@ -13,7 +13,7 @@ struct SupportCenterScreen: View {
     
     @Backport.StateObject var vm = SupportCenterViewModel()
     
-    private var showLoading: Bool {
+    var showLoading: Bool {
         return vm.isLoadingSupportRequestList || vm.isLoadingSupportExtensionsData ||
         vm.isLoadingQandAQuestionData
     }
@@ -22,63 +22,58 @@ struct SupportCenterScreen: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                HiNavigationView {
+            
+            HiNavigationView {
+                
+                ZStack{
+                    NavigationLinks
                     
-                    ZStack{
-                        NavigationLinks
-                        
-                        //Background layer
-                        Color.hiTheme.background
-                        
-                        //Content Layer
-                        
-                        ScrollView(showsIndicators: false) {
-                            VStack(spacing: 24){
-                                //MARK: - Create Support Request Block
-                                CreateSupportRequestView(supportRequestCategories: vm.createSupportRequestCategories, selectCategoryCallBack: vm.didSelectSupportRequestCategory)
-                                
-                                
-                                //MARK: - Support Request List Block
-                                if let supportRequestList = vm.supportRequestList {
-                                    SupportRequestListView(supportRequestList: supportRequestList.report)
-                                }
-                                
-                                //MARK: - Support Extension Block
-                                if let supportExtensionList = vm.supportExtensionList {
-                                    SupportExtensionsView(supportExtensionsList: supportExtensionList, didSelectSupportExtension: vm.didSelectSupportExtension)
-                                }
-                                
-                                //MARK: - Q&A Support Block
-                                if let qAndAQuestionModel = vm.qAndAQuestionModel {
-                                    SupportQandAView(
-                                        qAndAModel: qAndAQuestionModel,
-                                        selectedQuestion: $vm.selectedQuestion
-                                    )
-                                }
-                                
-                                
-                                Spacer()
-
+                    //Background layer
+                    Color.hiBackground
+                    
+                    //Content Layer
+                    
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: 24){
+                            //MARK: - Create Support Request Block
+                            CreateSupportRequestView(supportRequestCategories: vm.createSupportRequestCategories, selectCategoryCallBack: vm.didSelectSupportRequestCategory)
+                            
+                            
+                            //MARK: - Support Request List Block
+                            if let supportRequestList = vm.supportRequestList {
+                                SupportRequestListView(supportRequestList: supportRequestList.report)
                             }
+                            
+                            //MARK: - Support Extension Block
+                            if let supportExtensionList = vm.supportExtensionList {
+                                SupportExtensionsView(supportExtensionsList: supportExtensionList, didSelectSupportExtension: vm.didSelectSupportExtension)
+                            }
+                            
+                            //MARK: - Q&A Support Block
+                            if let qAndAQuestionModel = vm.qAndAQuestionModel {
+                                SupportQandAView(
+                                    qAndAModel: qAndAQuestionModel,
+                                    selectedQuestion: $vm.selectedQuestion
+                                )
+                            }
+                            
+                            
+                            Spacer()
+                            
                         }
-
                     }
-                    .hiNavigationTitle("Trung tâm hỗ trợ")
-                    .hiNavigationBackButtonHidden(true)
-                    .edgesIgnoringSafeArea(.bottom)
+                    
                 }
-                .allowsHitTesting(!showLoading)
-
-                if(showLoading) {
-                    HiLoadingScreen()
-
-                }
+                .hiNavigationTitle("Trung tâm hỗ trợ")
+                .hiNavigationBackButtonHidden(true)
+                .edgesIgnoringSafeArea(.bottom)
             }
-           
+            .modifier(HiLoading(showLoading: showLoading))
+            
+            
         }
     }
-        
+    
 }
 
 extension SupportCenterScreen {
@@ -111,7 +106,7 @@ struct SupportCenterScreen_Previews: PreviewProvider {
     static var previews: some View {
         SupportCenterScreen(vm: SupportCenterViewModel())
             .environmentObject(NavigationTagManager.shared)
-
+        
     }
 }
 

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct SupportExtensionsView: View {
     var supportExtensionsList: [SupportExtension]

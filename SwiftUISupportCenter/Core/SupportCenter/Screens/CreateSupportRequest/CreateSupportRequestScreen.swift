@@ -19,7 +19,7 @@ struct CreateSupportRequestScreen: View {
                 ZStack(alignment: .bottom){
                     NavigationLinks
                     
-                    Color.hiTheme.background
+                    Color.hiBackground
                     
                     createSupportContent
                     

@@ -74,7 +74,7 @@ struct ContractRow: View {
             
             Text("29/10/2023")
                 .font(.system(size: 16))
-                .foregroundColor(Color.hiTheme.secondaryText)
+                .foregroundColor(Color.hiSecondaryText)
         }
     }
 }
@@ -85,7 +85,7 @@ struct ProblemRow: View {
             VStack(alignment: .leading, spacing: 2){
                 Text("Tình trạng")
                     .font(.system(size: 16))
-                    .foregroundColor(Color.hiTheme.secondaryText)
+                    .foregroundColor(Color.hiSecondaryText)
                 
                 Text("Mạng chập chờn")
                     .font(.system(size: 16,weight: .medium))
@@ -104,7 +104,7 @@ struct ScheduleRow: View {
             VStack(alignment: .leading, spacing: 2){
                 Text("Đặt hẹn")
                     .font(.system(size: 16))
-                    .foregroundColor(Color.hiTheme.secondaryText)
+                    .foregroundColor(Color.hiSecondaryText)
                 
                 Text("29/11/2023, 09:00 - 10:00")
                     .font(.system(size: 16,weight: .medium))
@@ -123,14 +123,14 @@ struct StateRow: View {
             VStack(alignment: .leading, spacing: 8){
                 Text("Trạng thái")
                     .font(.system(size: 16))
-                    .foregroundColor(Color.hiTheme.secondaryText)
+                    .foregroundColor(Color.hiSecondaryText)
                 
                 Text("Đang phân công nhân viên xử lý")
                     .font(.system(size: 16, weight: .medium))
                     .padding(.horizontal, 8)
                     .padding(.vertical, 2)
-                    .foregroundColor(Color.hiTheme.primaryColor)
-                    .background(Color.hiTheme.secondaryBlue)
+                    .foregroundColor(Color.hiPrimary)
+                    .background(Color.hiSecondaryText)
                     .cornerRadius(4)
                 
             }
@@ -149,7 +149,7 @@ struct EmployeeRow: View {
                 VStack(alignment: .leading, spacing: 8){
                     Text("Nhân viên")
                         .font(.system(size: 16))
-                        .foregroundColor(Color.hiTheme.secondaryText)
+                        .foregroundColor(Color.hiSecondaryText)
                     
                     HStack{
                         Image(systemName: "apple.logo")
@@ -164,7 +164,7 @@ struct EmployeeRow: View {
                                 .font(.system(size: 16, weight: .medium))
                             Text("0912345678")
                                 .font(.system(size: 16))
-                                .foregroundColor(Color.hiTheme.secondaryText)
+                                .foregroundColor(Color.hiSecondaryText)
                         }
                         
                         Spacer()

@@ -14,7 +14,7 @@ struct RequestStatusTimeLineScreen: View {
     var body: some View {
         HiNavigationView{
             ZStack{
-                Color.hiTheme.background
+                Color.hiBackground
                 
                 VStack {
                     ScrollView{

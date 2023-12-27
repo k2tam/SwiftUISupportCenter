@@ -56,7 +56,7 @@ struct SupportQandAItemView: View {
                     vm.attributedString
                 )
                 .font(.system(size: 16))
-                .foregroundColor(Color.hiTheme.secondaryText)
+                .foregroundColor(Color.hiSecondaryText)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity)
                     

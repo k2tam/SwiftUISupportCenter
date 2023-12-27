@@ -9,6 +9,7 @@
 
 import SwiftUI
 import SwiftUIBackports
+import HiThemes
 
 enum eCalendarBusinessType {
     case technical
@@ -134,7 +135,7 @@ struct modifierSelectionUIForDateCell : ViewModifier {
                 ZStack {
                     if isChecked {
                         Circle()
-                            .fill(Color.hiTheme.primaryColor)
+                            .fill(Color.hiPrimary)
                     }else if date.isToday {
                         Circle()
                             .fill(Color(hex: "#EFF4FF"))
@@ -150,7 +151,7 @@ struct modifierSelectionUIForDateCell : ViewModifier {
             }
             
             if date.isToday {
-                return Color.hiTheme.primaryColor
+                return Color.hiPrimary
             }
             
             return Color.black
