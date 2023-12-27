@@ -58,20 +58,26 @@ struct HiNavigationBarView: View {
     let toolBar: EquatableViewContainer
     
     var body: some View {
-        HStack{
-            if showBackButton {
-                backButton
-            }
-            
-            Spacer()
-            
+        ZStack{
             Text(title)
                 .font(.system(size: 18, weight: .medium))
+        
             
-            Spacer()
-            
-            toolBar.view
+            HStack{
+                if showBackButton {
+                    backButton
+                }
+                
+                Spacer()
+                
+               
+          
+
+      
+                toolBar.view
+            }
         }
+        
         .padding(.horizontal, 16)
         .frame(height: 56)
       

@@ -13,6 +13,9 @@ class MoreQandAViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var listQandA: [SupportQandA] = []
     @Published var filteredListQandA: [SupportQandA] = []
+    @Published var isLoading: Bool = true
+    
+    private var qADataService = QADataService()
     
     private var cancellables =  Set<AnyCancellable>()
     
@@ -21,24 +24,35 @@ class MoreQandAViewModel: ObservableObject {
     }
     
     init() {
-        self.fetchListSupportCategory()
-        self.addSubscriber()
+        self.addSubscribers()
     }
     
-    private func addSubscriber() {
+    private func addSubscribers() {
         $searchText
             .sink {[weak self] searchText in
                 self?.filterSupportQandAQuestion(searchText: searchText)
                 
             }
             .store(in: &cancellables)
+        
+        
+        self.qADataService.$listQandA
+            .sink(receiveValue: {[weak self] returnedListQA in
+                self?.listQandA = returnedListQA
+            })
+            .store(in: &cancellables)
+        
+        self.qADataService.$isLoading
+            .sink(receiveValue: { [weak self] returnedIsLoading in
+                self?.isLoading = returnedIsLoading
+            })
+            .store(in: &cancellables)
+
+            
+
     }
     
-    func fetchListSupportCategory() {
-        SupportCenterManager.requestQandAQuestionData(completion: { result in
-            self.listQandA.append(contentsOf: result?.listQuestion ?? [])
-        })
-    }
+
     
     func filterSupportQandAQuestion(searchText: String) {
         guard !searchText.isEmpty else {

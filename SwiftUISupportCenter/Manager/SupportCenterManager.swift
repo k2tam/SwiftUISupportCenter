@@ -15,7 +15,7 @@ struct SupportCenterManager {
     
     static func requestSupportRequestListData(completion: @escaping(_ result: SupportRequestList?) -> Void) {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
             guard let data = SupportRequestListSampleData.sampleData.data(using: .utf8) else {
                 completion(nil)
                 return
@@ -33,7 +33,7 @@ struct SupportCenterManager {
     
     static func requestSupportExtensionsData(completion: @escaping(_ result: [SupportExtension]?) -> Void) {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
             guard let data = SupportExtensionsSampleData.sampleData.data(using: .utf8) else {
                 completion(nil)
                 return
@@ -54,7 +54,7 @@ struct SupportCenterManager {
     }
     
     static func requestQandAQuestionData(completion: @escaping(_ result: SupportQandAModel?) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
             guard let data = QAndAQuestionSampleDataPage1.sampleData.data(using: .utf8) else {
                 completion(nil)
                 return

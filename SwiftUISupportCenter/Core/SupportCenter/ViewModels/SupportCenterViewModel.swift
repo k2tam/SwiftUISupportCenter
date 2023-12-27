@@ -22,9 +22,16 @@ class SupportCenterViewModel: ObservableObject {
         }
     }
     
+    @Published var isLoadingSupportRequestList = true
+    @Published var isLoadingSupportExtensionsData = true
+    @Published var isLoadingQandAQuestionData = true
+    
+    
+    
     init() {
         SupportCenterManager.requestSupportRequestListData(completion: {[weak self] result in
             DispatchQueue.main.async {
+                self?.isLoadingSupportRequestList = false
                 self?.supportRequestList = result
 
             }
@@ -32,12 +39,15 @@ class SupportCenterViewModel: ObservableObject {
         
         SupportCenterManager.requestSupportExtensionsData {[weak self] result in
             DispatchQueue.main.async {
+                self?.isLoadingSupportExtensionsData = false
                 self?.supportExtensionList = result
             }
         }
+    
         
         SupportCenterManager.requestQandAQuestionData {[weak self] result in
             DispatchQueue.main.async {
+                self?.isLoadingQandAQuestionData = false
                 self?.qAndAQuestionModel = result
             }
         }

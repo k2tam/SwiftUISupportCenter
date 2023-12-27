@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct SupportRequestListView: View {
-    let supportRequestList: [SupportRequest]
+    
+    @EnvironmentObject var navManager: NavigationTagManager
+    var supportRequestList: [SupportRequest]
         
     var body: some View {
         VStack(spacing: 16){
             BlockNavHeader(title: "Danh sách yêu cầu") {
+                navManager.navTag = .toRequestListScreen
             }
             
             //Report List

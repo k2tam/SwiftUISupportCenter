@@ -15,7 +15,8 @@ struct SupportScheduleScreen: View {
     @Backport.StateObject var vm =  SupportScheduleViewModel()
     var callBackToGetSelectedDateTimes: ( ( _ date: Date , _ time: TimeSlotModel) -> Void )?
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    
+    
     
     init(dateTimeAllowModel: DateTimeAllowModel?, callBackToGetSelectedDateTimes: @escaping ( ( _ date: Date , _ time: TimeSlotModel) -> Void ) ){
         vm.dateTimeAllowModel = dateTimeAllowModel
@@ -37,13 +38,13 @@ struct SupportScheduleScreen: View {
                         HiCalendar(calendarType: .technical, checkedDate: $vm.selectedDate)
                             .frame(height: 350) // Adjust the value as needed
                         
-                
-                       HourSelectionView
+                        
+                        HourSelectionView
                         
                     }
                     .padding(.bottom, 100)
                 }
-
+                
                 ApplyButton
                 
             }
@@ -59,7 +60,10 @@ struct SupportScheduleScreen: View {
 
 extension SupportScheduleScreen {
     
+    
     private var HourSelectionView: some View {
+        
+        
         Group {
             Text("Chọn giờ")
                 .font(.system(size: 18, weight: .medium))
@@ -77,6 +81,7 @@ extension SupportScheduleScreen {
                     .frame(maxWidth: 37)
                     .padding(.trailing, 20)
                     
+                    
                     ScrollView(.horizontal, showsIndicators: false){
                         VStack(spacing: 16){
                             ForEach(vm.listTime){timeSlotModel in
@@ -85,6 +90,8 @@ extension SupportScheduleScreen {
                             }
                         }
                     }
+                    
+                    
                     
                 }
             }
@@ -139,10 +146,10 @@ extension SupportScheduleScreen {
                     .font(.system(size: 14))
                 
                 
-               Rectangle()
+                Rectangle()
                     .frame(width: 18.8, height: 1)
-                    
-                    
+                
+                
                 
                 Text(timeCellModel.end)
                     .font(.system(size: 14))
@@ -151,9 +158,9 @@ extension SupportScheduleScreen {
             .frame(width: 80, height: 72)
             .modifier(ModifierColorBasedOnTimeStatus(timeStatus: timeCellModel.status, isSelected: isSelected))
             .cornerRadius(8)
- 
+            
         }
-
+        
     }
     
     struct HourScheduleLine: View {
@@ -161,14 +168,14 @@ extension SupportScheduleScreen {
         var timeSupports: [TimeSlotModel]
         
         var body: some View {
-    
+            
             HStack{
                 ForEach(timeSupports) { timeSupport in
                     Button(action: {
                         self.vm.selectedTime = timeSupport
                     }, label: {
                         HourCell(timeCellModel: timeSupport, isSelected: checkHourCellIsChecked(timeSupport: timeSupport))
-
+                        
                     })
                     .disabled(
                         checkInteractCondition(timeSupport: timeSupport)
@@ -183,7 +190,7 @@ extension SupportScheduleScreen {
             guard let selectedTime = self.vm.selectedTime else {
                 return false
             }
-
+            
             if timeSupport.status == .deny || selectedTime == timeSupport {
                 return true
             }
@@ -241,7 +248,7 @@ extension SupportScheduleScreen {
                 return Color.hiTheme.secondaryText
             }
             
-
+            
         }
     }
 }
@@ -251,11 +258,11 @@ extension SupportScheduleScreen {
 //        @Backport.StateObject var vm = SupportScheduleViewModel()
 //
 //        SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel) { date, time in
-//            
+//
 //        }
 //    }
 //}
-    
-    
-    
+
+
+
 
