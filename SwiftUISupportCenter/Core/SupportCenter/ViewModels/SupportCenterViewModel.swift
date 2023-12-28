@@ -9,7 +9,7 @@ import Foundation
 
 
 class SupportCenterViewModel: ObservableObject {
-    let createSupportRequestCategories: [eSupportRequestCategory] = [.technicalSupport,.feeProcedures,.customerCare]
+    let createSupportRequestCategories: [eSupportRequestCategory] = [.technical,.procedure,.fee,.feedBack]
     @Published var supportRequestList: SupportRequestList? = nil
     @Published var supportExtensionList: [SupportExtension]? = nil
     
@@ -59,14 +59,15 @@ class SupportCenterViewModel: ObservableObject {
     //TODO: Handle selected support request category 
     func didSelectSupportRequestCategory(category: eSupportRequestCategory) {
         switch category {
-        case .technicalSupport:
+        case .technical:
             NavigationTagManager.shared.navTag = .toSupportRequestScreen
             print("Hỗ trợ kỹ thuật")
-            
-        case .feeProcedures:
+        case .procedure:
+            print("Thủ tục")
+        case .fee:
             print("Thủ tục cước phí")
-        case .customerCare:
-            print("Chăm sóc khác hàng")
+        case .feedBack:
+            print("Góp ý")
         }
     }
     

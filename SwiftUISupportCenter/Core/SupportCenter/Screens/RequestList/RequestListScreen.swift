@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HiThemes
 
 enum RequestTab {
     case progressing

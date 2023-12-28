@@ -5,9 +5,10 @@
 //  Created by Nghia Dao on 14/05/2023.
 //
 
-//import Foundation
-//import SwiftyJSON
-//
+import Foundation
+import SwiftyJSON
+import UIKit
+
 //struct ReportInfoModel{
 //    var checklistType: String?
 //    var imgSupportType : String
@@ -156,8 +157,8 @@
 //    var textColor: String
 //    var textTimeColor: String
 //    var textDetailColor: String
-//    var textDetailFontWeight: UIFont.Weight
-//    var textNameFontWeight: UIFont.Weight
+////    var textDetailFontWeight: UIFont.Weight
+////    var textNameFontWeight: UIFont.Weight
 //    var detail: String
 //    var feedback: String
 //    
@@ -168,9 +169,9 @@
 //        icon = json["icon"].stringValue
 //        textTimeColor = json["textTimeColor"].stringValue
 //        textDetailColor = json["textTimeColor"].stringValue
-//        textDetailFontWeight = TextFont.init(rawValue : json["textDetailFontWeight"].stringValue.lowercased())?.parseToFontWeight() ?? UIFont.Weight.regular
-//        textNameFontWeight = TextFont.init(rawValue : json["textNameFontWeight"].stringValue.lowercased())?.parseToFontWeight() ?? UIFont.Weight.regular
-//        textColor = json["textColor"].stringValue
+////        textDetailFontWeight = TextFont.init(rawValue : json["textDetailFontWeight"].stringValue.lowercased())?.parseToFontWeight() ?? UIFont.Weight.regular
+////        textNameFontWeight = TextFont.init(rawValue : json["textNameFontWeight"].stringValue.lowercased())?.parseToFontWeight() ?? UIFont.Weight.regular
+////        textColor = json["textColor"].stringValue
 //        status = RequestSupportStepStatusType.init(rawValue: json["status"].stringValue)
 //        detail = json["detail"].stringValue
 //        feedback = json["feedback"].stringValue

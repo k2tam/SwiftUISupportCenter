@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SupportExtensionsView: View {
     var supportExtensionsList: [SupportExtension]
@@ -22,7 +23,7 @@ struct SupportExtensionsView: View {
                 .buttonStyle(PlainButtonStyle())
             }
         }
-        .frame(height: 80)
+        .frame(height: 76)
         .padding(.horizontal, 16)
     }
 }
@@ -31,13 +32,17 @@ struct SupportExtensionView: View {
     let supportExtension: SupportExtension
     var body: some View {
         HStack(alignment: .top){
-           Text("Chat\nvới CSKH")
+            Text("Chat\nvới CSKH")
+                .font(.system(size: 16))
                 .multilineTextAlignment(.leading)
             
             Spacer()
             
-            Color.blue
+         
+            Image(systemName: "apple.logo")
                 .frame(width: 24, height: 24)
+        
+            
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -12,7 +12,7 @@ struct SupportRequestItemView: View {
     
     var body: some View {
         HStack {
-            VStack{
+            VStack(spacing: 0){
                 VStack(alignment: .leading){
                     HStack(spacing: 4) {
                         Text(supportRequest.contractNo)
@@ -25,7 +25,7 @@ struct SupportRequestItemView: View {
                             .padding(.horizontal, 8)
                             .padding(.vertical, 2)
                             .background(
-                                Color.hiPrimaryContainer
+                                Color.hiBlueContainer
                                     .cornerRadius(4)
                             )
                     }
@@ -41,7 +41,9 @@ struct SupportRequestItemView: View {
             
             HiImage(string: "ic_right_arrow")
         }
-        .frame(height: 68)
+        .padding(.vertical, 8)
+        .frame(height: 64)
+
     }
 }
 

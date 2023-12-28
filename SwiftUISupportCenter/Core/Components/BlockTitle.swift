@@ -13,25 +13,17 @@ struct BlockTitle: View {
     var isShowArrow: Bool = false
     
     var body: some View {
-        HStack{
+        HStack(spacing: 16){
             HiImage(string: icon)
-                .frame(width: 24, height: 24)
+                .frame(width: 36, height: 36)
             
             Text(title)
-                .font(Font.system(size: 16))
+                .font(Font.system(size: 18))
                 .fontWeight(.medium)
-                .padding(.leading, 8)
-            
-            Spacer()
-            
-            if isShowArrow {
-                HiImage(string: "ic_right_arrow")
-                    .frame(width: 24, height: 24)
-            }
-            
-            
+     
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(height: 36)
     }
 }
 

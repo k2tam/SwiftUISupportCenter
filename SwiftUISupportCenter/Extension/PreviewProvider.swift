@@ -55,18 +55,21 @@ class DeveloperPreview {
         }
     }
     
-    let createSupportRequestCategories: [eSupportRequestCategory] = [.customerCare,.feeProcedures,.technicalSupport]
+    let createSupportRequestCategories: [eSupportRequestCategory] = [.technical,.procedure,.fee,.feedBack]
     
     
     //TODO: Handle selected support request category
     func didSelectSupportRequestCategory(category: eSupportRequestCategory) {
         switch category {
-        case .technicalSupport:
+        case .technical:
             print("Hỗ trợ kỹ thuật")
-        case .feeProcedures:
-            print("Thủ tục cước phí")
-        case .customerCare:
-            print("Chăm sóc khác hàng")
+        case .procedure:
+            print("Hỗ trợ thủ tục")
+
+        case .fee:
+            print("Hỗ trợ cước phí")
+        case .feedBack:
+            print("Góp ý")
         }
     }
     

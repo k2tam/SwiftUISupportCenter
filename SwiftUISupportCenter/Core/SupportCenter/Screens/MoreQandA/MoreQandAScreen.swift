@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftUIBackports
+import HiThemes
 
 
 struct MoreQandAScreen: View {
@@ -15,7 +16,7 @@ struct MoreQandAScreen: View {
     var body: some View {
         HiNavigationView {
             VStack(spacing: 0){
-                HiSearchView(searchText: $vm.searchText)
+                HiSearchView(promptText: "Tìm kiếm câu hỏi", searchText: $vm.searchText)
                     .padding(.horizontal, 16)
                     .background(Color.white)
                 

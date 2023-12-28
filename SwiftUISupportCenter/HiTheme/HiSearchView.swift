@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HiSearchView: View {
+    let promptText: String
     @Binding var searchText: String
     
     var body: some View {
@@ -17,7 +18,7 @@ struct HiSearchView: View {
                 .padding(.leading, 12)
               
             
-            TextField("Tìm kiếm câu hỏi", text: $searchText)
+            TextField(promptText, text: $searchText)
                 .font(.system(size: 16))
                 .foregroundColor(Color(hex: "#888888"))
     
@@ -39,6 +40,7 @@ struct HiSearchView: View {
                 .stroke(Color(hex: "#E7E7E7"), lineWidth: 1)
                 .padding(.vertical, 1)
         )
+        .padding(.horizontal, 16)
     }
 }
 
@@ -48,7 +50,7 @@ struct HiSearchView_Previews: PreviewProvider {
     static var previews: some View {
         @State  var searchText: String = ""
 
-        HiSearchView(searchText: $searchText)
+        HiSearchView(promptText: "Tìm kiếm câu hỏi",searchText: $searchText)
     }
    
 }

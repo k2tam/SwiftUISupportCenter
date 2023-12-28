@@ -25,6 +25,7 @@ struct PrimaryButton: View {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(isActive ? Color(hex: backgroundActive) :  Color(hex: background))
                 Text(btnText)
+                    .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.white)
                     .padding(.vertical, 10)
             }

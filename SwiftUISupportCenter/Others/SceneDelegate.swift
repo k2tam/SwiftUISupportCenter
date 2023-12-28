@@ -20,7 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let rootScreen = CreateSupportRequestScreen()
 //        let rootScreen = SupportScheduleScreen()
 //        let rootScreen = RequestDetailScreen()
-        let rootScreen = SwiftUISupportCenterApp()
+//        let rootScreen = SupportCenterScreen()
+//        let rootScreen = SwiftUISupportCenterApp()
+        let rootScreen = SupportBottomSheet(heightOfEachItem: 56)
             
         
                 

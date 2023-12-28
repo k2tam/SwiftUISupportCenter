@@ -32,9 +32,16 @@
 		0547B15F2B3BE422002B7D6C /* HiFPTCoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B15E2B3BE422002B7D6C /* HiFPTCoreSDK */; };
 		0547B1622B3BE50C002B7D6C /* HiFPTCoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */; };
 		0547B1642B3C03D7002B7D6C /* ReportInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B1632B3C03D7002B7D6C /* ReportInfoModel.swift */; };
+		0547B1662B3C12D5002B7D6C /* SelectContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B1652B3C12D5002B7D6C /* SelectContract.swift */; };
+		0547B16B2B3C318B002B7D6C /* TextWithContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */; };
 		058674172B34296D00B88A05 /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058674162B34296D00B88A05 /* HourCell.swift */; };
 		0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */; };
 		059732532B2BFE1E00F79E25 /* BlockTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059732522B2BFE1E00F79E25 /* BlockTitle.swift */; };
+		059B8C312B3D30710087DCEC /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C302B3D30710087DCEC /* BottomSheet.swift */; };
+		059B8C332B3D30F40087DCEC /* ResponsiveSheetWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */; };
+		059B8C362B3D4FEB0087DCEC /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 059B8C352B3D4FEB0087DCEC /* SwiftUIIntrospect */; };
+		059B8C382B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 059B8C372B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic */; };
+		059B8C3A2B3D4FEB0087DCEC /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 059B8C392B3D4FEB0087DCEC /* SwiftUIIntrospect-Static */; };
 		05B1390A2B33CBCE001633C5 /* SupportScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B139092B33CBCE001633C5 /* SupportScheduleViewModel.swift */; };
 		05B1390D2B33CD02001633C5 /* DateTimeAllowDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1390C2B33CD02001633C5 /* DateTimeAllowDataService.swift */; };
 		05B779DF2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B779DE2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift */; };
@@ -94,9 +101,13 @@
 		0547B1242B3AB884002B7D6C /* fpt_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fpt_loading.json; sourceTree = "<group>"; };
 		0547B14A2B3BCD77002B7D6C /* HiLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiLoading.swift; sourceTree = "<group>"; };
 		0547B1632B3C03D7002B7D6C /* ReportInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportInfoModel.swift; sourceTree = "<group>"; };
+		0547B1652B3C12D5002B7D6C /* SelectContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContract.swift; sourceTree = "<group>"; };
+		0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithContainerView.swift; sourceTree = "<group>"; };
 		058674162B34296D00B88A05 /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailScreen.swift; sourceTree = "<group>"; };
 		059732522B2BFE1E00F79E25 /* BlockTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTitle.swift; sourceTree = "<group>"; };
+		059B8C302B3D30710087DCEC /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveSheetWrapper.swift; sourceTree = "<group>"; };
 		05B139092B33CBCE001633C5 /* SupportScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportScheduleViewModel.swift; sourceTree = "<group>"; };
 		05B1390C2B33CD02001633C5 /* DateTimeAllowDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeAllowDataService.swift; sourceTree = "<group>"; };
 		05B779DB2B2956EF00D4C8EB /* SwiftUISupportCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISupportCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,8 +160,11 @@
 				0547B1562B3BDDDE002B7D6C /* HiFPTCoreSDK in Frameworks */,
 				0547B1532B3BD9A4002B7D6C /* HiThemes in Frameworks */,
 				0547B15F2B3BE422002B7D6C /* HiFPTCoreSDK in Frameworks */,
+				059B8C382B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic in Frameworks */,
 				0547B1622B3BE50C002B7D6C /* HiFPTCoreSDK in Frameworks */,
+				059B8C3A2B3D4FEB0087DCEC /* SwiftUIIntrospect-Static in Frameworks */,
 				0547B1592B3BDDFD002B7D6C /* HiThemes in Frameworks */,
+				059B8C362B3D4FEB0087DCEC /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +244,7 @@
 		0540F5A32B2C41E100E9A1D5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0547B1672B3C12E4002B7D6C /* Contract */,
 				0547B1102B3A6E01002B7D6C /* RequestList */,
 				051225CC2B312BB900FB1DEF /* SupportSchedule */,
 				051225C12B30487A00FB1DEF /* MoreQandA */,
@@ -286,6 +301,14 @@
 				0547B14A2B3BCD77002B7D6C /* HiLoading.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		0547B1672B3C12E4002B7D6C /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				0547B1652B3C12D5002B7D6C /* SelectContract.swift */,
+			);
+			path = Contract;
 			sourceTree = "<group>";
 		};
 		0597324D2B2BF92200F79E25 /* RequestDetail */ = {
@@ -389,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				05B779F52B29590200D4C8EB /* HiAppExtension.swift */,
+				059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */,
 			);
 			path = HiExtensions;
 			sourceTree = "<group>";
@@ -396,6 +420,7 @@
 		05B779FD2B295BF500D4C8EB /* SupportCenter */ = {
 			isa = PBXGroup;
 			children = (
+				059B8C302B3D30710087DCEC /* BottomSheet.swift */,
 				05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */,
 				05B779FF2B295C4500D4C8EB /* ViewModels */,
 				0540F5A32B2C41E100E9A1D5 /* Screens */,
@@ -488,6 +513,7 @@
 				05B77A652B2B003500D4C8EB /* CustomTextView.swift */,
 				05B77A312B29AD9300D4C8EB /* BlockNavHeader.swift */,
 				059732522B2BFE1E00F79E25 /* BlockTitle.swift */,
+				0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -544,6 +570,9 @@
 				0547B15B2B3BDFD9002B7D6C /* HiFPTCoreSDK */,
 				0547B15E2B3BE422002B7D6C /* HiFPTCoreSDK */,
 				0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */,
+				059B8C352B3D4FEB0087DCEC /* SwiftUIIntrospect */,
+				059B8C372B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic */,
+				059B8C392B3D4FEB0087DCEC /* SwiftUIIntrospect-Static */,
 			);
 			productName = SwiftUISupportCenter;
 			productReference = 05B779DB2B2956EF00D4C8EB /* SwiftUISupportCenter.app */;
@@ -575,6 +604,7 @@
 			mainGroup = 05B779D22B2956EF00D4C8EB;
 			packageReferences = (
 				0547B1602B3BE50C002B7D6C /* XCLocalSwiftPackageReference "../Hi FPT/core-hi-fpt-HiCore_v3.4_SwiftUI" */,
+				059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = 05B779DC2B2956EF00D4C8EB /* Products */;
 			projectDirPath = "";
@@ -630,6 +660,7 @@
 				05B77A282B29922D00D4C8EB /* SampleData.swift in Sources */,
 				05B779DF2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift in Sources */,
 				05B77A162B295D3C00D4C8EB /* HiBottomSheet.swift in Sources */,
+				059B8C332B3D30F40087DCEC /* ResponsiveSheetWrapper.swift in Sources */,
 				05B77A642B2AFFC600D4C8EB /* HiPrimaryButton.swift in Sources */,
 				051225B82B2EF80600FB1DEF /* HiAlert.swift in Sources */,
 				05B77A1E2B29628400D4C8EB /* CreateSupportRequestView.swift in Sources */,
@@ -652,11 +683,14 @@
 				05B77A172B295D3C00D4C8EB /* HiNavigationLink.swift in Sources */,
 				05B77A1B2B295D3C00D4C8EB /* HiImage.swift in Sources */,
 				05B77A4D2B2AA4A500D4C8EB /* SupportQandAView.swift in Sources */,
+				0547B16B2B3C318B002B7D6C /* TextWithContainerView.swift in Sources */,
 				05B77A572B2ADA5900D4C8EB /* QAndASupportItemViewModel.swift in Sources */,
 				0540F5A02B2C034100E9A1D5 /* RequestProcessWithVLineView.swift in Sources */,
 				05B1390D2B33CD02001633C5 /* DateTimeAllowDataService.swift in Sources */,
 				05B77A5E2B2AFD9200D4C8EB /* BlockWithActionView.swift in Sources */,
 				05B779FC2B295BEB00D4C8EB /* SupportCenterScreen.swift in Sources */,
+				059B8C312B3D30710087DCEC /* BottomSheet.swift in Sources */,
+				0547B1662B3C12D5002B7D6C /* SelectContract.swift in Sources */,
 				05B77A5D2B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift in Sources */,
 				05B77A192B295D3C00D4C8EB /* HiNavigationView.swift in Sources */,
 			);
@@ -880,6 +914,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		0547B14E2B3BD4FC002B7D6C /* HiThemes */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -908,6 +953,21 @@
 		0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HiFPTCoreSDK;
+		};
+		059B8C352B3D4FEB0087DCEC /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
+		059B8C372B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Dynamic";
+		};
+		059B8C392B3D4FEB0087DCEC /* SwiftUIIntrospect-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Static";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

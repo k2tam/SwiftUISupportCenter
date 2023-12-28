@@ -26,7 +26,7 @@ struct CreateSupportRequestScreen: View {
                     createButton
                     
                 }
-                .hiNavigationTitle("Tạo yêu cầu hỗ trợ")
+                .hiNavigationTitle("Yêu cầu hỗ trợ")
 
     
             }
@@ -51,7 +51,7 @@ extension CreateSupportRequestScreen {
     private var NavigationLinks: some View {
         Group {
             NavigationLink(tag: eNavTag.toSupportScheduleScreen, selection: $navTag, destination: {
-//                SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel)
+
                 SupportScheduleScreen(dateTimeAllowModel: vm.dateTimeAllowModel) { date, time in
                     vm.didGetDateAndTimeSupport(date: date.string(), time: time)
                 }
@@ -60,49 +60,38 @@ extension CreateSupportRequestScreen {
     }
     
     private var ContractNoView: some View {
-        HStack(alignment: .top){
-            HiImage(string: "ic_contract")
-                .frame(width: 19, height: 24)
-                .padding(.trailing, 8)
+        VStack(alignment: .leading, spacing: 0){
+            BlockTitle(icon: "ic_contract", title: "Thông tin hợp đồng")
+           
+            HiDividerLine()
+            .padding(.vertical, 16)
+                
             
-            VStack(alignment: .leading){
-                Text("Số hợp đồng")
-                    .fontWeight(.medium)
-                    .font(Font.system(size: 16))
-                    .padding(.bottom, 4)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("SGFDN2201")
+                    .font(Font.system(size: 14, weight: .medium))
+                        .padding(.bottom, 8)
+                    
+                    
+                    Text("******, Khương Thượng, Đống Đa, Hà Nội")
+                        .fixedSize(horizontal: false, vertical: true)
+                        .font(Font.system(size: 14))
+                        .foregroundColor(Color(hex: "#888888"))
+                }
                 
-                Text("SGFDN2201")
-                    .font(Font.system(size: 14))
-                    .padding(.bottom, 8)
+                Spacer()
                 
-                //                ScrollView{
-                //                    HStack{
-                //                        ForEach(vm.contractTags, id: \.self) { tag in
-                //                            ContractTagView(text: tag)
-                //                        }
-                //                    }
-                //                }
-                //                .padding(.bottom, 16)
-                
-                Text("138A/28/22 Nguyễn Trãi, Phường 3, Quận 5, TP. Hồ Chí Minh")
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(Font.system(size: 14))
-                    .foregroundColor(Color(hex: "#888888"))
-                
-            }
-            
-            Spacer()
-            
-            VStack{
                 Image(systemName: "chevron.right")
                     .frame(width: 24, height: 24)
             }
-            .frame(maxHeight: .infinity, alignment: .center)
+            .frame(maxHeight: .infinity)
             
             
-        }
+        }        
         .padding(.all, 16)
         .background(Color.white)
+        .cornerRadius(8)
         .frame(maxWidth: .infinity)
         
     }
@@ -111,7 +100,7 @@ extension CreateSupportRequestScreen {
         ZStack{
             Color.white
             
-            PrimaryButton(btnText: "Tạo yêu cầu") {
+            PrimaryButton(btnText: "Tiếp tục") {
                 vm.submitSupportRequest()
             }
             .padding(.init(top: 16, leading: 16, bottom: 32, trailing: 16))
@@ -124,20 +113,29 @@ extension CreateSupportRequestScreen {
     
     
     private var createSupportContent: some View {
-        ScrollView {
-            VStack(spacing: 8){
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 16){
                 ContractNoView
-                    .padding(.top, 8)
+                    .padding(.top, 16)
                 
-                
-                BlockWithActionView(icon: "ic_status_grid", title: "Tình trạng", selectionText: "Không truy cập được Internet", systemSelectionIcon: "chevron.down") {
+                //MARK: - State block
+                BlockWithActionView(
+                    icon: "ic_state",
+                    title: "Tình trạng",
+                    subTitle: "Tình trạng",
+                    selectionText: "Không truy cập được Internet",
+                    selectionIcon: "ic_fill_arrow_down"
+                )
+                {
                     self.isCardShow.toggle()
                 }
                 
                 
+                //MARK: - Time schedule block
                 BlockWithActionView(
-                    icon: "ic_calendar",
+                    icon: "ic_clock",
                     title: "Thời gian đặt lịch hẹn ",
+                    subTitle: "Thời gian đặt hẹn",
                     selectionText: "\(self.vm.calendarLabelText)",
                     selectionIcon: "ic_black_calendar"){
                     self.navTag = .toSupportScheduleScreen
@@ -152,15 +150,17 @@ extension CreateSupportRequestScreen {
                         .frame(minHeight: 144)
                 }
             }
+            .padding(.horizontal, 16)
         }
+        
         
     }
     
     private var NoteView: some View {
-        VStack( alignment: .leading, spacing: 8){
+        VStack( alignment: .leading, spacing: 16){
             BlockTitle(icon: "ic_note", title: "Ghi chú")
 
-            TextField("", text: $vm.note)
+            TextField("Nhập ghi chú", text: $vm.note)
                 .frame(maxWidth: .infinity, minHeight: 80,alignment: .top)
                 .padding(.vertical, 12)
                 .padding(.horizontal, 14)
@@ -175,19 +175,28 @@ extension CreateSupportRequestScreen {
         }
         .padding(.all, 16)
         .background(Color.white)
+        .cornerRadius(8)
     }
     
     private var ContactInfoView: some View {
-        VStack(alignment: .leading, spacing: 8){
-            BlockTitle(icon: "ic_phone_book", title: "Thông tin liên hệ")
+        VStack(alignment: .leading){
+            BlockTitle(icon: "ic_contact", title: "Thông tin liên hệ")
             
-            ContactTextFieldView(title: "Họ tên", tfText: $vm.fullName, keyboardType: .alphabet, vm: vm)
-            ContactTextFieldView(title: "Số điện thoại liên hệ", tfText: $vm.phoneNumber, keyboardType: .phonePad, vm: vm)
+            HiDividerLine()
+                .padding(.vertical, 16)
             
+            ContractFieldInfoView(title: "Người liên hệ", content: "Nguyễn Quỳnh Anh")
+            
+            HiDividerLine()
+                .padding(.vertical, 16)
+            
+            ContractFieldInfoView(title: "Số điện thoại liên hệ", content: "023523789")
+                    
             
         }
         .padding(.all, 16)
         .background(Color.white)
+        .cornerRadius(8)
         
         
     }
@@ -202,6 +211,21 @@ extension CreateSupportRequestScreen {
         }
     }
     
+    struct ContractFieldInfoView: View {
+        let title: String
+        let content: String
+        
+        var body: some View {
+            VStack(alignment: .leading){
+                Text(title)
+                    .font(.system(size: 16))
+                    .foregroundColor(Color.hiSecondaryText)
+                
+                Text(content)
+                    .font(.system(size: 16, weight: .medium))
+            }
+        }
+    }
     
     struct ContactTextFieldView: View {
         let title: String

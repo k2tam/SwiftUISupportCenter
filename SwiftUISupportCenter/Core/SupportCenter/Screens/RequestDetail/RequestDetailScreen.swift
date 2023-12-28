@@ -31,7 +31,6 @@ struct RequestDetailScreen: View {
                             self.navTag = .toRequestStatusTimeLineScreen
                         }
                             
-                        
                         //MARK: - Contract info block
                         //TODO: find address
                         ContractInfoView(contractNo: supportRequest.contractNo, address: "")

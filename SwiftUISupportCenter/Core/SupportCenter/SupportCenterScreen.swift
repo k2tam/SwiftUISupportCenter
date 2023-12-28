@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftUIBackports
+import HiThemes
 
 struct SupportCenterScreen: View {
     @EnvironmentObject var navManager : NavigationTagManager

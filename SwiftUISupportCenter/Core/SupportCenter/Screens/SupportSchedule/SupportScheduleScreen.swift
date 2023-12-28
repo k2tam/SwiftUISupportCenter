@@ -86,13 +86,9 @@ extension SupportScheduleScreen {
                         VStack(spacing: 16){
                             ForEach(vm.listTime){timeSlotModel in
                                 HourScheduleLine(vm: self.vm, timeSupports: timeSlotModel.supportTime)
-                                
                             }
                         }
-                    }
-                    
-                    
-                    
+                    }                    
                 }
             }
             .frame(height: 248)

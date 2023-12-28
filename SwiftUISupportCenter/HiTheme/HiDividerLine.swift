@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct HiDividerLine: View {
-    let hexColor: String
+    let hexColor: String?
     
-    init(hexColor: String = "#CAD3E2"){
+    init(hexColor: String? = nil){
         self.hexColor = hexColor
     }
     
     var body: some View {
         Rectangle()
-            .foregroundColor(Color(hex: hexColor))
+            .foregroundColor(hexColor == nil ? Color.strokeLight : Color(hex: hexColor!))
             .frame(maxWidth: .infinity,maxHeight: 1)
     }
 }

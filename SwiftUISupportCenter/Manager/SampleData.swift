@@ -231,7 +231,7 @@ struct SupportExtensionsSampleData {
              },
              "nameColor" : "#333333",
              "backgroundColor" : "#FFFFFF",
-             "name" : "Điểm giao dịch gần nhà",
+             "name" : "Điểm giao dịch",
              "borderWidth" : null,
              "opacity" : 0.080000000000000002,
              "keyTracking" : "Home/Support/Chat",

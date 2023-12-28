@@ -11,24 +11,32 @@ import SwiftUI
 struct BlockWithActionView : View{
     let icon: String
     let title: String
+    let subTitle: String
     let selectionText: String
-    let selectionIcon: String?
-    let systemSelectionIcon: String?
+    let selectionIcon: String
     let action: (() -> Void)
     
     
-    init(icon: String, title: String, selectionText: String, selectionIcon: String? = nil, systemSelectionIcon: String? = nil, action: @escaping () -> Void) {
+    init(icon: String, title: String, subTitle: String,selectionText: String, selectionIcon: String, action: @escaping () -> Void) {
         self.icon = icon
         self.title = title
+        self.subTitle = subTitle
         self.selectionText = selectionText
         self.selectionIcon = selectionIcon
-        self.systemSelectionIcon = systemSelectionIcon
         self.action = action
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8){
+        VStack(alignment: .leading, spacing: 0){
             BlockTitle(icon: self.icon, title: self.title)
+            
+            HiDividerLine()
+                .padding(.vertical, 16)
+            
+            Text(subTitle)
+                .font(.system(size: 16))
+                .foregroundColor(Color.hiSecondaryText)
+                .padding(.bottom, 12)
             
             Button {
                 action()
@@ -38,23 +46,19 @@ struct BlockWithActionView : View{
                         .font(Font.system(size: 14))
                     Spacer()
                     
-                    if let selectionIcon = selectionIcon {
-                        HiImage(string: selectionIcon)
-                    }
-                    
-                    if systemSelectionIcon != nil {
-                        Image(systemName: "chevron.down")
-                            .frame(width: 24, height: 24)
-                    }
-                    
+              
+                    HiImage(string: selectionIcon)
+                        .frame(width: 24, height: 24)
+                
+      
                     
                     
                 }
                 .padding(.vertical, 12)
                 .padding(.horizontal, 14)
                 .background(
-                    Color(hex: "#4A6187", alpha: 0.08)
-                        .cornerRadius(8)
+                   RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.strokePrimary, lineWidth: 1)
                 )
                 .foregroundColor(Color.black)
                 
@@ -65,6 +69,7 @@ struct BlockWithActionView : View{
         }
         .padding(.all, 16)
         .background(Color.white)
+        .cornerRadius(8)
         
         
         
@@ -74,3 +79,8 @@ struct BlockWithActionView : View{
 }
 
 
+#Preview {
+    BlockWithActionView(icon: "ic_state", title: "Tình trạng", subTitle: "Tình trạng", selectionText: "Mạng Wifi không ổn định", selectionIcon: "ic_fill_arrow_down") {
+        
+    }
+}

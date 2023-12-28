@@ -56,6 +56,7 @@ struct RequestCategory: View {
                 
         }
         .frame(maxWidth: .infinity)
+        .frame(height: 84)
         .padding(.vertical, 8)
         .background(Color.white.cornerRadius(8))
     }

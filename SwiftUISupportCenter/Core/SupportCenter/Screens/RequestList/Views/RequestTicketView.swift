@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HiThemes
 
 enum eRequestTicketItem {
     case contractItem
@@ -21,7 +22,7 @@ struct RequestTicketView: View {
     var body: some View {
         VStack(spacing: 0){
             ForEach(Array(ticketItems.enumerated()), id: \.element){ index, item in
-                VStack {
+                VStack(spacing: 0) {
                     switch item {
                     case .contractItem:
                         ContractRow()
@@ -130,7 +131,7 @@ struct StateRow: View {
                     .padding(.horizontal, 8)
                     .padding(.vertical, 2)
                     .foregroundColor(Color.hiPrimary)
-                    .background(Color.hiSecondaryText)
+                    .background(Color.hiBlueContainer)
                     .cornerRadius(4)
                 
             }
