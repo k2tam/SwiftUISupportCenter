@@ -80,12 +80,12 @@ fileprivate struct ResponsiveSheetContent: ViewModifier {
             content
                 .padding(.bottom, safeAreaInsets.bottom)
                 .background(Color(UIColor.systemBackground))
-                .cornerRadius(10, corners: [.topLeft, .topRight])
+                .clipShape(RoundedCorner(radius: 10, corners: [.topLeft, .topRight]))
         } else {
             content
                 .padding()
                 .background(Color(UIColor.systemBackground))
-                .cornerRadius(10, corners: [.allCorners])
+                .clipShape(RoundedCorner(radius: 10, corners: [.topLeft, .topRight]))
         }
     }
 }

@@ -34,14 +34,14 @@
 		0547B1642B3C03D7002B7D6C /* ReportInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B1632B3C03D7002B7D6C /* ReportInfoModel.swift */; };
 		0547B1662B3C12D5002B7D6C /* SelectContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B1652B3C12D5002B7D6C /* SelectContract.swift */; };
 		0547B16B2B3C318B002B7D6C /* TextWithContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */; };
+		055E35532B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35522B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift */; };
+		055E35562B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35552B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift */; };
 		058674172B34296D00B88A05 /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058674162B34296D00B88A05 /* HourCell.swift */; };
 		0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */; };
 		059732532B2BFE1E00F79E25 /* BlockTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059732522B2BFE1E00F79E25 /* BlockTitle.swift */; };
-		059B8C312B3D30710087DCEC /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C302B3D30710087DCEC /* BottomSheet.swift */; };
+		059B8C312B3D30710087DCEC /* HiSupportBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C302B3D30710087DCEC /* HiSupportBottomSheet.swift */; };
 		059B8C332B3D30F40087DCEC /* ResponsiveSheetWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */; };
-		059B8C362B3D4FEB0087DCEC /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 059B8C352B3D4FEB0087DCEC /* SwiftUIIntrospect */; };
-		059B8C382B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 059B8C372B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic */; };
-		059B8C3A2B3D4FEB0087DCEC /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 059B8C392B3D4FEB0087DCEC /* SwiftUIIntrospect-Static */; };
+		059B8C3C2B3E5D6A0087DCEC /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C3B2B3E5D6A0087DCEC /* Playground.swift */; };
 		05B1390A2B33CBCE001633C5 /* SupportScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B139092B33CBCE001633C5 /* SupportScheduleViewModel.swift */; };
 		05B1390D2B33CD02001633C5 /* DateTimeAllowDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1390C2B33CD02001633C5 /* DateTimeAllowDataService.swift */; };
 		05B779DF2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B779DE2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift */; };
@@ -103,11 +103,14 @@
 		0547B1632B3C03D7002B7D6C /* ReportInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportInfoModel.swift; sourceTree = "<group>"; };
 		0547B1652B3C12D5002B7D6C /* SelectContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContract.swift; sourceTree = "<group>"; };
 		0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithContainerView.swift; sourceTree = "<group>"; };
+		055E35522B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiSupportBottomSheetViewModel.swift; sourceTree = "<group>"; };
+		055E35552B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiSupportBottomSheetContent.swift; sourceTree = "<group>"; };
 		058674162B34296D00B88A05 /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailScreen.swift; sourceTree = "<group>"; };
 		059732522B2BFE1E00F79E25 /* BlockTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTitle.swift; sourceTree = "<group>"; };
-		059B8C302B3D30710087DCEC /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		059B8C302B3D30710087DCEC /* HiSupportBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiSupportBottomSheet.swift; sourceTree = "<group>"; };
 		059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveSheetWrapper.swift; sourceTree = "<group>"; };
+		059B8C3B2B3E5D6A0087DCEC /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 		05B139092B33CBCE001633C5 /* SupportScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportScheduleViewModel.swift; sourceTree = "<group>"; };
 		05B1390C2B33CD02001633C5 /* DateTimeAllowDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeAllowDataService.swift; sourceTree = "<group>"; };
 		05B779DB2B2956EF00D4C8EB /* SwiftUISupportCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISupportCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,11 +163,8 @@
 				0547B1562B3BDDDE002B7D6C /* HiFPTCoreSDK in Frameworks */,
 				0547B1532B3BD9A4002B7D6C /* HiThemes in Frameworks */,
 				0547B15F2B3BE422002B7D6C /* HiFPTCoreSDK in Frameworks */,
-				059B8C382B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic in Frameworks */,
 				0547B1622B3BE50C002B7D6C /* HiFPTCoreSDK in Frameworks */,
-				059B8C3A2B3D4FEB0087DCEC /* SwiftUIIntrospect-Static in Frameworks */,
 				0547B1592B3BDDFD002B7D6C /* HiThemes in Frameworks */,
-				059B8C362B3D4FEB0087DCEC /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +311,24 @@
 			path = Contract;
 			sourceTree = "<group>";
 		};
+		055E35512B3E7E5C00FAC071 /* HiSupportBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				059B8C302B3D30710087DCEC /* HiSupportBottomSheet.swift */,
+				055E35542B3E7F1E00FAC071 /* Views */,
+				055E35522B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift */,
+			);
+			path = HiSupportBottomSheet;
+			sourceTree = "<group>";
+		};
+		055E35542B3E7F1E00FAC071 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				055E35552B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0597324D2B2BF92200F79E25 /* RequestDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +409,7 @@
 		05B779F02B29575300D4C8EB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				059B8C3B2B3E5D6A0087DCEC /* Playground.swift */,
 				05B77A302B29AD8800D4C8EB /* Components */,
 				05B779FD2B295BF500D4C8EB /* SupportCenter */,
 			);
@@ -420,7 +439,6 @@
 		05B779FD2B295BF500D4C8EB /* SupportCenter */ = {
 			isa = PBXGroup;
 			children = (
-				059B8C302B3D30710087DCEC /* BottomSheet.swift */,
 				05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */,
 				05B779FF2B295C4500D4C8EB /* ViewModels */,
 				0540F5A32B2C41E100E9A1D5 /* Screens */,
@@ -509,6 +527,7 @@
 		05B77A302B29AD8800D4C8EB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				055E35512B3E7E5C00FAC071 /* HiSupportBottomSheet */,
 				051225DA2B32C53300FB1DEF /* Calendar */,
 				05B77A652B2B003500D4C8EB /* CustomTextView.swift */,
 				05B77A312B29AD9300D4C8EB /* BlockNavHeader.swift */,
@@ -570,9 +589,6 @@
 				0547B15B2B3BDFD9002B7D6C /* HiFPTCoreSDK */,
 				0547B15E2B3BE422002B7D6C /* HiFPTCoreSDK */,
 				0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */,
-				059B8C352B3D4FEB0087DCEC /* SwiftUIIntrospect */,
-				059B8C372B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic */,
-				059B8C392B3D4FEB0087DCEC /* SwiftUIIntrospect-Static */,
 			);
 			productName = SwiftUISupportCenter;
 			productReference = 05B779DB2B2956EF00D4C8EB /* SwiftUISupportCenter.app */;
@@ -604,7 +620,6 @@
 			mainGroup = 05B779D22B2956EF00D4C8EB;
 			packageReferences = (
 				0547B1602B3BE50C002B7D6C /* XCLocalSwiftPackageReference "../Hi FPT/core-hi-fpt-HiCore_v3.4_SwiftUI" */,
-				059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = 05B779DC2B2956EF00D4C8EB /* Products */;
 			projectDirPath = "";
@@ -669,6 +684,7 @@
 				05B77A622B2AFF3D00D4C8EB /* CreateSupportRequestViewModel.swift in Sources */,
 				05B77A2F2B29958D00D4C8EB /* SupportRequestListView.swift in Sources */,
 				051225DD2B32DDC200FB1DEF /* CalendarDateModel.swift in Sources */,
+				055E35532B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift in Sources */,
 				05B77A552B2AC1F700D4C8EB /* TextView.swift in Sources */,
 				05B77A342B29B1CB00D4C8EB /* HiDividerLine.swift in Sources */,
 				0540F5A22B2C0D6000E9A1D5 /* RequestStatusView.swift in Sources */,
@@ -678,6 +694,7 @@
 				0547B1152B3A8021002B7D6C /* RequestTicketView.swift in Sources */,
 				05B77A3E2B29F2B300D4C8EB /* SupportExtensionsView.swift in Sources */,
 				0547B14B2B3BCD77002B7D6C /* HiLoading.swift in Sources */,
+				055E35562B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift in Sources */,
 				05B77A362B29B20100D4C8EB /* SupportRequestItemView.swift in Sources */,
 				05B77A402B29F3E300D4C8EB /* SupportRequestCategory.swift in Sources */,
 				05B77A172B295D3C00D4C8EB /* HiNavigationLink.swift in Sources */,
@@ -689,9 +706,10 @@
 				05B1390D2B33CD02001633C5 /* DateTimeAllowDataService.swift in Sources */,
 				05B77A5E2B2AFD9200D4C8EB /* BlockWithActionView.swift in Sources */,
 				05B779FC2B295BEB00D4C8EB /* SupportCenterScreen.swift in Sources */,
-				059B8C312B3D30710087DCEC /* BottomSheet.swift in Sources */,
+				059B8C312B3D30710087DCEC /* HiSupportBottomSheet.swift in Sources */,
 				0547B1662B3C12D5002B7D6C /* SelectContract.swift in Sources */,
 				05B77A5D2B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift in Sources */,
+				059B8C3C2B3E5D6A0087DCEC /* Playground.swift in Sources */,
 				05B77A192B295D3C00D4C8EB /* HiNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -914,17 +932,6 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/swiftui-introspect.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		0547B14E2B3BD4FC002B7D6C /* HiThemes */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -953,21 +960,6 @@
 		0547B1612B3BE50C002B7D6C /* HiFPTCoreSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HiFPTCoreSDK;
-		};
-		059B8C352B3D4FEB0087DCEC /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = SwiftUIIntrospect;
-		};
-		059B8C372B3D4FEB0087DCEC /* SwiftUIIntrospect-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = "SwiftUIIntrospect-Dynamic";
-		};
-		059B8C392B3D4FEB0087DCEC /* SwiftUIIntrospect-Static */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 059B8C342B3D4FEB0087DCEC /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = "SwiftUIIntrospect-Static";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

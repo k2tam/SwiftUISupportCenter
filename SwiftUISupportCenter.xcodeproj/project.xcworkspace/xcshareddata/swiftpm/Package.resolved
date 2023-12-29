@@ -91,15 +91,6 @@
       }
     },
     {
-      "identity" : "swiftui-introspect",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/siteline/swiftui-introspect.git",
-      "state" : {
-        "revision" : "9e1cc02a65b22e09a8251261cccbccce02731fc5",
-        "version" : "1.1.1"
-      }
-    },
-    {
       "identity" : "swiftuibackports",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/shaps80/SwiftUIBackports.git",

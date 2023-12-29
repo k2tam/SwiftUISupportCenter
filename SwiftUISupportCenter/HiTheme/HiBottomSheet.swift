@@ -60,10 +60,12 @@ struct HiBottomSheet<Content: View>: View {
                     
                 }
                 .frame(width: UIScreen.main.bounds.width, height: height)
+                .padding(.bottom, 10)
                 .background(Color.white)
-                .cornerRadius(self.cornerRadius, corners: [.topLeft,.topRight])
+                
+//                .cornerRadius(self.cornerRadius, corners: [.topLeft,.topRight])
                 .offset(y: isCardShow ? 0 : height)
-                .animation(.spring(response: 0.25, dampingFraction: 0.7))
+                .animation(.spring(response: 0.25, dampingFraction: 0.65))
                 .offset(y: max(dragOffset.height,0))
                 .animation(.default.delay(0))
                 .gesture(

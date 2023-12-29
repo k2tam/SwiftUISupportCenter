@@ -30,6 +30,7 @@ struct HiLoading: ViewModifier {
         }
 }
 
+
 extension View {
     func hiLoading(showLoading: Bool) -> some View {
         self
