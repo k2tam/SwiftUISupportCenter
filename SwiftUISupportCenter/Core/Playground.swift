@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftBackports
 
 struct Playground: View {
+    
     @State  var isShow: Bool = false
     var body: some View {
         ZStack {
@@ -17,7 +19,7 @@ struct Playground: View {
                 Text("Toggle")
             })
             
-            HiSupportBottomSheet(isShow: $isShow, heightOfEachItem: 56)
+            HiSupportBottomSheet(isShow: $isShow, heightOfEachItem: 56, showServicesBar: true)
         }
     }
 }

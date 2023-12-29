@@ -36,6 +36,9 @@
 		0547B16B2B3C318B002B7D6C /* TextWithContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */; };
 		055E35532B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35522B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift */; };
 		055E35562B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35552B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift */; };
+		055E35582B3EADAF00FAC071 /* ProblemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35572B3EADAF00FAC071 /* ProblemsListView.swift */; };
+		055E355A2B3EB15500FAC071 /* SupportServicesBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35592B3EB15500FAC071 /* SupportServicesBar.swift */; };
+		055E355C2B3EB65000FAC071 /* SupBottomSheetSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E355B2B3EB65000FAC071 /* SupBottomSheetSampleData.swift */; };
 		058674172B34296D00B88A05 /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058674162B34296D00B88A05 /* HourCell.swift */; };
 		0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */; };
 		059732532B2BFE1E00F79E25 /* BlockTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059732522B2BFE1E00F79E25 /* BlockTitle.swift */; };
@@ -105,6 +108,9 @@
 		0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithContainerView.swift; sourceTree = "<group>"; };
 		055E35522B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiSupportBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		055E35552B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiSupportBottomSheetContent.swift; sourceTree = "<group>"; };
+		055E35572B3EADAF00FAC071 /* ProblemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsListView.swift; sourceTree = "<group>"; };
+		055E35592B3EB15500FAC071 /* SupportServicesBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportServicesBar.swift; sourceTree = "<group>"; };
+		055E355B2B3EB65000FAC071 /* SupBottomSheetSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupBottomSheetSampleData.swift; sourceTree = "<group>"; };
 		058674162B34296D00B88A05 /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailScreen.swift; sourceTree = "<group>"; };
 		059732522B2BFE1E00F79E25 /* BlockTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTitle.swift; sourceTree = "<group>"; };
@@ -315,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				059B8C302B3D30710087DCEC /* HiSupportBottomSheet.swift */,
+				055E355B2B3EB65000FAC071 /* SupBottomSheetSampleData.swift */,
 				055E35542B3E7F1E00FAC071 /* Views */,
 				055E35522B3E7E8200FAC071 /* HiSupportBottomSheetViewModel.swift */,
 			);
@@ -324,7 +331,9 @@
 		055E35542B3E7F1E00FAC071 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				055E35592B3EB15500FAC071 /* SupportServicesBar.swift */,
 				055E35552B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift */,
+				055E35572B3EADAF00FAC071 /* ProblemsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -670,6 +679,7 @@
 				05B77A422B29F42700D4C8EB /* SupportExtension.swift in Sources */,
 				05B77A222B296BF700D4C8EB /* SupportCenterViewModel.swift in Sources */,
 				0547B1122B3A6E36002B7D6C /* RequestListScreen.swift in Sources */,
+				055E355A2B3EB15500FAC071 /* SupportServicesBar.swift in Sources */,
 				05B77A662B2B003600D4C8EB /* CustomTextView.swift in Sources */,
 				05B77A322B29AD9300D4C8EB /* BlockNavHeader.swift in Sources */,
 				05B77A282B29922D00D4C8EB /* SampleData.swift in Sources */,
@@ -692,6 +702,8 @@
 				051225C62B3048A700FB1DEF /* MoreQandAViewModel.swift in Sources */,
 				05B779EF2B29575100D4C8EB /* SceneDelegate.swift in Sources */,
 				0547B1152B3A8021002B7D6C /* RequestTicketView.swift in Sources */,
+				055E355C2B3EB65000FAC071 /* SupBottomSheetSampleData.swift in Sources */,
+				055E35582B3EADAF00FAC071 /* ProblemsListView.swift in Sources */,
 				05B77A3E2B29F2B300D4C8EB /* SupportExtensionsView.swift in Sources */,
 				0547B14B2B3BCD77002B7D6C /* HiLoading.swift in Sources */,
 				055E35562B3E7F3E00FAC071 /* HiSupportBottomSheetContent.swift in Sources */,

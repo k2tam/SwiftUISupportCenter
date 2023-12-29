@@ -8,66 +8,75 @@
 import Foundation
 import Combine
 
-struct SelectionModel {
-    var id: Int
-    let title: String
-    var isSelected: Bool = false
+enum SupServiceType {
+    case internet
+    case tv
+    case camera
 }
 
-struct BottomSheetServices: Identifiable {
+struct SupProblem: Equatable, Identifiable {
+    var id: Int
+    let title: String
+    var supServiceType: SupServiceType
+
+    
+    static func == (lhs: SupProblem, rhs: SupProblem) -> Bool {
+        return lhs.id == rhs.id && lhs.supServiceType == rhs.supServiceType
+        }
+}
+
+struct BottomSheetSupportService: Identifiable, Equatable {
     var id: Int
     var title: String
-    var isSelected: Bool = false
+    var problems: [SupProblem]
+    
+    static func == (lhs: BottomSheetSupportService, rhs: BottomSheetSupportService) -> Bool {
+            return lhs.id == rhs.id
+        }
 }
 
 
 class HiSupportBottomSheetViewModel: ObservableObject {
-    @Published var currentSelections: [SelectionModel] = []
-    @Published var selectedId: Int = 5
+    @Published var currentProblems: [SupProblem] = []
+    @Published var selectedProblem: SupProblem? = nil
     
-    @Published var selectedServiceId: Int? = nil
-    @Published var services: [BottomSheetServices] = []
-////        didSet {
-////            if !services.isEmpty && selectedId{
-////                selectedId = services.
-////            }
-////        }
-//    }
+    @Published var selectedService: BottomSheetSupportService? = nil {
+        didSet {
+            currentProblems = selectedService?.problems ?? []
+        }
+    }
+    
+    
+    @Published var services: [BottomSheetSupportService] = [] {
+        didSet {
+            if !services.isEmpty && selectedService == nil{
+                selectedService = services.first
+            }
+        }
+    }
+       
     
     private var cancelables = Set<AnyCancellable>()
     
     
     init() {
-        self.currentSelections = [
-            SelectionModel(id: 0, title: "Nâng cấp dịch vụ"),
-            SelectionModel(id: 1, title: "Chuyển địa điểm dịch vụ"),
-            SelectionModel(id: 2, title: "Khôi phục dịch vụ"),
-            SelectionModel(id: 3, title: "Tạm dừng / ngưng dịch vụ"),
-            SelectionModel(id: 4, title: "Không truy cập được"),
-            SelectionModel(id: 5, title: "Khác"),
-            
-        ]
-        
-        self.services = [
-            BottomSheetServices(id: 1,title: "Internet"),
-            BottomSheetServices(id: 2,title: "Truyền hình"),
-            BottomSheetServices(id: 3, title: "Camera"),
-            BottomSheetServices(id: 4, title: "Thiết bị"),
-        ]
+        self.services = SupBottomSheetSampleData.supportServices
         
         
-        
+
         addSelectedIdSubscriber()
     }
     
     private func addSelectedIdSubscriber() {
-        $selectedId
-            .sink { selectedId in
-                self.currentSelections =  self.currentSelections.map { selectionModel in
-                    if selectionModel.id == selectedId {
-                        return SelectionModel(id: selectionModel.id, title: selectionModel.title, isSelected: true)
+        $selectedProblem
+            .sink {[weak self]  selectedId in
+                guard let self else {return}
+                
+                self.currentProblems =  self.currentProblems.map { problem in
+                    if problem == self.selectedProblem {
+                        return SupProblem(id: problem.id, title: problem.title, supServiceType: problem.supServiceType)
                     }else {
-                        return SelectionModel(id: selectionModel.id, title: selectionModel.title, isSelected: false)
+                        return SupProblem(id: problem.id, title: problem.title, supServiceType: problem.supServiceType)
                     }
                     
                 }
