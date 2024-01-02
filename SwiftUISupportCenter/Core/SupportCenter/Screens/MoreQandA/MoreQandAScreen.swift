@@ -66,16 +66,8 @@ struct MoreQandAScreen: View {
                         }
                        
                     }
-                    
-                        
-                    
-                   
-                    
-                    
                 }
-                
-                
-                
+
             }
             .hiNavigationTitle("Câu hỏi thường gặp")
         }

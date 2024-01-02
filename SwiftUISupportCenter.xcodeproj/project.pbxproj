@@ -43,7 +43,6 @@
 		0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */; };
 		059732532B2BFE1E00F79E25 /* BlockTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059732522B2BFE1E00F79E25 /* BlockTitle.swift */; };
 		059B8C312B3D30710087DCEC /* HiSupportBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C302B3D30710087DCEC /* HiSupportBottomSheet.swift */; };
-		059B8C332B3D30F40087DCEC /* ResponsiveSheetWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */; };
 		059B8C3C2B3E5D6A0087DCEC /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B8C3B2B3E5D6A0087DCEC /* Playground.swift */; };
 		05B1390A2B33CBCE001633C5 /* SupportScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B139092B33CBCE001633C5 /* SupportScheduleViewModel.swift */; };
 		05B1390D2B33CD02001633C5 /* DateTimeAllowDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1390C2B33CD02001633C5 /* DateTimeAllowDataService.swift */; };
@@ -115,7 +114,6 @@
 		0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailScreen.swift; sourceTree = "<group>"; };
 		059732522B2BFE1E00F79E25 /* BlockTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTitle.swift; sourceTree = "<group>"; };
 		059B8C302B3D30710087DCEC /* HiSupportBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiSupportBottomSheet.swift; sourceTree = "<group>"; };
-		059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveSheetWrapper.swift; sourceTree = "<group>"; };
 		059B8C3B2B3E5D6A0087DCEC /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 		05B139092B33CBCE001633C5 /* SupportScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportScheduleViewModel.swift; sourceTree = "<group>"; };
 		05B1390C2B33CD02001633C5 /* DateTimeAllowDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeAllowDataService.swift; sourceTree = "<group>"; };
@@ -440,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				05B779F52B29590200D4C8EB /* HiAppExtension.swift */,
-				059B8C322B3D30F40087DCEC /* ResponsiveSheetWrapper.swift */,
 			);
 			path = HiExtensions;
 			sourceTree = "<group>";
@@ -685,7 +682,6 @@
 				05B77A282B29922D00D4C8EB /* SampleData.swift in Sources */,
 				05B779DF2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift in Sources */,
 				05B77A162B295D3C00D4C8EB /* HiBottomSheet.swift in Sources */,
-				059B8C332B3D30F40087DCEC /* ResponsiveSheetWrapper.swift in Sources */,
 				05B77A642B2AFFC600D4C8EB /* HiPrimaryButton.swift in Sources */,
 				051225B82B2EF80600FB1DEF /* HiAlert.swift in Sources */,
 				05B77A1E2B29628400D4C8EB /* CreateSupportRequestView.swift in Sources */,

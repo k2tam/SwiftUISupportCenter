@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftBackports
 
 struct HiSupportBottomSheetContent: View {
-    @EnvironmentObject private var vm: HiSupportBottomSheetViewModel
+    @EnvironmentObject var vm: HiSupportBottomSheetViewModel
     
 //    @ObservedObject var vm: HiSupportBottomSheetViewModel
     @Binding var isShowBottomSheet: Bool
@@ -35,6 +35,7 @@ struct HiSupportBottomSheetContent: View {
     let headerHeight: CGFloat = 88
     let paddingBottom: CGFloat = 40
     
+    var supServices: [BottomSheetSupportService] = []
     var showServicesBar: Bool
     var showTabBar: Bool
     
@@ -78,7 +79,31 @@ struct HiSupportBottomSheetContent: View {
             
             //MARK: - Services bar
             if showServicesBar {
-                SupportServicesBar(servicesBarHeight: self.servicesBarHeight, isShowBottomSheet: $isShowBottomSheet)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12){
+                        ForEach(vm.services) { service in
+                            Button {
+                                vm.selectedService = service
+                            } label: {
+                                Text(service.title)
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundColor(service == vm.selectedService ?  Color.hiPrimary : Color.hiSecondaryText)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .inset(by: 0.5)
+                                            .stroke(service == vm.selectedService ? Color.hiPrimary : Color.hiSecondaryText  , lineWidth: 1)
+                                    )
+                            }
+              
+                        }
+                    }
+                    .padding(.leading, 16)
+                    
+                }
+                .padding(.vertical, 16)
+                .frame(height: self.servicesBarHeight)
             }
             
             
@@ -100,9 +125,6 @@ struct HiSupportBottomSheetContent: View {
     }
     
 }
-
-
-
 
 //Functions
 extension HiSupportBottomSheetContent {
@@ -176,4 +198,6 @@ struct HiSupportBottomSheetContent_Previews: PreviewProvider{
     static var previews: some View {
         HiSupportBottomSheet(isShow: .constant(true), heightOfEachItem: 56, showServicesBar: true)
     }
+    
+    
 }

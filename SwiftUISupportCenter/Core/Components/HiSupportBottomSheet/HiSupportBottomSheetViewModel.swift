@@ -45,25 +45,30 @@ class HiSupportBottomSheetViewModel: ObservableObject {
             currentProblems = selectedService?.problems ?? []
         }
     }
-    
-    
+
     @Published var services: [BottomSheetSupportService] = [] {
         didSet {
+            //Auto select first service
             if !services.isEmpty && selectedService == nil{
                 selectedService = services.first
             }
         }
     }
-       
-    
+
     private var cancelables = Set<AnyCancellable>()
     
+    init(services: [BottomSheetSupportService]){
+        self.services = services
+        addSelectedIdSubscriber()
+    }
     
+    init(problems: [SupProblem]){
+        self.currentProblems = problems
+        addSelectedIdSubscriber()
+    }
+
     init() {
         self.services = SupBottomSheetSampleData.supportServices
-        
-        
-
         addSelectedIdSubscriber()
     }
     

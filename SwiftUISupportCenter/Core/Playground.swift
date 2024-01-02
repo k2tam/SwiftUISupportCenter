@@ -19,7 +19,13 @@ struct Playground: View {
                 Text("Toggle")
             })
             
-            HiSupportBottomSheet(isShow: $isShow, heightOfEachItem: 56, showServicesBar: true)
+//            HiSupportBottomSheet(isShow: $isShow, heightOfEachItem: 56, showServicesBar: true)
+            
+            HiSupportBottomSheet(isShow: $isShow
+                                 , heightOfEachItem: 56, supServices: SupBottomSheetSampleData.supportServices)
+            
+//            HiSupportBottomSheet(isShow: $isShow
+//                                 , heightOfEachItem: 56, supProblems: SupBottomSheetSampleData.tvProblems)
         }
     }
 }

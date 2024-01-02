@@ -19,8 +19,6 @@ struct SupportCenterScreen: View {
         vm.isLoadingQandAQuestionData
     }
     
-    
-    
     var body: some View {
         NavigationView {
             
