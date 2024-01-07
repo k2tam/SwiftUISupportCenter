@@ -95,6 +95,12 @@ extension SupportCenterScreen {
                 tag: eNavTag.toRequestListScreen,
                 selection: $navManager.navTag){}
             
+            NavigationLink(
+                destination: ProcedureScreen(),
+                tag: eNavTag.toProcedureRequestScreen,
+                selection: $navManager.navTag){}
+            
+            
         }
     }
 }

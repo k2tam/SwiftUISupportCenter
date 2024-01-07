@@ -49,6 +49,7 @@ struct HiSupportBottomSheet: View {
 
     }
     
+    //MARK: - Init for just problems
     init(isShow: Binding<Bool>,heightOfEachItem: CGFloat, supProblems: [SupProblem]) {
         self._isShowBottomSheet = isShow
         _vm = Backport.StateObject(wrappedValue: HiSupportBottomSheetViewModel(problems: supProblems))
@@ -57,12 +58,10 @@ struct HiSupportBottomSheet: View {
         
         self.showTabBar = false
         self.showServicesBar = false
-        
 
-        
     }
     
-    
+    //MARK: - Init for just services
     init(isShow: Binding<Bool>,heightOfEachItem: CGFloat, supServices: [BottomSheetSupportService]){
         self._isShowBottomSheet = isShow
         _vm = Backport.StateObject(wrappedValue: HiSupportBottomSheetViewModel(services: supServices))
@@ -71,13 +70,11 @@ struct HiSupportBottomSheet: View {
         
         self.showTabBar = false
         self.showServicesBar = true
-
         
+        
+ 
     }
-    
-    
-    
-    
+
     var body: some View{
         ZStack(alignment: .bottom){
             //Dimmed View
@@ -87,6 +84,8 @@ struct HiSupportBottomSheet: View {
                 .onTapGesture(perform: {
                     self.dismiss()
                 })
+            
+          
             
             //Bottom sheet content
             HiSupportBottomSheetContent(isShowBottomSheet: self.$isShowBottomSheet, maxHeight: self.maxHeight, heightOfEachItem: self.heightOfEachItem, showServicesBar: self.showServicesBar, showTabBar: self.showTabBar)

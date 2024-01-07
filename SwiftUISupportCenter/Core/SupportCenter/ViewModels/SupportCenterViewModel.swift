@@ -63,6 +63,7 @@ class SupportCenterViewModel: ObservableObject {
             NavigationTagManager.shared.navTag = .toSupportRequestScreen
             print("Hỗ trợ kỹ thuật")
         case .procedure:
+            NavigationTagManager.shared.navTag = .toProcedureRequestScreen
             print("Thủ tục")
         case .fee:
             print("Thủ tục cước phí")

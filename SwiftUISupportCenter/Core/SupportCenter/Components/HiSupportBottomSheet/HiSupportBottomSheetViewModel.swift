@@ -38,7 +38,11 @@ struct BottomSheetSupportService: Identifiable, Equatable {
 
 class HiSupportBottomSheetViewModel: ObservableObject {
     @Published var currentProblems: [SupProblem] = []
-    @Published var selectedProblem: SupProblem? = nil
+    @Published var selectedProblem: SupProblem? = nil {
+        didSet {
+            print(selectedProblem)
+        }
+    }
     
     @Published var selectedService: BottomSheetSupportService? = nil {
         didSet {
@@ -61,7 +65,7 @@ class HiSupportBottomSheetViewModel: ObservableObject {
         self.services = services
         addSelectedIdSubscriber()
     }
-    
+     
     init(problems: [SupProblem]){
         self.currentProblems = problems
         addSelectedIdSubscriber()
@@ -77,7 +81,7 @@ class HiSupportBottomSheetViewModel: ObservableObject {
             .sink {[weak self]  selectedId in
                 guard let self else {return}
                 
-                self.currentProblems =  self.currentProblems.map { problem in
+                 self.currentProblems.map { problem in
                     if problem == self.selectedProblem {
                         return SupProblem(id: problem.id, title: problem.title, supServiceType: problem.supServiceType)
                     }else {

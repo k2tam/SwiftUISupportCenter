@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let rootScreen = SupportScheduleScreen()
 //        let rootScreen = RequestDetailScreen()
 //        let rootScreen = SupportCenterScreen()
-//        let rootScreen = SwiftUISupportCenterApp()
-        let rootScreen = Playground()
+        let rootScreen = SwiftUISupportCenterApp()
+//        let rootScreen = Playground()
             
         
                 

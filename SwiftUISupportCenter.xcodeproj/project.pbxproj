@@ -39,6 +39,7 @@
 		055E35582B3EADAF00FAC071 /* ProblemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35572B3EADAF00FAC071 /* ProblemsListView.swift */; };
 		055E355A2B3EB15500FAC071 /* SupportServicesBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E35592B3EB15500FAC071 /* SupportServicesBar.swift */; };
 		055E355C2B3EB65000FAC071 /* SupBottomSheetSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E355B2B3EB65000FAC071 /* SupBottomSheetSampleData.swift */; };
+		055E355F2B4505E700FAC071 /* ProcedureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E355E2B4505E700FAC071 /* ProcedureScreen.swift */; };
 		058674172B34296D00B88A05 /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058674162B34296D00B88A05 /* HourCell.swift */; };
 		0597324F2B2BF95900F79E25 /* RequestDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */; };
 		059732532B2BFE1E00F79E25 /* BlockTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059732522B2BFE1E00F79E25 /* BlockTitle.swift */; };
@@ -110,6 +111,7 @@
 		055E35572B3EADAF00FAC071 /* ProblemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsListView.swift; sourceTree = "<group>"; };
 		055E35592B3EB15500FAC071 /* SupportServicesBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportServicesBar.swift; sourceTree = "<group>"; };
 		055E355B2B3EB65000FAC071 /* SupBottomSheetSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupBottomSheetSampleData.swift; sourceTree = "<group>"; };
+		055E355E2B4505E700FAC071 /* ProcedureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureScreen.swift; sourceTree = "<group>"; };
 		058674162B34296D00B88A05 /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailScreen.swift; sourceTree = "<group>"; };
 		059732522B2BFE1E00F79E25 /* BlockTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTitle.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		0540F5A32B2C41E100E9A1D5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				055E355D2B4505C900FAC071 /* Procedures */,
 				0547B1672B3C12E4002B7D6C /* Contract */,
 				0547B1102B3A6E01002B7D6C /* RequestList */,
 				051225CC2B312BB900FB1DEF /* SupportSchedule */,
@@ -336,6 +339,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		055E355D2B4505C900FAC071 /* Procedures */ = {
+			isa = PBXGroup;
+			children = (
+				055E355E2B4505E700FAC071 /* ProcedureScreen.swift */,
+			);
+			path = Procedures;
+			sourceTree = "<group>";
+		};
 		0597324D2B2BF92200F79E25 /* RequestDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				059B8C3B2B3E5D6A0087DCEC /* Playground.swift */,
-				05B77A302B29AD8800D4C8EB /* Components */,
 				05B779FD2B295BF500D4C8EB /* SupportCenter */,
 			);
 			path = Core;
@@ -445,6 +455,7 @@
 		05B779FD2B295BF500D4C8EB /* SupportCenter */ = {
 			isa = PBXGroup;
 			children = (
+				05B77A302B29AD8800D4C8EB /* Components */,
 				05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */,
 				05B779FF2B295C4500D4C8EB /* ViewModels */,
 				0540F5A32B2C41E100E9A1D5 /* Screens */,
@@ -711,6 +722,7 @@
 				0547B16B2B3C318B002B7D6C /* TextWithContainerView.swift in Sources */,
 				05B77A572B2ADA5900D4C8EB /* QAndASupportItemViewModel.swift in Sources */,
 				0540F5A02B2C034100E9A1D5 /* RequestProcessWithVLineView.swift in Sources */,
+				055E355F2B4505E700FAC071 /* ProcedureScreen.swift in Sources */,
 				05B1390D2B33CD02001633C5 /* DateTimeAllowDataService.swift in Sources */,
 				05B77A5E2B2AFD9200D4C8EB /* BlockWithActionView.swift in Sources */,
 				05B779FC2B295BEB00D4C8EB /* SupportCenterScreen.swift in Sources */,

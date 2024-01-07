@@ -14,6 +14,7 @@ enum eNavTag{
     case toSupportScheduleScreen
     case toSupportRequestScreen
     case toRequestListScreen
+    case toProcedureRequestScreen
 }
 
 
