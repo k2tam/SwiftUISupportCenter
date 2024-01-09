@@ -29,7 +29,7 @@ struct HiNavBarTitlePreferenceKey: PreferenceKey {
 
 }
 
-struct HiNavBarBackButtonHiddenPreferenceKey: PreferenceKey {
+struct HiNavBarButtonHiddenPreferenceKey: PreferenceKey {
     static var defaultValue: Bool = false
     
     static func reduce(value: inout Bool, nextValue: () -> Bool) {
@@ -37,7 +37,6 @@ struct HiNavBarBackButtonHiddenPreferenceKey: PreferenceKey {
     }
 
 }
-
 
 struct HiNavBarToolBarPreferenceKey: PreferenceKey {
     static var defaultValue: EquatableViewContainer = EquatableViewContainer(view: AnyView(EmptyView()) )
@@ -47,6 +46,15 @@ struct HiNavBarToolBarPreferenceKey: PreferenceKey {
     }
 }
 
+struct HiNavBarBtnPreferenceKey: PreferenceKey {
+    static var defaultValue: String = "ic_nav_left_arrow"
+    
+    static func reduce(value: inout String, nextValue: () -> String) {
+        value = nextValue()
+    }
+}
+
+
 extension View {
     
     
@@ -55,14 +63,19 @@ extension View {
             .preference(key: HiNavBarTitlePreferenceKey.self, value: title)
     }
     
-    func hiNavigationBackButtonHidden(_ hidden: Bool) -> some View{
+    func hiNavButtonHidden(_ hidden: Bool) -> some View{
         self
-            .preference(key: HiNavBarBackButtonHiddenPreferenceKey.self, value: hidden)
+            .preference(key: HiNavBarButtonHiddenPreferenceKey.self, value: hidden)
     }
     
     func hiToolBar<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
         self
             .preference(key: HiNavBarToolBarPreferenceKey.self, value: EquatableViewContainer(view: AnyView(content())))
+    }
+    
+    func hiNavButton(_ imgString: String) -> some View {
+        self
+            .preference(key: HiNavBarBtnPreferenceKey.self, value: imgString)
     }
     
     

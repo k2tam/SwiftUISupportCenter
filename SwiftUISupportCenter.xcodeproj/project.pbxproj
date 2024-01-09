@@ -15,6 +15,12 @@
 		051225D22B31D79100FB1DEF /* SupportScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225D12B31D79100FB1DEF /* SupportScheduleScreen.swift */; };
 		051225D72B32A09700FB1DEF /* DateTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225D62B32A09700FB1DEF /* DateTimeModel.swift */; };
 		051225DD2B32DDC200FB1DEF /* CalendarDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051225DC2B32DDC200FB1DEF /* CalendarDateModel.swift */; };
+		05143FA02B4CE6EB00408707 /* SpeedMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05143F9F2B4CE6EB00408707 /* SpeedMeter.swift */; };
+		05143FA22B4CE84800408707 /* ErrorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05143FA12B4CE84800408707 /* ErrorText.swift */; };
+		0517183A2B4B96260044274C /* HiBaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051718392B4B96260044274C /* HiBaseScreen.swift */; };
+		0517183C2B4BB7DD0044274C /* ContractInfoBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517183B2B4BB7DD0044274C /* ContractInfoBlockView.swift */; };
+		0517183F2B4BD9790044274C /* NoteBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517183E2B4BD9790044274C /* NoteBlockView.swift */; };
+		051718412B4BDA4D0044274C /* ErrorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051718402B4BDA4D0044274C /* ErrorTextView.swift */; };
 		053172072B357A4F00BDC36F /* HiSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053172062B357A4F00BDC36F /* HiSearchView.swift */; };
 		0540F5A02B2C034100E9A1D5 /* RequestProcessWithVLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */; };
 		0540F5A22B2C0D6000E9A1D5 /* RequestStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */; };
@@ -77,11 +83,11 @@
 		05B77A532B2ABCC600D4C8EB /* SupportQandAItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A522B2ABCC600D4C8EB /* SupportQandAItemView.swift */; };
 		05B77A552B2AC1F700D4C8EB /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A542B2AC1F700D4C8EB /* TextView.swift */; };
 		05B77A572B2ADA5900D4C8EB /* QAndASupportItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A562B2ADA5900D4C8EB /* QAndASupportItemViewModel.swift */; };
-		05B77A5D2B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A592B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift */; };
+		05B77A5D2B2AFD9200D4C8EB /* RequestTechnical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A592B2AFD9200D4C8EB /* RequestTechnical.swift */; };
 		05B77A5E2B2AFD9200D4C8EB /* BlockWithActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A5B2B2AFD9200D4C8EB /* BlockWithActionView.swift */; };
 		05B77A5F2B2AFD9200D4C8EB /* SupportRequestBottomSheetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A5C2B2AFD9200D4C8EB /* SupportRequestBottomSheetContent.swift */; };
 		05B77A622B2AFF3D00D4C8EB /* CreateSupportRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A612B2AFF3D00D4C8EB /* CreateSupportRequestViewModel.swift */; };
-		05B77A642B2AFFC600D4C8EB /* HiPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A632B2AFFC600D4C8EB /* HiPrimaryButton.swift */; };
+		05B77A642B2AFFC600D4C8EB /* HiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A632B2AFFC600D4C8EB /* HiButton.swift */; };
 		05B77A662B2B003600D4C8EB /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B77A652B2B003500D4C8EB /* CustomTextView.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +100,12 @@
 		051225D12B31D79100FB1DEF /* SupportScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportScheduleScreen.swift; sourceTree = "<group>"; };
 		051225D62B32A09700FB1DEF /* DateTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeModel.swift; sourceTree = "<group>"; };
 		051225DC2B32DDC200FB1DEF /* CalendarDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateModel.swift; sourceTree = "<group>"; };
+		05143F9F2B4CE6EB00408707 /* SpeedMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedMeter.swift; sourceTree = "<group>"; };
+		05143FA12B4CE84800408707 /* ErrorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
+		051718392B4B96260044274C /* HiBaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiBaseScreen.swift; sourceTree = "<group>"; };
+		0517183B2B4BB7DD0044274C /* ContractInfoBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractInfoBlockView.swift; sourceTree = "<group>"; };
+		0517183E2B4BD9790044274C /* NoteBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBlockView.swift; sourceTree = "<group>"; };
+		051718402B4BDA4D0044274C /* ErrorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTextView.swift; sourceTree = "<group>"; };
 		053172062B357A4F00BDC36F /* HiSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiSearchView.swift; sourceTree = "<group>"; };
 		0540F59F2B2C034100E9A1D5 /* RequestProcessWithVLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessWithVLineView.swift; sourceTree = "<group>"; };
 		0540F5A12B2C0D6000E9A1D5 /* RequestStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusView.swift; sourceTree = "<group>"; };
@@ -151,11 +163,11 @@
 		05B77A522B2ABCC600D4C8EB /* SupportQandAItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportQandAItemView.swift; sourceTree = "<group>"; };
 		05B77A542B2AC1F700D4C8EB /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		05B77A562B2ADA5900D4C8EB /* QAndASupportItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAndASupportItemViewModel.swift; sourceTree = "<group>"; };
-		05B77A592B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSupportRequestScreen.swift; sourceTree = "<group>"; };
+		05B77A592B2AFD9200D4C8EB /* RequestTechnical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTechnical.swift; sourceTree = "<group>"; };
 		05B77A5B2B2AFD9200D4C8EB /* BlockWithActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockWithActionView.swift; sourceTree = "<group>"; };
 		05B77A5C2B2AFD9200D4C8EB /* SupportRequestBottomSheetContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportRequestBottomSheetContent.swift; sourceTree = "<group>"; };
 		05B77A612B2AFF3D00D4C8EB /* CreateSupportRequestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSupportRequestViewModel.swift; sourceTree = "<group>"; };
-		05B77A632B2AFFC600D4C8EB /* HiPrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiPrimaryButton.swift; sourceTree = "<group>"; };
+		05B77A632B2AFFC600D4C8EB /* HiButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiButton.swift; sourceTree = "<group>"; };
 		05B77A652B2B003500D4C8EB /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,15 +259,60 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		05143F9E2B4CE6BB00408707 /* SpeedTest */ = {
+			isa = PBXGroup;
+			children = (
+				05143F9F2B4CE6EB00408707 /* SpeedMeter.swift */,
+			);
+			path = SpeedTest;
+			sourceTree = "<group>";
+		};
+		05143FA42B4D4A5B00408707 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				05B779FD2B295BF500D4C8EB /* SupportCenter */,
+				05143F9E2B4CE6BB00408707 /* SpeedTest */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		051718372B4B8EBC0044274C /* RequestTimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */,
+			);
+			path = RequestTimeLine;
+			sourceTree = "<group>";
+		};
+		051718382B4B96090044274C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				051718392B4B96260044274C /* HiBaseScreen.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0517183D2B4BD0E60044274C /* CreateSupportViews */ = {
+			isa = PBXGroup;
+			children = (
+				05B77A5B2B2AFD9200D4C8EB /* BlockWithActionView.swift */,
+				0517183B2B4BB7DD0044274C /* ContractInfoBlockView.swift */,
+				0517183E2B4BD9790044274C /* NoteBlockView.swift */,
+				051718402B4BDA4D0044274C /* ErrorTextView.swift */,
+			);
+			path = CreateSupportViews;
+			sourceTree = "<group>";
+		};
 		0540F5A32B2C41E100E9A1D5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				051718372B4B8EBC0044274C /* RequestTimeLine */,
 				055E355D2B4505C900FAC071 /* Procedures */,
 				0547B1672B3C12E4002B7D6C /* Contract */,
 				0547B1102B3A6E01002B7D6C /* RequestList */,
 				051225CC2B312BB900FB1DEF /* SupportSchedule */,
 				051225C12B30487A00FB1DEF /* MoreQandA */,
-				05B77A582B2AFD9200D4C8EB /* CreateSupportRequest */,
+				05B77A582B2AFD9200D4C8EB /* CreateSupport */,
 				0597324D2B2BF92200F79E25 /* RequestDetail */,
 			);
 			path = Screens;
@@ -350,9 +407,8 @@
 		0597324D2B2BF92200F79E25 /* RequestDetail */ = {
 			isa = PBXGroup;
 			children = (
-				0547B1462B3BCC58002B7D6C /* Models */,
 				0597324E2B2BF95900F79E25 /* RequestDetailScreen.swift */,
-				0540F5A42B2C425100E9A1D5 /* RequestStatusTimeLineScreen.swift */,
+				0547B1462B3BCC58002B7D6C /* Models */,
 				059732512B2BFC2B00F79E25 /* ViewModels */,
 				059732502B2BFC2500F79E25 /* Views */,
 			);
@@ -403,11 +459,12 @@
 			isa = PBXGroup;
 			children = (
 				05B77A1C2B295D6A00D4C8EB /* Others */,
+				051718382B4B96090044274C /* Base */,
 				05B77A0E2B295D3C00D4C8EB /* HiTheme */,
 				05B77A232B296D7400D4C8EB /* Extension */,
 				05B779F42B29588E00D4C8EB /* HiExtensions */,
 				05B779F02B29575300D4C8EB /* Core */,
-				05B779F32B29587700D4C8EB /* Models */,
+				05143FA42B4D4A5B00408707 /* Modules */,
 				05B77A262B29921900D4C8EB /* Manager */,
 				05B779F22B2957B800D4C8EB /* Info.plist */,
 				05B779E22B2956F100D4C8EB /* Assets.xcassets */,
@@ -428,7 +485,6 @@
 			isa = PBXGroup;
 			children = (
 				059B8C3B2B3E5D6A0087DCEC /* Playground.swift */,
-				05B779FD2B295BF500D4C8EB /* SupportCenter */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -455,8 +511,9 @@
 		05B779FD2B295BF500D4C8EB /* SupportCenter */ = {
 			isa = PBXGroup;
 			children = (
-				05B77A302B29AD8800D4C8EB /* Components */,
 				05B779FB2B295BEB00D4C8EB /* SupportCenterScreen.swift */,
+				05B77A302B29AD8800D4C8EB /* Components */,
+				05B779F32B29587700D4C8EB /* Models */,
 				05B779FF2B295C4500D4C8EB /* ViewModels */,
 				0540F5A32B2C41E100E9A1D5 /* Screens */,
 				05B779FE2B295C4000D4C8EB /* Views */,
@@ -493,7 +550,7 @@
 				0547B1492B3BCD65002B7D6C /* Modifiers */,
 				05B77A102B295D3C00D4C8EB /* Navigation */,
 				053172062B357A4F00BDC36F /* HiSearchView.swift */,
-				05B77A632B2AFFC600D4C8EB /* HiPrimaryButton.swift */,
+				05B77A632B2AFFC600D4C8EB /* HiButton.swift */,
 				05B77A0F2B295D3C00D4C8EB /* HiBottomSheet.swift */,
 				05B77A152B295D3C00D4C8EB /* HiImage.swift */,
 				05B77A332B29B1CB00D4C8EB /* HiDividerLine.swift */,
@@ -544,31 +601,32 @@
 		05B77A302B29AD8800D4C8EB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0517183D2B4BD0E60044274C /* CreateSupportViews */,
 				055E35512B3E7E5C00FAC071 /* HiSupportBottomSheet */,
 				051225DA2B32C53300FB1DEF /* Calendar */,
 				05B77A652B2B003500D4C8EB /* CustomTextView.swift */,
 				05B77A312B29AD9300D4C8EB /* BlockNavHeader.swift */,
 				059732522B2BFE1E00F79E25 /* BlockTitle.swift */,
 				0547B16A2B3C318B002B7D6C /* TextWithContainerView.swift */,
+				05143FA12B4CE84800408707 /* ErrorText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		05B77A582B2AFD9200D4C8EB /* CreateSupportRequest */ = {
+		05B77A582B2AFD9200D4C8EB /* CreateSupport */ = {
 			isa = PBXGroup;
 			children = (
-				05B77A592B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift */,
+				05B77A592B2AFD9200D4C8EB /* RequestTechnical.swift */,
 				05B1390B2B33CCCB001633C5 /* Service */,
 				05B77A602B2AFF3400D4C8EB /* ViewModels */,
 				05B77A5A2B2AFD9200D4C8EB /* Views */,
 			);
-			path = CreateSupportRequest;
+			path = CreateSupport;
 			sourceTree = "<group>";
 		};
 		05B77A5A2B2AFD9200D4C8EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05B77A5B2B2AFD9200D4C8EB /* BlockWithActionView.swift */,
 				05B77A5C2B2AFD9200D4C8EB /* SupportRequestBottomSheetContent.swift */,
 			);
 			path = Views;
@@ -688,12 +746,13 @@
 				05B77A222B296BF700D4C8EB /* SupportCenterViewModel.swift in Sources */,
 				0547B1122B3A6E36002B7D6C /* RequestListScreen.swift in Sources */,
 				055E355A2B3EB15500FAC071 /* SupportServicesBar.swift in Sources */,
+				05143FA02B4CE6EB00408707 /* SpeedMeter.swift in Sources */,
 				05B77A662B2B003600D4C8EB /* CustomTextView.swift in Sources */,
 				05B77A322B29AD9300D4C8EB /* BlockNavHeader.swift in Sources */,
 				05B77A282B29922D00D4C8EB /* SampleData.swift in Sources */,
 				05B779DF2B2956EF00D4C8EB /* SwiftUISupportCenterApp.swift in Sources */,
 				05B77A162B295D3C00D4C8EB /* HiBottomSheet.swift in Sources */,
-				05B77A642B2AFFC600D4C8EB /* HiPrimaryButton.swift in Sources */,
+				05B77A642B2AFFC600D4C8EB /* HiButton.swift in Sources */,
 				051225B82B2EF80600FB1DEF /* HiAlert.swift in Sources */,
 				05B77A1E2B29628400D4C8EB /* CreateSupportRequestView.swift in Sources */,
 				058674172B34296D00B88A05 /* HourCell.swift in Sources */,
@@ -710,6 +769,7 @@
 				05B779EF2B29575100D4C8EB /* SceneDelegate.swift in Sources */,
 				0547B1152B3A8021002B7D6C /* RequestTicketView.swift in Sources */,
 				055E355C2B3EB65000FAC071 /* SupBottomSheetSampleData.swift in Sources */,
+				0517183F2B4BD9790044274C /* NoteBlockView.swift in Sources */,
 				055E35582B3EADAF00FAC071 /* ProblemsListView.swift in Sources */,
 				05B77A3E2B29F2B300D4C8EB /* SupportExtensionsView.swift in Sources */,
 				0547B14B2B3BCD77002B7D6C /* HiLoading.swift in Sources */,
@@ -720,15 +780,19 @@
 				05B77A1B2B295D3C00D4C8EB /* HiImage.swift in Sources */,
 				05B77A4D2B2AA4A500D4C8EB /* SupportQandAView.swift in Sources */,
 				0547B16B2B3C318B002B7D6C /* TextWithContainerView.swift in Sources */,
+				05143FA22B4CE84800408707 /* ErrorText.swift in Sources */,
 				05B77A572B2ADA5900D4C8EB /* QAndASupportItemViewModel.swift in Sources */,
 				0540F5A02B2C034100E9A1D5 /* RequestProcessWithVLineView.swift in Sources */,
+				051718412B4BDA4D0044274C /* ErrorTextView.swift in Sources */,
 				055E355F2B4505E700FAC071 /* ProcedureScreen.swift in Sources */,
+				0517183C2B4BB7DD0044274C /* ContractInfoBlockView.swift in Sources */,
+				0517183A2B4B96260044274C /* HiBaseScreen.swift in Sources */,
 				05B1390D2B33CD02001633C5 /* DateTimeAllowDataService.swift in Sources */,
 				05B77A5E2B2AFD9200D4C8EB /* BlockWithActionView.swift in Sources */,
 				05B779FC2B295BEB00D4C8EB /* SupportCenterScreen.swift in Sources */,
 				059B8C312B3D30710087DCEC /* HiSupportBottomSheet.swift in Sources */,
 				0547B1662B3C12D5002B7D6C /* SelectContract.swift in Sources */,
-				05B77A5D2B2AFD9200D4C8EB /* CreateSupportRequestScreen.swift in Sources */,
+				05B77A5D2B2AFD9200D4C8EB /* RequestTechnical.swift in Sources */,
 				059B8C3C2B3E5D6A0087DCEC /* Playground.swift in Sources */,
 				05B77A192B295D3C00D4C8EB /* HiNavigationView.swift in Sources */,
 			);
